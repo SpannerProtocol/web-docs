@@ -23,7 +23,7 @@ const users = [
 const siteConfig = {
   title: 'Spanner Protocol', // Title for your website.
   tagline: 'A website for Spanner',
-  url: 'https://spannerprotocol.com', // Your website URL
+  url: 'https://spannerprotocol.github.io', // Your website URL
   baseUrl: '/web-docs/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -38,8 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'getting_started', label: 'Docs'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
   ],
@@ -73,7 +72,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} SpannerProtocol`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

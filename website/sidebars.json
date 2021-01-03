@@ -1,10 +1,26 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "General": ["getting_started", "glossary"],
+    "Learn": [
+    	"launch_phases", 
+    	{
+    		"type": "subcategory",
+    		"label": "Basics",
+    		"ids": ["architecture", "governance"]
+    	},
+    	{
+    		"type": "subcategory",
+    		"label": "Economics",
+    		"ids": ["bolt"]
+    	}
+    ],
+    "Build": [
+    	{
+    		"type": "subcategory",
+    		"label": "Tools",
+    		"ids": ["tools"]
+    	}
+    ],
+    "Maintain": ["network_maintainers", "collator"]
   }
 }
