@@ -1,8 +1,5 @@
 ---
 id: governance
-title: Governance
+title: Protocol Governance
 ---
-
-## Chain
-
-## DPO
+dss dddd  mui

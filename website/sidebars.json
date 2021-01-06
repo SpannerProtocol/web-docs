@@ -14,13 +14,7 @@
     		"ids": ["bolt"]
     	}
     ],
-    "Build": [
-    	{
-    		"type": "subcategory",
-    		"label": "Tools",
-    		"ids": ["tools"]
-    	}
-    ],
+    "Build": ["integration_guide", "tools"],
     "Maintain": ["network_maintainers", "collator"]
   }
 }
