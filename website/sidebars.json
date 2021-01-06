@@ -2,16 +2,22 @@
   "docs": {
     "General": ["getting_started", "glossary"],
     "Learn": [
-    	"launch_phases", 
+		"launch_phases", 
+		"web3",
     	{
     		"type": "subcategory",
     		"label": "Basics",
-    		"ids": ["architecture", "governance"]
+    		"ids": ["architecture","bolt","governance"]
     	},
     	{
     		"type": "subcategory",
-    		"label": "Economics",
-    		"ids": ["bolt"]
+    		"label": "DEFI",
+    		"ids": ["dex","yield_farming"]
+		},
+		{
+    		"type": "subcategory",
+    		"label": "GT-01 Rules",
+    		"ids": ["growthbox_rule", "dpo_rule"]
     	}
     ],
     "Build": ["integration_guide", "tools"],

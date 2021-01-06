@@ -2,4 +2,4 @@
 id: governance
 title: Protocol Governance
 ---
-dss dddd  mui
+Spanner Protocol inherits the complete [governance](https://polkadot.network/launch-governance/) features of Polakdot. 
