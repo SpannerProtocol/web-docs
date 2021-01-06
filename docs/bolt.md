@@ -15,7 +15,7 @@ BOLT is the native token of Spanner Protocol. It is primarily used as a utility 
 
 ### Issuance and Distribution
 
-Total BOLT issuance = 100,000,000
+Total BOLT issuance = 1,000,000,000
 - Token sales (0%): It is noteworthy that the Spanner Protocol was initially developed at the expense of the founding members who provided the initial idea, engineering efforts and capital needed to bootstrap the protocol. No initial token sales also gives the benefit that no major token holders can ruin the market with early token dumps. 
 - Team (8%): Scheduled to linearly vett to Spanner core developers over a 4-year period after Jan 1st of 2021. This is to ensure both long-term commitment and short term market stability. The list of beneficiary wallets of core developers will be public for community review. 
 - Early Growth (32%): Used for creating GrowthBox or other growth-oriented offerings that incentivse early token holders, partners and project launching on Spanner.   

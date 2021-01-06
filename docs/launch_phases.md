@@ -13,6 +13,11 @@ Spanner Protocol has following three major launch phases:
 **Phase 3 - Spanner Parachain**: After the official launch of Polkadot parachain integraiton, we will bid for a parachain slot with wide community supports. The parachain integration is anticipated to bring higher value of BOLT token via improved interoperability and pool security. 
 
 ## Feature Roadmap
-Economy of Scale 
+We will progressively implement following features. 
+- Economy of Scale for pricing Spanner components and templates
+- More Growth Templates to supoort more project launches.
+- More features for interoperability with other Parachain and integration. 
+- Parachain infrastructures like Collator. 
+- more
 
-more templates, more projects, more defi features. more integrations
+The actual implementation schedule are evolving based on our github issue discussion pages.

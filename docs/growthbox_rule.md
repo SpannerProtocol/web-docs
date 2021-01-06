@@ -1,5 +1,13 @@
 ---
 id: growthbox_rule
-title: GrowthBox Rules
+title: Growth Box Rules
 ---
-gbbgg
+
+A Growth Box is a yield generating deposit offering both a one time participation bonus and a passive periodic yield. Growth Boxes help projects grow by allowing them to fundraise for their project, improve liquidity and stabilize volatility of token prices. This benefits both project and backers by encouraging holders to use the token with less fear of sudden prices drops and to have longer term perspectives.
+
+A Growth Box can be activated by either an token holder or a [DPO](dpo_rule.md). A Growth Box is defined by following major attributes:
+- Lock amount and lock period: the committer needs to lock up the required amount of initiate the Growth Box. The locked up tokens will unlock automatically after the lock period.
+- Instant Drop: return to the committer instantly upon Growth Box activation.
+- Periodic Drop: drop X tokens to the committer every Y blocks throughout the whole lock period upon Growth Box activation. 
+
+As you can see, a Growth Box only **gives tokens** in the long run. Again, it is designed to benefit both **the projects and the committer**. Anyone can create a Growth Box if they want to participate in catalyzing community growth.
