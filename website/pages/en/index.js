@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+const React = require("react");
 
-const CompLibrary = require('../../core/CompLibrary.js');
+const CompLibrary = require("../../core/CompLibrary.js");
 
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
 const Container = CompLibrary.Container;
@@ -15,25 +15,21 @@ const GridBlock = CompLibrary.GridBlock;
 
 class HomeSplash extends React.Component {
   render() {
-    const {siteConfig, language = ''} = this.props;
-    const {baseUrl, docsUrl} = siteConfig;
-    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
-    const langPart = `${language ? `${language}/` : ''}`;
+    const { siteConfig, language = "" } = this.props;
+    const { baseUrl, docsUrl } = siteConfig;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    const langPart = `${language ? `${language}/` : ""}`;
     const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const SplashContainer = (props) => (
-      <div className="homeContainer">
+      <div className="homeContainer" style={{ background: "#1e2123" }}>
         <div className="homeSplashFade">
           <div className="wrapper homeWrapper">{props.children}</div>
         </div>
       </div>
     );
 
-    const Logo = (props) => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
+    const Logo = (props) => <div className="projectLogo"></div>;
 
     const ProjectTitle = (props) => (
       <h2 className="projectTitle">
@@ -62,11 +58,13 @@ class HomeSplash extends React.Component {
       <SplashContainer>
         <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
         <div className="inner">
-          <ProjectTitle tagline={siteConfig.tagline} title={siteConfig.title} />
+          <ProjectTitle
+            tagline={siteConfig.tagline}
+            title={siteConfig.title}
+            style={{ color: "#fff" }}
+          />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href="blog">Learn more</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -76,14 +74,15 @@ class HomeSplash extends React.Component {
 
 class Index extends React.Component {
   render() {
-    const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
+    const { config: siteConfig, language = "" } = this.props;
+    const { baseUrl } = siteConfig;
 
     const Block = (props) => (
       <Container
-        padding={['bottom', 'top']}
+        padding={["bottom", "top"]}
         id={props.id}
-        background={props.background}>
+        background={props.background}
+      >
         <GridBlock
           align="center"
           contents={props.children}
@@ -95,9 +94,18 @@ class Index extends React.Component {
     const FeatureCallout = () => (
       <div
         className="productShowcaseSection paddingBottom"
-        style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        style={{ textAlign: "center" }}
+      >
+        <h2>What is Spanner?</h2>
+        <MarkdownBlock>
+          # Secure, economically incentivized and highly customizable components
+          for blockchain projects.
+        </MarkdownBlock>
+        <MarkdownBlock>
+          Evergrowing catalogue of Components for smart contracts to quickly get
+          projects up-and-running. Create an asset, enroll in Spanner DeFi for
+          liquidity and promote them with Growth Templates.
+        </MarkdownBlock>
       </div>
     );
 
@@ -106,12 +114,12 @@ class Index extends React.Component {
         {[
           {
             content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
+              "To make your landing page more attractive, use illustrations! Check out " +
+              "[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. " +
+              "The illustrations you see on this page are from unDraw.",
             image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            imageAlign: "left",
+            title: "Wonderful SVG Illustrations",
           },
         ]}
       </Block>
@@ -122,10 +130,10 @@ class Index extends React.Component {
         {[
           {
             content:
-              'This is another description of how this project is useful',
+              "This is another description of how this project is useful",
             image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Description',
+            imageAlign: "right",
+            title: "Description",
           },
         ]}
       </Block>
@@ -136,10 +144,10 @@ class Index extends React.Component {
         {[
           {
             content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
+              "Each new Docusaurus project has **randomly-generated** theme colors.",
             image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
+            imageAlign: "right",
+            title: "Randomly Generated Theme Colors",
           },
         ]}
       </Block>
@@ -149,16 +157,25 @@ class Index extends React.Component {
       <Block layout="fourColumn">
         {[
           {
-            content: 'This is the content of my feature',
+            content: `Instantly bootstrap your project with asset and liquidity. 
+            <section class="button-wrap">Learn More</section>`,
             image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
+            imageAlign: "top",
+            title: "Project Launchpad",
           },
           {
-            content: 'The content of my second feature',
+            content: `Use Growth Templates to help promote your project.
+            <section class="button-wrap">Learn More</section>`,
             image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
+            imageAlign: "top",
+            title: "Incentivized Growth ",
+          },
+          {
+            content: `Build your project with secure and customizable components.
+            <section class="button-wrap">Learn More</section>`,
+            image: `${baseUrl}img/undraw_operating_system.svg`,
+            imageAlign: "top",
+            title: "Rapid Development",
           },
         ]}
       </Block>
@@ -178,7 +195,7 @@ class Index extends React.Component {
         ));
 
       const pageUrl = (page) =>
-        baseUrl + (language ? `${language}/` : '') + page;
+        baseUrl + (language ? `${language}/` : "") + page;
 
       return (
         <div className="productShowcaseSection paddingBottom">
@@ -186,7 +203,7 @@ class Index extends React.Component {
           <p>This project is used by all these people</p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
+            <a className="button" href={pageUrl("users.html")}>
               More {siteConfig.title} Users
             </a>
           </div>

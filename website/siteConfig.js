@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Spanner Protocol', // Title for your website.
-  tagline: 'A website for Spanner',
+  tagline: 'Bootstrap crypto projects with asset, liquidity and growth',
   url: 'https://spannerprotocol.github.io', // Your website URL
   baseUrl: '/web-docs/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -47,21 +47,21 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
+  headerIcon: 'img/spanner-logo.svg',
   footerIcon: 'img/favicon.ico',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#1e7f9b',
-    secondaryColor: '#15586c',
+    primaryColor: '#E0359D',
+    secondaryColor: '#E0359D',
   },
 
   /* Custom fonts for website */
-  /*
+  
   fonts: {
     myFont: [
-      "Times New Roman",
+      "Avenir",
       "Serif"
     ],
     myOtherFont: [
@@ -69,7 +69,7 @@ const siteConfig = {
       "system-ui"
     ]
   },
-  */
+  
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} SpannerProtocol`,
@@ -83,7 +83,7 @@ const siteConfig = {
   scripts: ['https://buttons.github.io/buttons.js'],
 
   // On page navigation for the current documentation page.
-  onPageNav: 'separate',
+  onPageNav: '',
   // No .html extensions for paths.
   cleanUrl: true,
 

@@ -7,6 +7,18 @@
 
 /* your custom css */
 
+p, h1, h2, h3 {
+  color: #000
+}
+
+.headerTitleWithLogo {
+  color: #fff
+}
+
+.projectTitle {
+  color: #fff
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
