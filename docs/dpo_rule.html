@@ -64,17 +64,16 @@
 </ul>
 <p><img src="assets/dpo.png" width="600"></p>
 <h2><a class="anchor" aria-hidden="true" id="dpo-structure"></a><a href="#dpo-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DPO Structure</h2>
-<p>DPO is a formalized on-chain organization. Here's some important basic concepts:</p>
+<p>DPO is a formalized on-chain organization. a DPO is primarily for crowdfunding. Here's some important basic concepts:</p>
 <ul>
-<li>A DPO is initiated by a <strong>DPO Manager</strong> with a defined intent (e.g. to activate a <a href="/web-docs/docs/growthbox_rule">Growth Box</a>).</li>
-<li>A DPO has X <strong>seats</strong>. Each seat has a price. And each slot has one share of <strong>voting power</strong>.</li>
-<li>A DPO will be <strong>In Motion</strong> when over Y seats are claimed.</li>
+<li>A DPO is initiated by a <strong>DPO Manager</strong> with a target value and bounds (e.g. aims to crowdfund 10k BOLTs and commit to target, either a Growth Box or seats of another DPO, with at least 7% APY)</li>
+<li>A DPO has X <strong>seats</strong>. Each seat has the same price, one share of voting power and an equal claim to the rewards of this DPO.</li>
 <li>Users who claim the seat will become <strong>DPO Members</strong>. A DPO Member can be an individual wallet or a DPO (DPO in DPO). A DPO Member may claim multiple seats within the bound.</li>
 </ul>
-<p>For our first launch, a DPO</p>
+<p>For our first launch,</p>
 <ul>
-<li>Targets a Growth Box or another DPO seat(s).</li>
-<li>Has 100 seats with the same price and the same voting power. Needs all seats claimed to be In Motion</li>
+<li>DPO Manager can flexibly configure the target value and bounds.</li>
+<li>A DPO has 100 seats with the same price and the same voting power. Needs all seats claimed to be In Motion.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="dpo-incentive"></a><a href="#dpo-incentive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DPO Incentive</h2>
 <p>DPO incentive is guaranteed by the Blockchain consensus and based strictly on on-chain metric.</p>
@@ -89,21 +88,40 @@
 </ul>
 <p>For our first launch,</p>
 <ul>
-<li>DPO Manager can not charge more than (5% + Z%) management fee, where Z is the number of seats claimed by the DPO Manager. The fee cap is 20%. DPO Manager can only lower the fee.</li>
+<li>Management fee
+<ul>
+<li>is firstly set as DPO initialization is (5 + Z) %, where Z is the number of seats claimed by the DPO Manager.</li>
+<li>is capped at 20%.Claiming more seats later wont increase the fee. The DPO Manager can choose lower the fee by himself.</li>
+<li>is subject to slashing conditions. See the DPO Governance section.</li>
+</ul></li>
 <li>Both Internal and External Referral will share a part of the overall Instant Drop from a <a href="/web-docs/docs/growthbox_rule">Growth Box</a>.</li>
 <li>External Referral has only 30% bonus as that of an Internal Referral.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="dpo-governance"></a><a href="#dpo-governance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DPO Governance</h2>
-<p>DPO governance includes:</p>
+<p>DPO governance aims to enforce the DPO operates as intended. It includes:</p>
 <ul>
-<li>Changing the DPO mandate (the intent)</li>
-<li>Enforcing normal operations. e.g. DPO Members enforcing what the DPO Manager fail to perform</li>
-<li>All governance changes are binding and will be determiend by a formal quorom voting.</li>
+<li>Conditions for the DPO state transition.</li>
+<li>Member fund safety.</li>
+<li>Slashing conditions</li>
 </ul>
 <p>For our first launch,</p>
+<h4><a class="anchor" aria-hidden="true" id="dpo-state-transition"></a><a href="#dpo-state-transition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DPO State Transition</h4>
 <ul>
-<li>Major DPO Members can suggest a change of target.</li>
-<li>If the DPO Manager fail to dispense rewards for its members, the DPO Member who enforces the reward dispense is entitled to a part of the management fee.</li>
-<li>The DPO will be disbanded and all committed toekns will return to the members if the DPO failed to exercise its intent within 15 days.</li>
+<li>Upon initiated, the DPO state becomes <strong>PREPARING</strong>.</li>
+<li>All seats are required to be taken for the DPO to be <strong>ACTIVE</strong>.</li>
+<li>The DPO Manager has a 3-day grace period after <strong>ACTIVE</strong> to commit to a eligible target within the target bound. DPO will be tagged as <strong>COMMITTED</strong> after commting to targets.</li>
+<li>After the all the rewards from the target are distributed, the DPO state becomes <strong>COMPLETED</strong></li>
+<li>If a DPO fails to commit to any target after 14 days since ACTIVE, any of its DPO Member has the <strong>OPTION</strong> to tag the DPO as <strong>DISBANDED</strong>.</li>
+</ul>
+<p>TODO: a flowchart</p>
+<h4><a class="anchor" aria-hidden="true" id="dpo-fund-safety"></a><a href="#dpo-fund-safety" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DPO Fund Safety</h4>
+<ul>
+<li>If the committed target does not use the DPO funds to its fullest, the rest of the fund will be returned to their origind.</li>
+<li>If the DPO is tagged as <strong>DISBANDED</strong>, all the funds will be returned to their origins.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="slashing-condition"></a><a href="#slashing-condition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Slashing Condition</h4>
+<ul>
+<li>After the 3-day grace period, any other DPO Member can commit to a legitimate target on the behalf of the DPO Manager, in which case the management fee would be slashed by half.</li>
+<li>Anyone can distribute the DPO rewards to its mebmer by calling the function. But this action incur costs and should normally be done by the DPO Manager. A DPO Manager should distribute rewards within 7 days since the last reward distribution checkpoint for better member experiences. Should the DPO Manager fail to do so, half of the management fee for the accumulated rewards will be slashed. If the distribution function was called by its DPO member after the 7-day grace period, the slashed will go to the caller as incentive.</li>
 </ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/web-docs/docs/growthbox_rule"><span class="arrow-prev">← </span><span>Growth Box Rules</span></a><a class="docs-next button" href="/web-docs/docs/integration_guide"><span>Integration Guide</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#dpo-structure">DPO Structure</a></li><li><a href="#dpo-incentive">DPO Incentive</a></li><li><a href="#dpo-governance">DPO Governance</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/web-docs/" class="nav-home"><img src="/web-docs/img/favicon.ico" alt="Spanner Protocol" width="66" height="58"/></a><div><h5>Docs</h5><a href="/web-docs/docs/doc1.html">Getting Started (or other categories)</a><a href="/web-docs/docs/doc2.html">Guides (or other categories)</a><a href="/web-docs/docs/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/web-docs/users">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/web-docs/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/web-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2021 SpannerProtocol</section></footer></div></body></html>
