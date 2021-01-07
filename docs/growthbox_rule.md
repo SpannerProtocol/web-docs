@@ -11,3 +11,12 @@ A Growth Box can be activated by either an token holder or a [DPO](dpo_rule.md).
 - Periodic Drop: drop X tokens to the committer every Y blocks throughout the whole lock period upon Growth Box activation. 
 
 As you can see, a Growth Box only **gives tokens** in the long run. Again, it is designed to benefit both **the projects and the committer**. Anyone can create a Growth Box if they want to participate in catalyzing community growth.
+
+### Milestone Drop
+A Milestone Drop is a scheduled token airdrop for hitting a milestone, which can be flexibly defined. In our first launch, a Milestone Drop is activatd by metrics of Growth Box and DPO and its token reward package will be fairly distributed to the target audiences. It is like how Uniswap/1inch airdrop tokens for their early backers. 
+
+For example, 
+- drop 10000 BOLT tokens to all Growth Box committers when totally 5 Growth Boxes were activated.
+- drop 10000 BOLT tokens to all DPO managers when  totally 15 Growth Boxes were activated.
+
+Anyone who want to incentivize community growth can schedule a Milestone Drop.
