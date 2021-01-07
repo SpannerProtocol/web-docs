@@ -3,6 +3,4 @@ id: web3
 title: Web3 and Spanner
 ---
 
-Recap Gavins' round up 2020
-
-How Spanner plays an essential role
+Read [Spanner, Polkadot and Web3](https://spannerprotocol.medium.com/spanner-polkadot-and-the-web3-adventure-5bd9c880e084).
