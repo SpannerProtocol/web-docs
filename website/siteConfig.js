@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Spanner Protocol', // Title for your website.
-  tagline: 'Bootstrap crypto projects with asset, liquidity and growth',
+  tagline: 'The blockchain business application layer',
   url: 'https://spannerprotocol.github.io', // Your website URL
   baseUrl: '/web-docs/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -47,14 +47,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/spanner-logo.svg',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/spanner-logo-white.svg',
+  footerIcon: 'img/spanner-logo-orange.svg',
+  favicon: 'img/spanner-logo-orange.svg',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#E0359D',
-    secondaryColor: '#E0359D',
+    primaryColor: 'linear-gradient(90deg, #D28203 0%, #AD074F 100%)',
+    secondaryColor: 'linear-gradient(90deg, #D28203 0%, #AD074F 100%)',
   },
 
   /* Custom fonts for website */
