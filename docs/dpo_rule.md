@@ -15,7 +15,7 @@ Notable features of DPO include:
 
 ## DPO Structure
 DPO is a formalized on-chain organization. a DPO is primarily for crowdfunding. Here's some important basic concepts:
-- A DPO is initiated by a **DPO Manager** with a target value and bounds (e.g. aims to crowdfund 10k BOLTs and commit to target, either a Growth Box or seats of another DPO, with at least 7% APY)
+- A DPO is initiated by a **DPO Manager** with a default target, target value and bounds (e.g. aims to crowdfund 10k BOLTs and commit to target, either a Growth Box or seats of another DPO, with at least 7% APY)
 - A DPO has X **seats**. Each seat has the same price, one share of voting power and an equal claim to the rewards of this DPO. 
 - Users who claim the seat will become **DPO Members**. A DPO Member can be an individual wallet or a DPO (DPO in DPO). A DPO Member may claim multiple seats within the bound. 
 
@@ -49,7 +49,7 @@ DPO governance aims to enforce the DPO operates as intended. It includes:
 For our first launch,
 
 #### DPO State Transition
-- Upon initiated, the DPO state becomes **PREPARING**. 
+- Upon initiated, the DPO state becomes **CREATED**. 
 - All seats are required to be taken for the DPO to be **ACTIVE**. 
 - The DPO Manager has a 3-day grace period after **ACTIVE** to commit to a eligible target within the target bound. DPO will be tagged as **COMMITTED** after commting to targets.
 - After the all the rewards from the target are distributed, the DPO state becomes **COMPLETED**

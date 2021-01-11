@@ -164,13 +164,9 @@ class Index extends React.Component {
         <MarkdownBlock>### Blockchain projects on steroids</MarkdownBlock>
         <MarkdownBlock>
           Create an asset, enroll in Spanner DeFi for liquidity and promote them
-          with Growth Templates -- all with little to no code. Focus on your
+          with Growth Templates -- all with little-to-no code. Focus on your
           users and let Spanner take care of the rest. Use Spanner Components
-          for smart contracts to quickly get a project up-and-running. Select
-          the components you need and bundle them together to create a Smart
-          Contract. Spanner components are designed to be highly configurable
-          and for the technically savvy, our components are written with
-          extensibility as a core principle.
+          to build Smart Contracts to quickly get your project's application up-and-running. 
         </MarkdownBlock>
         <MarkdownBlock></MarkdownBlock>
       </div>
@@ -207,9 +203,11 @@ class Index extends React.Component {
               ### An expanding catalogue of components
             </MarkdownBlock>
             <MarkdownBlock>
-              Our components help new projects develop fast, securely and
-              affordably. Bundle them for your Smart Contract and focus on
-              building your DApp.
+              Spanner components are designed to be highly configurable without coding. 
+              For the technically savvy, our components are written with
+              extensibility as a core principle. Our components help new
+              projects develop fast, securely and affordably. Bundle them for
+              your Smart Contract and focus on building your DApp.
             </MarkdownBlock>
           </div>
           <div className="container component-catalogue">
@@ -245,7 +243,7 @@ class Index extends React.Component {
     };
 
     const Features = () => (
-      <Block layout="fourColumn">
+      <Block layout="threeColumn">
         {[
           {
             content: `Instantly bootstrap your project with asset and liquidity. 
@@ -257,7 +255,7 @@ class Index extends React.Component {
             title: "#### Project Launchpad",
           },
           {
-            content: `Use Growth Templates to help promote your project.
+            content: `Use Growth Templates to promote your project and asset.
             <div class="promoRow buttonWrapper">
             <a class="button-red" href="docs/glossary#growth-template">Learn More</a></div>`,
             image: `${baseUrl}img/components.svg`,
