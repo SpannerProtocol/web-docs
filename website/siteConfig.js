@@ -58,7 +58,7 @@ const siteConfig = {
   },
 
   /* Custom fonts for website */
-  
+
   fonts: {
     myFont: [
       "Avenir",
@@ -69,7 +69,7 @@ const siteConfig = {
       "system-ui"
     ]
   },
-  
+
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} SpannerProtocol`,
@@ -83,7 +83,7 @@ const siteConfig = {
   scripts: ['https://buttons.github.io/buttons.js'],
 
   // On page navigation for the current documentation page.
-  onPageNav: '',
+  onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
 
