@@ -4,6 +4,7 @@
     "Learn": [
 		"launch_phases", 
 		"web3",
+		"params",
     	{
     		"type": "subcategory",
     		"label": "Basics",
