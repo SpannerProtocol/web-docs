@@ -23,8 +23,9 @@ const users = [
 const siteConfig = {
   title: 'Spanner Protocol', // Title for your website.
   tagline: 'The blockchain business application layer',
-  url: 'http://www.spanner.network', // Your website URL
-  baseUrl: '/web-docs/', // Base URL for your project */
+    cname: "www.spanner.network",
+  url: 'https://www.spanner.network', // Your website URL
+  baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
