@@ -39,13 +39,13 @@ h4 {
 }
 
 .button-orange {
-  border: 1px solid #FF9E04;
+  border: 1px solid #ff9e04;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #FF9E04;
+  background: #ff9e04;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -54,7 +54,7 @@ h4 {
 }
 
 .button-orange:hover {
-  background-color: #D28203;
+  background-color: #d28203;
 }
 
 .button-red {
@@ -166,7 +166,7 @@ h4 {
   padding: 1rem;
   max-width: 380px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .community-box h3 {
@@ -225,7 +225,7 @@ h4 {
   margin-bottom: 0;
   width: 55px;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
 }
 
 .buttonWrapper .button {
@@ -403,7 +403,6 @@ h4 {
 }
 
 @media screen and (min-width: 360px) and (max-width: 736px) {
-
   h3 {
     font-size: 30px;
   }
@@ -493,6 +492,22 @@ h4 {
 @media screen and (max-width: 1023px) {
   .timeline-item-content {
     max-width: 100%;
+  }
+
+  .docsNavContainer {
+    background: #fff;
+    left: 0;
+    top: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+
+  .mainContainer {
+    flex: 1 1 0%;
+    max-width: 100%;
+    margin-top: 80px;
+    padding: 0;
   }
 }
 
