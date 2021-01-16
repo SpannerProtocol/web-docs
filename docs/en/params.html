@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Spanner Parameters · Spanner Protocol</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Many of these parameter values can be updated via on-chain governance. If you require absolute"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Spanner Parameters · Spanner Protocol"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.spanner.network//"/><meta property="og:description" content="Many of these parameter values can be updated via on-chain governance. If you require absolute"/><meta property="og:image" content="https://www.spanner.network/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.spanner.network/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/spanner-logo-orange.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/spanner-logo-white.svg" alt="Spanner Protocol"/><h2 class="headerTitleWithLogo">Spanner Protocol</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/getting_started" target="_self">Docs</a></li><li class=""><a href="/en/help" target="_self">Support</a></li><li class=""><a href="https://spannerprotocol.medium.com" target="_blank">Blog</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/zh-CN/params">中文</a></li><li><a href="https://crowdin.com/project/spannerprotocol" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Learn</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/getting_started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/en/glossary">Glossary</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/launch_phases">RoadMap</a></li><li class="navListItem"><a class="navItem" href="/docs/en/web3">Web3 and Spanner</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/params">Parameters</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Basics</h4><ul><li class="navListItem"><a class="navItem" href="/docs/en/architecture">Architecture</a></li><li class="navListItem"><a class="navItem" href="/docs/en/bolt">BOLT Economy</a></li><li class="navListItem"><a class="navItem" href="/docs/en/governance">Protocol Governance</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">DEFI</h4><ul><li class="navListItem"><a class="navItem" href="/docs/en/dex">DEX</a></li><li class="navListItem"><a class="navItem" href="/docs/en/yield_farming">Yield Farming</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">GT-01 Rules</h4><ul><li class="navListItem"><a class="navItem" href="/docs/en/growthbox_rule">GrowthBox Rules</a></li><li class="navListItem"><a class="navItem" href="/docs/en/dpo_rule">DPO Rules for GT-01</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Build</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/integration_guide">Integration Guide</a></li><li class="navListItem"><a class="navItem" href="/docs/en/tools">Toolings</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Maintain</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/network_maintainers">Network Maintainers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/collator">Collator</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Spanner Parameters</h1></header><article><div><span><p>Many of these parameter values can be updated via on-chain governance. If you require absolute
+certainty as to their values, it is recommended you directly check the constants on the explorer.</p>
+<h3><a class="anchor" aria-hidden="true" id="periods-of-common-actions-and-attributes"></a><a href="#periods-of-common-actions-and-attributes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Periods of common actions and attributes</h3>
+<ul>
+<li>Slot: 6 seconds *(generally one block per slot, although see note below)</li>
+<li>Epoch: 4 hours (2,400 slots x 6 seconds)</li>
+<li>Session: 4 hours (Session and Epoch lengths are the same)</li>
+<li>Era: 24 hours (6 sessions per Era, 2,400 slots x 6 epochs x 6 seconds)</li>
+</ul>
+<table>
+<thead>
+<tr><th>Spanner</th><th>Time</th><th>Slots*</th></tr>
+</thead>
+<tbody>
+<tr><td>Slot</td><td>6 seconds</td><td>1</td></tr>
+<tr><td>Epoch</td><td>4 hours</td><td>2,400</td></tr>
+<tr><td>Session</td><td>4 hours</td><td>2,400</td></tr>
+<tr><td>Era</td><td>24 hours</td><td>14,400</td></tr>
+</tbody>
+</table>
+<p>*<em>A maximum of one block per slot can be in a canonical chain. However, occasionally a slot will be
+without a block in the chain. Thus, the times given are estimates. See <a href="learn-consensus">Consensus</a>
+for more details.</em></p>
+<h3><a class="anchor" aria-hidden="true" id="governance"></a><a href="#governance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Governance</h3>
+<table>
+<thead>
+<tr><th>Democracy</th><th>Time</th><th>Slots</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Voting period</td><td>28 days</td><td>403,200</td><td>How long the public can vote on a referendum.</td></tr>
+<tr><td>Launch period</td><td>28 days</td><td>403,200</td><td>How long the public can select which proposal to hold a referendum on, i.e., every week, the highest-weighted proposal will be selected to have a referendum.</td></tr>
+<tr><td>Enactment period</td><td>28 days</td><td>403,200</td><td>Time it takes for a successful referendum to be implemented on the network.</td></tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th>Council</th><th>Time</th><th>Slots</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Term duration</td><td>7 days</td><td>100,800</td><td>The length of a council member's term until the next election round.</td></tr>
+<tr><td>Voting period</td><td>7 days</td><td>100,800</td><td>The council's voting period for motions.</td></tr>
+</tbody>
+</table>
+<p>The Spanner Council consists of up to 13 members and up to 20 runners up.</p>
+<table>
+<thead>
+<tr><th>Technical committee</th><th>Time</th><th>Slots</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Cool-off period</td><td>7 days</td><td>100,800</td><td>The time a veto from the technical committee lasts before the proposal can be submitted again.</td></tr>
+<tr><td>Emergency voting period</td><td>3 hours</td><td>1,800</td><td>The voting period after the technical committee expedites voting.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="staking-validating-and-nominating"></a><a href="#staking-validating-and-nominating" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Staking, Validating, and Nominating</h3>
+<table>
+<thead>
+<tr><th>Spanner</th><th>Time</th><th>Slots</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Term duration</td><td>1 Day</td><td>14,400</td><td>The time for which a validator is in the set after being elected. Note, this duration can be shortened in the case that a validator misbehaves.</td></tr>
+<tr><td>Nomination period</td><td>1 Day</td><td>14,400</td><td>How often a new validator set is elected according to Phragmén's method.</td></tr>
+<tr><td>Bonding duration</td><td>28 days</td><td>403,200</td><td>How long until your funds will be transferrable after unbonding. Note that the bonding duration is defined in eras, not directly by slots.</td></tr>
+<tr><td>Slash defer duration</td><td>28 days</td><td>403,200</td><td>Prevents overslashing and validators &quot;escaping&quot; and getting their nominators slashed with no repercussions to themselves. Note that the bonding duration is defined in eras, not directly by slots.</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="treasury"></a><a href="#treasury" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Treasury</h3>
+<table>
+<thead>
+<tr><th>Treasury</th><th>Time</th><th>Slots</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Periods between spends</td><td>24 days</td><td>345,600</td><td>When the treasury can spend again after spending previously.</td></tr>
+</tbody>
+</table>
+<p>Burn percentage is currently <code>1.00%</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="precision"></a><a href="#precision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Precision</h3>
+<p>BOLT have 10 decimals of precision. In other words, 10 ** 10 (10,000,000,000 or ten billion)
+Plancks make up a DOT.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/web3"><span class="arrow-prev">← </span><span>Web3 and Spanner</span></a><a class="docs-next button" href="/docs/en/architecture"><span>Architecture</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/spanner-logo-orange.svg" alt="Spanner Protocol" width="66" height="58"/></a><div><h5>Info and Docs</h5><a href="/docs/getting_started.html">Spanner Introduction</a><a href="/docs/launch_phases.html">White Paper</a></div><div><h5>More</h5><a href="https://spannerprotocol.medium.com/">Blog</a><a href="https://github.com/SpannerProtocol">GitHub</a></div></section><section class="copyright">Copyright © 2021 SpannerProtocol</section></footer></div></body></html>
