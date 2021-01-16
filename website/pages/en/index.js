@@ -249,7 +249,7 @@ class Index extends React.Component {
             content: `Instantly bootstrap your project with asset and liquidity. 
             No code required.
             <div class="promoRow buttonWrapper">
-            <a class="button-red" href="docs/getting_started#why-projects-want-to-launch-on-spanner">Learn More</a></div>`,
+            <a class="button-orange" href="docs/getting_started#why-projects-want-to-launch-on-spanner">Learn More</a></div>`,
             image: `${baseUrl}img/rocket.svg`,
             imageAlign: "top",
             title: "#### Project Launchpad",
@@ -257,7 +257,7 @@ class Index extends React.Component {
           {
             content: `Use Growth Templates to promote your project and asset.
             <div class="promoRow buttonWrapper">
-            <a class="button-red" href="docs/glossary#growth-template">Learn More</a></div>`,
+            <a class="button-orange" href="docs/glossary#growth-template">Learn More</a></div>`,
             image: `${baseUrl}img/components.svg`,
             imageAlign: "top",
             title: "#### Incentivized Growth ",
@@ -265,7 +265,7 @@ class Index extends React.Component {
           {
             content: `Build your project with secure and customizable components.
             <div class="promoRow buttonWrapper">
-            <a class="button-red" href="docs/glossary#components">Learn More</a></div>`,
+            <a class="button-orange" href="docs/glossary#components">Learn More</a></div>`,
             image: `${baseUrl}img/customize.svg`,
             imageAlign: "top",
             title: "#### Rapid Development",

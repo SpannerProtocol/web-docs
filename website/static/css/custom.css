@@ -37,6 +37,26 @@ h4 {
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
 }
+
+.button-orange {
+  border: 1px solid #FF9E04;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  background: #FF9E04;
+  line-height: 1.2em;
+  padding: 10px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+
+.button-orange:hover {
+  background-color: #D28203;
+}
+
 .button-red {
   border: 1px solid #fd1177;
   border-radius: 3px;
