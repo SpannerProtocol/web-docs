@@ -193,6 +193,16 @@ For more information about the navigation bar, click [here](https://docusaurus.i
 
 For more information about custom pages, click [here](https://docusaurus.io/docs/en/custom-pages).
 
+## Translation
+```bash
+cd website
+#upload
+CROWDIN_DOCUSAURUS_PROJECT_ID=YOUR_CROWDIN_PROJECT_ID CROWDIN_DOCUSAURUS_API_KEY=YOUR_CROWDIN_API_KEY yarn run crowdin-upload
+#download
+CROWDIN_DOCUSAURUS_PROJECT_ID=YOUR_CROWDIN_PROJECT_ID CROWDIN_DOCUSAURUS_API_KEY=YOUR_CROWDIN_API_KEY yarn run crowdin-download
+```
+Enabled by updating languages.js
+
 # Full Documentation
 
 Full documentation can be found on the [website](https://docusaurus.io/).
