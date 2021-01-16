@@ -1,0 +1,84 @@
+{
+  "_comment": "此文件是由写入翻译.js自动生成",
+  "localized-strings": {
+    "next": "下一页",
+    "previous": "上一页",
+    "tagline": "区块链业务应用层",
+    "docs": {
+      "architecture": {
+        "title": "架构"
+      },
+      "bolt": {
+        "title": "BOLT 经济"
+      },
+      "collator": {
+        "title": "Collator"
+      },
+      "dex": {
+        "title": "DEX"
+      },
+      "dpo_rule": {
+        "title": "GT-01 DPO 规则"
+      },
+      "getting_started": {
+        "title": "入门开始"
+      },
+      "glossary": {
+        "title": "词汇"
+      },
+      "governance": {
+        "title": "协议治理"
+      },
+      "growthbox_rule": {
+        "title": "GrowthBox 规则"
+      },
+      "integration_guide": {
+        "title": "整合指南",
+        "sidebar_label": "整合指南"
+      },
+      "launch_phases": {
+        "title": "路径图"
+      },
+      "network_maintainers": {
+        "title": "网络维护者"
+      },
+      "params": {
+        "title": "Spanner参数",
+        "sidebar_label": "参数"
+      },
+      "tools": {
+        "title": "工具"
+      },
+      "web3": {
+        "title": "Web3和Spanner"
+      },
+      "yield_farming": {
+        "title": "Yield Farming"
+      }
+    },
+    "links": {
+      "Docs": "文档",
+      "Support": "支持",
+      "Blog": "博客"
+    },
+    "categories": {
+      "General": "概况",
+      "Learn": "学习",
+      "Build": "构建...",
+      "Maintain": "维护者"
+    }
+  },
+  "pages-strings": {
+    "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)|no description given": "了解更多使用 [此站点上的文档](/test-site/docs/en/doc1.html)",
+    "Browse Docs|no description given": "浏览文档",
+    "Ask questions about the documentation and project|no description given": "询问有关文档和项目的问题",
+    "Join the community|no description given": "加入社区",
+    "Find out what's new with this project|no description given": "了解这个项目的最新内容",
+    "Stay up to date|no description given": "查看最新",
+    "Need help?|no description given": "需要帮助吗？",
+    "This project is maintained by a dedicated group of people.|statement made to reader": "该项目由一批专职人员维持。",
+    "Help Translate|recruit community translators for your project": "帮助翻译",
+    "Edit this Doc|recruitment message asking to edit the doc source": "编辑",
+    "Translate this Doc|recruitment message asking to translate the docs": "翻译"
+  }
+}
