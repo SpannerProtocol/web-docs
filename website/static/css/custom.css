@@ -218,7 +218,7 @@ h4 {
 .blockElement {
   max-width: 340px;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .blockImage {
@@ -506,7 +506,7 @@ h4 {
   .mainContainer {
     flex: 1 1 0%;
     max-width: 100%;
-    margin-top: 80px;
+    margin-top: 70px;
     padding: 0;
   }
 }
