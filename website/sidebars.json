@@ -18,7 +18,7 @@
 		{
     		"type": "subcategory",
     		"label": "GT-01 Rules",
-    		"ids": ["growthbox_rule", "dpo_rule"]
+    		"ids": ["gt01", "growthbox_rule", "dpo_rule", "globaldrop"]
     	}
     ],
     "Build": ["integration_guide", "tools"],

@@ -1,6 +1,6 @@
 ---
 id: growthbox_rule
-title: GrowthBox Rules
+title: GrowthBox
 ---
 
 A GrowthBox is a yield generating deposit offering both a one time participation bonus and a passive periodic yield. GrowthBoxes help projects grow by allowing them to fundraise for their project, improve liquidity and stabilize volatility of token prices. This benefits both project and backers by encouraging holders to use the token with less fear of sudden prices drops and to have longer term perspectives.

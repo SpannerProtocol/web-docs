@@ -1,6 +1,6 @@
 ---
 id: dpo_rule
-title: DPO Rules for GT-01
+title: DPO
 ---
 
 DPO stands for Decentralized Programmable Organization. Essentially it is a DAO (Decentralized Autonomous Organization) that has an intention bounded by code. Check out our Medium post [Introducing DPO](https://spannerprotocol.medium.com/introducing-dpo-e4ca0730e1c) for more information on its design rationale and principles. Users can use it as is and configure it according to their requirements.

@@ -18,10 +18,13 @@
         "title": "DEX"
       },
       "dpo_rule": {
-        "title": "DPO Rules for GT-01"
+        "title": "DPO Rules"
       },
       "getting_started": {
         "title": "Getting Started"
+      },
+      "globaldrop": {
+        "title": "Global Drop"
       },
       "glossary": {
         "title": "Glossary"
@@ -30,7 +33,10 @@
         "title": "Protocol Governance"
       },
       "growthbox_rule": {
-        "title": "GrowthBox Rules"
+        "title": "Growth Box Rules"
+      },
+      "gt01": {
+        "title": "GT-01 Overview"
       },
       "integration_guide": {
         "title": "Integration guide",
