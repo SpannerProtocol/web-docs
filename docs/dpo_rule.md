@@ -1,6 +1,6 @@
 ---
 id: dpo_rule
-title: DPO Rules
+title: DPO
 ---
 
 Check [this](https://spannerprotocol.medium.com/introducing-dpo-e4ca0730e1c) Medium post out for its design rational and principles. Users can also use it as is and configure DPO for their usages. 
@@ -13,11 +13,28 @@ Notable features of DPO include:
 
 <img src="assets/dpo.png" width="600">
 
+### DPO Glossary
+- Manager: the user who created the DPO
+- Members: users taking up seats of a DPO. A Member can be an *Individual Member* or a *DPO Member*
+- DPO Chaining: a DPO taking seats of another DPO. e.g. DPO_a chains to DPO_b. It is equivalent to DPO_a is chained to DPO_b
+
+### DPO Lifecycle, States and Behaviours
+- **CREATED**: The state upon DPO creation. Users can then start referring others to join the DPO.
+- **FILLED**: When all seats were taken by *Members*. The DPO can then buy a Genesis Package or chains to another DPO
+- **CHAINED**: When the DPO chains to another DPO. The DPO will wait for recursive state change events.
+- **IN EFFECT**: When the DPO has purchased a Genesis Package and begins receiving rewards. 
+- **COMPLETED**: when all rewards from the purchased Genesis Package have been received. Members can withdraw at this state.
+- **TERMINATED**: Members can withdraw at this state. There are a few scenarios where a DPO could become **TERMINATED**: 
+  - **CREATED** -> **TERMINATED**: if the DPO can not fill all of its 100 seats within 15 days after **CREATED**, and a member requests to withdraw
+  - **FILLED** -> **TERMINATED**: if the DPO fails to commit to an eligible target within 15 days after **FILLED**, and a member requests to withdraw
+
+Please note that a new state of {**IN EFFECT**, **COMPLETED** or **TERMINATED**} will trigger recursive state change to all of its *DPO Members* into the same state. 
+This rule will apply recursively that if a DPO Member has its own DPO Members. 
+
 ## DPO Structure
-DPO is a formalized on-chain organization. A DPO is primarily for crowdfunding. Here's some important basic concepts:
 - A DPO is initiated by a **DPO Manager** with a target crowdfund value and bounds (e.g. aims to crowdfund 10k BOLTs and commit to target, either a Growth Box or seats of another DPO, with at least 7% APY)
-- A DPO has 100 **seats**, taken by its **DPO Members**. Each seat has the same price, one share of voting power and an equal claim to the rewards of this DPO. 
-- **DPO Members** can be either an individual wallet address or a DPO (DPO in DPO). 
+- A DPO has 100 **seats**, taken by its **DPO Members**. Each seat has the same price and an equal claim to the rewards of this DPO. 
+- **DPO Members** can be either an individual wallet address or a DPO, the DPO chaining pattern 
     - An individual wallet participant can take up to 20 seats
     - A DPO participant can take up to 30 seats
 
@@ -25,41 +42,43 @@ DPO is a formalized on-chain organization. A DPO is primarily for crowdfunding. 
 - Anyone can refer the seat to others. 
     - **Internal Referral**: referred by a DPO member of the same DPO.
     - **External Referral**: otherwise than the above.
-- Both Internal and External Referral will share a part of the overall Instant Drop from a [Growth Box](growthbox_rule.md).
-- External Referral has only 30% bonus as that of an Internal Referral.
+- Both Internal and External Referral will share a part of the overall Instant Drop from a [Growth Box](growthbox_rule.md). External Referral has only 30% BONUS as that of an Internal Referral.
+- DPO Members without a referrer when joining will be assigned a referrer selected from the early members of the DPO. The selection rule is using a First-In-First-Out queue:
+    - ..
+
 ## DPO Incentive
-DPO incentive is guaranteed by the Blockchain consensus and based strictly on on-chain metric.
-- Dpo Manager is entitled to charge management fee from the rewards of its DPO Members.
+DPO only receives two types of rewards, namely the BONUS and YIELD from Genesis Packages.
 
-For our first launch,
-- Management fee 
-    - is firstly set as DPO initialization is (5 + Z) %, where Z is the number of seats claimed by the DPO Manager. 
-    - is capped at 20%.Claiming more seats later wont increase the fee. The DPO Manager can choose lower the fee by himself. 
-    - is subject to slashing conditions. See the DPO Governance section. 
+### BONUS Distribution
+BONUS will first distribute pro rata to members per the number of their seats of the DPO. 
+The member keeps 20% the assigned BONUS and the rest 80% will distribute as follows
+- 60, 20
 
 
-## DPO Governance
-DPO governance aims to enforce the DPO operates as intended. It includes:
-- Conditions for the DPO state transition.
-- Member fund safety. 
-- Slashing conditions
+### YIELD Distribution
+A management fee is applied to YIELD rewards for the manager's efforts in organizing and managing the DPO. 
+For each time the YIELD reward gets distributed, the manager receives a portion of the total YIELD reward and the rest goes to DPO members pro rata to the number of their seats
 
-For our first launch,
+The management fee 
+- is set to be (5 + Z) % on DPO creation, where Z is the number of seats claimed by the DPO Manager. The reason is the simple yet effective Skin-in-the-game rational.
+- is capped at 20%. Once initialized, the fee can only monotonously go down should the manager chooses so. The manager taking more seats later will not increase the fee.
+- can be slashed by DPO governance.
 
-#### DPO State Transition
-- Upon initiated, the DPO state becomes **PREPARING**. 
-- All seats are required to be taken for the DPO to be **ACTIVE**. 
-- The DPO Manager has a 3-day grace period after **ACTIVE** to commit to a eligible target within the target bound. DPO will be tagged as **COMMITTED** after commting to targets.
-- After the all the rewards from the target are distributed, the DPO state becomes **COMPLETED**
-- If a DPO fails to commit to any target after 14 days since ACTIVE, any of its DPO Member has the **OPTION** to tag the DPO as **DISBANDED**. 
+#### DPO governance
+DPO Managers are expected to perform some functions for the benefit of the DPO members.
+For example, they should actively distribute YIELD rewards to its members and pay for the gas fee required for performing such actions on Blockchain.
 
-TODO: a flowchart
+Slashing condition:
+- After the DPO became FILLED, the manager has a 7-day grace period to commit to an eligible target (Genesis Package or another DPO). 
+  Should the manager fails to do so, any member of the DPO can commit to an eligible target. 
+  If a member performed the action, then the management fee will be slashed by half throughout the whole DPO lifetime.
+  
+- After the DPO became COMMITTED, the DPO will start receiving the YIELD reward, and the manager is expected to distribute the rewards to its members. 
+  However, anyone (even not a DPO member) is allowed to call the function to distribute the YIELD reward for flexibility. 
+  If the manager fails to distribute the YIELD to its member within a 7-day grace period since last distribution, the management fee of this distribution batch will be slashed by half
+  If the distribution function was called by an internal DPO member, then the slashed fee will go to the caller. 
+  If the function was called by an external account, then the slashed fee will go to the Spanner Treasury.
 
 #### DPO Fund Safety
-- If the committed target does not use the DPO funds to its fullest, the rest of the fund will be returned to their origind.
+- If the committed target does not use the DPO funds to its fullest, the rest of the fund will be returned to their origin.
 - If the DPO is tagged as **DISBANDED**, all the funds will be returned to their origins.
-
-#### Slashing Condition
-DPO Managers are expected to perform some functions for the benefit of the DPO and all of these functions incur costs for consuming Blockchain resources. That justifies the idea of management fee. DPO Managers are given a grace period for different functions. After the grace period, others may have the right to perform the function and the DPO Manager would be slashed accordingly.
-- After the 3-day grace period, any other DPO Member can commit to a legitimate target on the behalf of the DPO Manager, in which case the management fee would be slashed by half. 
-- Anyone can distribute the DPO rewards to its mebmer by calling the function. A DPO Manager should distribute rewards within 7 days since the last reward distribution checkpoint for better member experiences. Should the DPO Manager fail to do so, half of the management fee for the accumulated rewards will be slashed. If the distribution function was called by its DPO member after the 7-day grace period, the slashed will go to the caller as incentive. 

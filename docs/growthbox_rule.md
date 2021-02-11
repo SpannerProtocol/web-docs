@@ -1,14 +1,18 @@
 ---
 id: growthbox_rule
-title: Growth Box Rules
+title: Genesis Package
 ---
 
-A Growth Box is a yield generating deposit offering both a one time participation bonus and a passive periodic yield. Growth Boxes help projects grow by allowing them to fundraise for their project, improve liquidity and stabilize volatility of token prices. This benefits both project and backers by encouraging holders to use the token with less fear of sudden prices drops and to have longer term perspectives.
+A Genesis Package is a yield generating product designed to help projects grow by allowing them to fundraise for their project, improve liquidity and stabilize volatility of token prices. 
+This benefits both project and backers by encouraging holders to use the token with less fear of sudden prices drops and to have longer term perspectives.<br/>
 
+Specifically, a Genesis Package works as follows in chronological order:
+- Token Lockup
+- Gives Bonus: gives the buyer a one-time bonus upon purchased 
+- Gives Yield: gives the buyer periodic rewards over a given time period. 
+  If a milestone of total Genesis Package was met, the buyer gets extra yield (i.e. the Milestone Airdrop). 
+- Token Un-lockup
 
-A Growth Box can be activated by either an token holder or a [DPO](dpo_rule.md). A Growth Box is defined by following major attributes:
-- Lock amount and lock period: the committer needs to lock up the required amount of initiate the Growth Box. The locked up tokens will unlock automatically after the lock period.
-- Instant Drop: return to the committer instantly upon Growth Box activation.
-- Periodic Drop: drop X tokens to the committer every Y blocks throughout the whole lock period upon Growth Box activation. 
+A Genesis Package can be purchased by either a token holder or a [DPO](dpo_rule.md). Again, a Genesis Package only **gives tokens** in the long run and is designed to benefit both **the projects and their early adopters**. 
 
-As you can see, a Growth Box only **gives tokens** in the long run. Again, it is designed to benefit both **the projects and the committer**. Anyone can create a Growth Box if they want to participate in catalyzing community growth.
+Anyone can create Genesis Package offerings or schedule Milestone Airdrop for the collective good of project communities.
