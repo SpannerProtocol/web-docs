@@ -7,20 +7,21 @@ Before you read on, make sure you have read the [SGC-01 Overview](gt01.md).
 
 ## Structures
 DPO is short for Decentralized Programmable Organization. 
-- It has a crowdfunding goal (e.g. 1000 BOLTs), a *Default Target* (GrowthBox or DPO) and expiry (e.g. 1,000 blocks after creation)
-- It has *100 seats* to represent stakes of the DPO. Each seat has equal value (1% of the crowdfunding goal).
-- It has many roles with distinct incentive structures. Roles include 
+- It has a crowdfunding goal (e.g. 1000 BOLTs), a *Default Target* (GrowthBox or DPO) and expiry (e.g. at block #10000)
+- It has 100 seats to represent stakes of the DPO. Each seat has equal value (1% of the crowdfunding goal).
+- It has 3 roles with distinct incentive structures. Roles include 
   - *Manager*, who created the DPO, can earn Management Fee for creating and running the DPO.
   - *Member*, who takes the seats of the DPO, can share GrowthBox yield rewards of the DPO for joining the crowdfund. 
  A Member can be an *Individual Member*, or a *DPO Member* if the seats are taken by a DPO.
   - *Referrer*, who refers other users to become *Members*, can have GrowthBox Bonus for growing the community.
-- *Manager*, *Individual Members* and *DPO Members* can take up to 15, 20 and 30 seats, respectively.
-- It has four accounts to securely manage the funds and received rewards. 
+- It has 4 accounts to securely manage the funds and received rewards. 
   - *Deposit Account* to store the funds *Members* pay for taking the seats.
   - *Yield Account* to store the accumulated received yields from GrowthBoxes and also Global Rewards.
   - *Bonus Account* to store the received bonus from GrowthBoxes.
   - *Withdraw Account* to store the funds to be returned to *Members*.
-  
+
+*Manager*, *Individual Members* and *DPO Members* can take up to 15, 20 and 30 seats, respectively.
+
 ## Lifecycle and States
 - **CREATED**: The state upon DPO creation. Users can then start referring others to join the DPO.
 - **FILLED**: When all seats were taken. DPO will wait for the action of *Manager* or *Member*. 
@@ -45,7 +46,7 @@ Releasing the *Withdraw Account* is very straightforward that tokens will go to 
 For the other two accounts, releasing tokens involve incentive mechanism and behave differrently. 
 
 #### Management Fee and Yields
-A Management Fee is applied to yield distribution. 
+A Management Fee is applied to yield release. 
 It is set as (5 + Z) % on DPO creation, where Z is the number of seats taken by the DPO Manager **on creation**.
 For example, if the *Manager* takes 15 seats on creation, the fee is 20%. 
 This design incentivizes managers to have Skin-in-the-game on creation. 
@@ -54,14 +55,14 @@ buy a GrowthBox (becomes **IN EFFECT**) or chain to another DPO (becomes **CHAIN
 This action is exclusive to the *Manager* in the grace period, after which 
 any *Member* of the DPO can act and slash the management fee by half permanently.
 
-Each yield distribution will clear the *Yield Account*.
+Each yield release will clear the *Yield Account*.
 - *Manager* will first receive Management Fees. 
   If yields in account has accumulated for more than 5 days (grace period), 
   Management Fees for this release will be slahsed by half.
 - The rest will go to *Members* by seats.
 
 #### Referral and Bonuses
-DPO is open. Any user can refer any DPO to others.
+Any user can refer any DPO to others.
 DPO determines the referrer by the following rules:
 - Let's say if Alice refers Bob to join a DPO successfully. 
   If Alice is a *Member* of the DPO, then Alice will become Bob's *Internal Referrer*.
@@ -71,13 +72,26 @@ DPO determines the referrer by the following rules:
 - The Walk-In Rule states that any newly joined member without an *Internal Referrer* 
   will be assigned one selected from the early *Members*. 
   The selection is based on a First-In-First-Out queue structured by very simple rules:
-  - The newly joined member is placed at the end of the queue.
+  - The newly joined *Member* is placed at the end of the queue. 
   - If the Walk-In Rule applies, the first *Member* of the queue will be selected as the assigned *Internal Referrer* 
     and then be placed to the end of the queue. 
 
-BONUS will first release pro rata to members per the number of their seats. 
-The member keeps 20% the assigned BONUS and the rest 80% will release as follows
-- 60, 20
-- todo
+##### Calculating Distributable Bonus
+Bonus will pass through two filters
+- Filter 1: if the *Member* is a *DPO Member*, only its *Manager's* portion is distributable
+- Filter 2: if the *Member* has a *External Referrer*, only the remaining 70% is distributable while others go to the *External Referrer*
 
-The bonus distribution mechanism gaurantees that the bonus % = growthbox bonus %
+| ![internal distributable bonus](/img/bonus_pipe.svg) |
+|:--:|
+| Examples of Calculating the Distributable Bonus |
+
+##### Assigning Distributable Bonus
+  - if the *Internal Referrer* is the *Manager*, 100 % to the *Manager*
+  - if the *Internal Referrer* is a *Member*, 80% to the *Member* and 20% to its *Internal Referrer*
+  
+|Referral Type|Description                             |Reward (first/second degree)|
+  |-------------|----------------------------------------|-----------------------------|
+|Manager      |refereed by the Manager of the same DPO | 100% / 20%                  |
+|Member       |referred by a DPO member of the same DPO| 80% / 20%                   |
+
+The bonus release mechanism gaurantees that the bonus % = growthbox bonus %
