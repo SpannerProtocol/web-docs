@@ -70,17 +70,16 @@
 <h2><a class="anchor" aria-hidden="true" id="structures"></a><a href="#structures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structures</h2>
 <p>DPO is short for Decentralized Programmable Organization.</p>
 <ul>
-<li>It has a crowdfunding goal (e.g. 1000 BOLTs), a <em>Default Target</em> (GrowthBox or DPO) and expiry (e.g. 1,000 blocks after creation)</li>
-<li>It has <em>100 seats</em> to represent stakes of the DPO. Each seat has equal value (1% of the crowdfunding goal).</li>
-<li>It has many roles with distinct incentive structures. Roles include
+<li>It has a crowdfunding goal (e.g. 1000 BOLTs), a <em>Default Target</em> (GrowthBox or DPO) and expiry (e.g. at block #10000)</li>
+<li>It has 100 seats to represent stakes of the DPO. Each seat has equal value (1% of the crowdfunding goal).</li>
+<li>It has 3 roles with distinct incentive structures. Roles include
 <ul>
 <li><em>Manager</em>, who created the DPO, can earn Management Fee for creating and running the DPO.</li>
 <li><em>Member</em>, who takes the seats of the DPO, can share GrowthBox yield rewards of the DPO for joining the crowdfund.
 A Member can be an <em>Individual Member</em>, or a <em>DPO Member</em> if the seats are taken by a DPO.</li>
 <li><em>Referrer</em>, who refers other users to become <em>Members</em>, can have GrowthBox Bonus for growing the community.</li>
 </ul></li>
-<li><em>Manager</em>, <em>Individual Members</em> and <em>DPO Members</em> can take up to 15, 20 and 30 seats, respectively.</li>
-<li>It has four accounts to securely manage the funds and received rewards.
+<li>It has 4 accounts to securely manage the funds and received rewards.
 <ul>
 <li><em>Deposit Account</em> to store the funds <em>Members</em> pay for taking the seats.</li>
 <li><em>Yield Account</em> to store the accumulated received yields from GrowthBoxes and also Global Rewards.</li>
@@ -88,6 +87,7 @@ A Member can be an <em>Individual Member</em>, or a <em>DPO Member</em> if the s
 <li><em>Withdraw Account</em> to store the funds to be returned to <em>Members</em>.</li>
 </ul></li>
 </ul>
+<p><em>Manager</em>, <em>Individual Members</em> and <em>DPO Members</em> can take up to 15, 20 and 30 seats, respectively.</p>
 <h2><a class="anchor" aria-hidden="true" id="lifecycle-and-states"></a><a href="#lifecycle-and-states" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lifecycle and States</h2>
 <ul>
 <li><strong>CREATED</strong>: The state upon DPO creation. Users can then start referring others to join the DPO.</li>
@@ -116,7 +116,7 @@ This state is Chain Effect Applicable. Remaining funds in the <em>Deposit Accoun
 Releasing the <em>Withdraw Account</em> is very straightforward that tokens will go to <em>Members</em> by seats.
 For the other two accounts, releasing tokens involve incentive mechanism and behave differrently.</p>
 <h4><a class="anchor" aria-hidden="true" id="management-fee-and-yields"></a><a href="#management-fee-and-yields" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Management Fee and Yields</h4>
-<p>A Management Fee is applied to yield distribution.
+<p>A Management Fee is applied to yield release.
 It is set as (5 + Z) % on DPO creation, where Z is the number of seats taken by the DPO Manager <strong>on creation</strong>.
 For example, if the <em>Manager</em> takes 15 seats on creation, the fee is 20%.
 This design incentivizes managers to have Skin-in-the-game on creation.
@@ -124,7 +124,7 @@ After the DPO becomes <strong>FILLED</strong>, the <em>Manager</em> has a 7-day 
 buy a GrowthBox (becomes <strong>IN EFFECT</strong>) or chain to another DPO (becomes <strong>CHAINED</strong>).
 This action is exclusive to the <em>Manager</em> in the grace period, after which
 any <em>Member</em> of the DPO can act and slash the management fee by half permanently.</p>
-<p>Each yield distribution will clear the <em>Yield Account</em>.</p>
+<p>Each yield release will clear the <em>Yield Account</em>.</p>
 <ul>
 <li><em>Manager</em> will first receive Management Fees.
 If yields in account has accumulated for more than 5 days (grace period),
@@ -132,7 +132,7 @@ Management Fees for this release will be slahsed by half.</li>
 <li>The rest will go to <em>Members</em> by seats.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="referral-and-bonuses"></a><a href="#referral-and-bonuses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Referral and Bonuses</h4>
-<p>DPO is open. Any user can refer any DPO to others.
+<p>Any user can refer any DPO to others.
 DPO determines the referrer by the following rules:</p>
 <ul>
 <li>Let's say if Alice refers Bob to join a DPO successfully.
@@ -144,16 +144,38 @@ Bob will be assigned an <em>Internal Referrer</em> according to the Walk-In Rule
 will be assigned one selected from the early <em>Members</em>.
 The selection is based on a First-In-First-Out queue structured by very simple rules:
 <ul>
-<li>The newly joined member is placed at the end of the queue.</li>
+<li>The newly joined <em>Member</em> is placed at the end of the queue.</li>
 <li>If the Walk-In Rule applies, the first <em>Member</em> of the queue will be selected as the assigned <em>Internal Referrer</em>
 and then be placed to the end of the queue.</li>
 </ul></li>
 </ul>
-<p>BONUS will first release pro rata to members per the number of their seats.
-The member keeps 20% the assigned BONUS and the rest 80% will release as follows</p>
+<h5><a class="anchor" aria-hidden="true" id="calculating-distributable-bonus"></a><a href="#calculating-distributable-bonus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calculating Distributable Bonus</h5>
+<p>Bonus will pass through two filters</p>
 <ul>
-<li>60, 20</li>
-<li>todo</li>
+<li>Filter 1: if the <em>Member</em> is a <em>DPO Member</em>, only its <em>Manager's</em> portion is distributable</li>
+<li>Filter 2: if the <em>Member</em> has a <em>External Referrer</em>, only the remaining 70% is distributable while others go to the <em>External Referrer</em></li>
 </ul>
-<p>The bonus distribution mechanism gaurantees that the bonus % = growthbox bonus %</p>
+<table>
+<thead>
+<tr><th style="text-align:center"><img src="/img/bonus_pipe.svg" alt="internal distributable bonus"></th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">Examples of Calculating the Distributable Bonus</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="assigning-distributable-bonus"></a><a href="#assigning-distributable-bonus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Assigning Distributable Bonus</h5>
+<ul>
+<li>if the <em>Internal Referrer</em> is the <em>Manager</em>, 100 % to the <em>Manager</em></li>
+<li>if the <em>Internal Referrer</em> is a <em>Member</em>, 80% to the <em>Member</em> and 20% to its <em>Internal Referrer</em></li>
+</ul>
+<table>
+<thead>
+<tr><th>Referral Type</th><th>Description</th><th>Reward (first/second degree)</th></tr>
+</thead>
+<tbody>
+<tr><td>Manager</td><td>refereed by the Manager of the same DPO</td><td>100% / 20%</td></tr>
+<tr><td>Member</td><td>referred by a DPO member of the same DPO</td><td>80% / 20%</td></tr>
+</tbody>
+</table>
+<p>The bonus release mechanism gaurantees that the bonus % = growthbox bonus %</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/gt01"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/docs/en/integration_guide"><span>Integration Guide</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#structures">Structures</a></li><li><a href="#lifecycle-and-states">Lifecycle and States</a></li><li><a href="#incentives">Incentives</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/spanner-logo-orange.svg" alt="Spanner Protocol" width="66" height="58"/></a><div><h5>Info and Docs</h5><a href="/docs/getting_started.html">Spanner Introduction</a><a href="/docs/launch_phases.html">White Paper</a></div><div><h5>More</h5><a href="https://spannerprotocol.medium.com/">Blog</a><a href="https://github.com/SpannerProtocol">GitHub</a></div></section><section class="copyright">Copyright © 2021 SpannerProtocol</section></footer></div></body></html>
