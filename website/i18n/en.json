@@ -18,7 +18,7 @@
         "title": "DEX"
       },
       "dpo_rule": {
-        "title": "DPO"
+        "title": "DPO Rules"
       },
       "getting_started": {
         "title": "Getting Started"
@@ -31,9 +31,6 @@
       },
       "governance": {
         "title": "Protocol Governance"
-      },
-      "growthbox_rule": {
-        "title": "Genesis Package"
       },
       "gt01": {
         "title": "Overview"

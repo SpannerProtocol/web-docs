@@ -17,8 +17,8 @@
 		},
 		{
     		"type": "subcategory",
-    		"label": "ChainFund",
-    		"ids": ["gt01", "growthbox_rule", "dpo_rule"]
+    		"label": "SGC-01",
+    		"ids": ["gt01", "dpo_rule"]
     	}
     ],
     "Build": ["integration_guide", "tools"],

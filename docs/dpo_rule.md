@@ -1,29 +1,21 @@
 ---
 id: dpo_rule
-title: DPO
+title: DPO Rules
 ---
+Decentralized Programmable Organization
+### DPO Structure and Roles
 
-Check [this](https://spannerprotocol.medium.com/introducing-dpo-e4ca0730e1c) Medium post out for its design rational and principles. Users can also use it as is and configure DPO for their usages. 
 
-Notable features of DPO include:
-- Binding Governance — Opening participation and governance inclusive to all participants through advanced cryptography. All parameters can be configured and changed through a **binding** DPO governance.
-- Transparent incentive — A reward mechanism based strictly on on-chain metrics to drive desired behaviors
-- Modularization — Composable and scalable DPO in numerous levels. Enabling DPO in DPO patterns just like the holding structure of LLC.
-- Liquidity — A market for all DPO stakes through on-chain swapping with ease compared to how company shares are circulated.
-
-<img src="assets/dpo.png" width="600">
-
-### DPO Glossary
 - Manager: the user who created the DPO
 - Members: users taking up seats of a DPO. A Member can be an *Individual Member* or a *DPO Member*
 - DPO Chaining: a DPO taking seats of another DPO. e.g. DPO_a chains to DPO_b. It is equivalent to DPO_a is chained to DPO_b
 
 ### DPO Lifecycle, States and Behaviours
 - **CREATED**: The state upon DPO creation. Users can then start referring others to join the DPO.
-- **FILLED**: When all seats were taken by *Members*. The DPO can then buy a Genesis Package or chains to another DPO
+- **FILLED**: When all seats were taken by *Members*. The DPO can then buy a GrowthBox or chains to another DPO
 - **CHAINED**: When the DPO chains to another DPO. The DPO will wait for recursive state change events.
-- **IN EFFECT**: When the DPO has purchased a Genesis Package and begins receiving rewards. 
-- **COMPLETED**: when all rewards from the purchased Genesis Package have been received. Members can withdraw at this state.
+- **IN EFFECT**: When the DPO has purchased a GrowthBox and begins receiving rewards. 
+- **COMPLETED**: when all rewards from the purchased GrowthBox have been received. Members can withdraw at this state.
 - **TERMINATED**: Members can withdraw at this state. There are a few scenarios where a DPO could become **TERMINATED**: 
   - **CREATED** -> **TERMINATED**: if the DPO can not fill all of its 100 seats within 15 days after **CREATED**, and a member requests to withdraw
   - **FILLED** -> **TERMINATED**: if the DPO fails to commit to an eligible target within 15 days after **FILLED**, and a member requests to withdraw
@@ -42,18 +34,17 @@ This rule will apply recursively that if a DPO Member has its own DPO Members.
 - Anyone can refer the seat to others. 
     - **Internal Referral**: referred by a DPO member of the same DPO.
     - **External Referral**: otherwise than the above.
-- Both Internal and External Referral will share a part of the overall Instant Drop from a [Growth Box](growthbox_rule.md). External Referral has only 30% BONUS as that of an Internal Referral.
+- Both Internal and External Referral will share a part of the overall Instant Drop from a [Growth Box](gt01.md). External Referral has only 30% BONUS as that of an Internal Referral.
 - DPO Members without a referrer when joining will be assigned a referrer selected from the early members of the DPO. The selection rule is using a First-In-First-Out queue:
     - ..
 
 ## DPO Incentive
-DPO only receives two types of rewards, namely the BONUS and YIELD from Genesis Packages.
+DPO only receives two types of rewards, namely the BONUS and YIELD from GrowthBoxes.
 
 ### BONUS Distribution
 BONUS will first distribute pro rata to members per the number of their seats of the DPO. 
 The member keeps 20% the assigned BONUS and the rest 80% will distribute as follows
 - 60, 20
-
 
 ### YIELD Distribution
 A management fee is applied to YIELD rewards for the manager's efforts in organizing and managing the DPO. 
@@ -69,7 +60,7 @@ DPO Managers are expected to perform some functions for the benefit of the DPO m
 For example, they should actively distribute YIELD rewards to its members and pay for the gas fee required for performing such actions on Blockchain.
 
 Slashing condition:
-- After the DPO became FILLED, the manager has a 7-day grace period to commit to an eligible target (Genesis Package or another DPO). 
+- After the DPO became FILLED, the manager has a 7-day grace period to commit to an eligible target (GrowthBox or another DPO). 
   Should the manager fails to do so, any member of the DPO can commit to an eligible target. 
   If a member performed the action, then the management fee will be slashed by half throughout the whole DPO lifetime.
   
