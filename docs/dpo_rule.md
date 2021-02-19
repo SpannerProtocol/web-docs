@@ -3,12 +3,12 @@ id: dpo_rule
 title: DPO Rules V1
 ---
 
-Before you read on, make sure you have read the [BulletTrain Overview](gt01.md). 
+Before you read on, make sure you have read the [BulletTrain Overview](bullettrain.md). 
 
 ## DPO Lifecycle and Behaviors
 
 ##### CREATED
-A DPO is created by a **Manager** and has a **Target** objective and expiry (e.g. crowfund 1000 BOLTs before block #10000). It has 100 equal-value seats for **Members** to buy. A target can be to (1) buy an incentive package such as TravelCabin in BulletTrain or (2) chain to another DPO by buying its seats. On creation, the Manager specifies a **Default Target** which helps determine the DPO's crowdfunding amount. A Member can be a **User Member**, or a **DPO Member** (DPO buys seats of another DPO).
+A DPO is created by a **Manager** and has a **Target** objective and expiry (e.g. crowdfund 1000 BOLTs before block #10000). It has 100 equal-value seats for **Members** to buy. A target can be to (1) buy an incentive package such as TravelCabin in BulletTrain or (2) chain to another DPO by buying its seats. On creation, the Manager specifies a **Default Target** which helps determine the DPO's crowdfunding amount. A Member can be a **User Member**, or a **DPO Member** (DPO buys seats of another DPO).
 Manager earns Management Fee and both Manager and Members can earn yield rewards proportionate to their seats. A Manager, User Member and DPO Member can buy up to 15, 15, and 30 seats, respectively.
 
 A DPO has 4 accounts to store project tokens: 
@@ -18,13 +18,12 @@ A DPO has 4 accounts to store project tokens:
   - **Withdraw Account** to store the funds to be returned to seat buyers.
 
 ##### ACTIVE
-When all seats are bought, a DPO is ready to commit to a target. If the Default Target from CREATE is available to be committed, the DPO must commit to it. Otherwise, it is free to select another target to commit to. The Default Target might not be available because a user or another DPO could have committed to it first.
+When all seats are bought, a DPO is ready to buy to a target. If the Default Target from CREATE is available to be bought, the DPO must buy it. Otherwise, it is free to select another target to commit to. The Default Target might not be available because a user or another DPO could have committed to it first.
 
 After committing to a target successfully, unused funds will go to the Withdraw Account. Any Member can release the withdraw amount from that account to the DPO but Managers are encouraged and incentivized to do it. Released amounts are distributed proportionately to Members by their seats. Funds in the Yield Account, Bonus Account and Withdraw Account can be released as soon as amounts are acculumated there.
 
 ##### FAILED  
-If the DPO has failed to buy all seats before its expiry, all funds in the Deposit Account will go to the Withdraw Account.
-DPOs directly chaining to this DPO, can commit to a new target. No other actions are allowed for a FAILED DPO except to withdraw. 
+If the DPO has failed to sell all seats before its expiry, all funds in the Deposit Account will go to its Withdraw Account. No other actions are allowed except for withdrawing from the DPO. If the member is a DPO, the withdrawn amount will go to their deposit account, which can be used to commit to another Target.
 
 [comment]: <> (| ![DPO States]&#40;/img/DPO_States.svg&#41; |)
 

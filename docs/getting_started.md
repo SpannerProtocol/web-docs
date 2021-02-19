@@ -18,7 +18,7 @@ We believe that a successful decentralized crypto project needs 3 key elements: 
 The Spanner Launchpad provides projects with asset, liquidity and growth, **3-in-1 on Spanner Protocol**. This can be done with little-to-no code. Thus, we make it super easy and accessible for new projects to get started.
 
 Furthermore, we provide the following tools built on a solid decentralized protocol (Parity Substrate) and designed with **community-first** in mind: 
-- Out-of-box templates: Just configure. Templates already solve real-world problems. Projects can launch on with pre-built Growth Templates.
+- Out-of-box Components: Just configure. Components already solve real-world problems. Projects can launch on with pre-built Growth Components.
 - Liquid markets: wallets, DEX, users and more.
 ## How does Spanner work?
 Check out the [Spanner Architecture Explained](https://spannerprotocol.medium.com/spanner-architecture-explained-55655b8d0ab4).
