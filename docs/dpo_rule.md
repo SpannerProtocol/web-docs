@@ -3,73 +3,73 @@ id: dpo_rule
 title: DPO Rules V1
 ---
 
-Before you read on, make sure you have read the [Express Overview](gt01.md). 
+Before you read on, make sure you have read the [BulletTrain Overview](gt01.md). 
 
-## Structures
-DPO is short for Decentralized Programmable Organization. 
-- It has a crowdfunding goal (e.g. 1000 BOLTs), a *Default Target* (GrowthBox or DPO) and expiry (e.g. at block #10000)
-- It has 100 seats to represent stakes of the DPO. Each seat has equal value (1% of the crowdfunding goal).
-- It has 3 roles with distinct incentive structures. Roles include 
-  - *Manager*, who created the DPO, can earn Management Fee for creating and running the DPO.
-  - *Member*, who takes the seats of the DPO, can share GrowthBox yield rewards of the DPO for joining the crowdfund. 
- A Member can be an *User Member*, or a *DPO Member* if the seats are taken by a DPO.
-  - *Referrer*, who refers other users to become *Members*, can have GrowthBox Bonus for growing the community.
-- It has 4 accounts to securely manage the funds and received rewards. 
-  - *Deposit Account* to store the funds *Members* pay for taking the seats.
-  - *Yield Account* to store the accumulated received yields from GrowthBoxes and also Global Rewards.
-  - *Bonus Account* to store the received bonus from GrowthBoxes.
+## DPO Basics
+Let's understand DPO through its lifecycle and behaviours
+
+##### CREATED
+A DPO is created by a *Manager* with a goal and expiry (e.g. crowfund 1000 BOLTs before block #10000).
+It has 100 equal-value seats for *Members* to take.
+A Member can be an *User Member*, or a *DPO Member* if the Member is a DPO.
+Manager earns Management Fee and Members earn yields rewards.
+A Manager, User Member and DPO Member can take up to 15, 15, and 30 seats, respectively.
+
+A DPO has 4 accounts: 
+  - *Deposit Account* to store the funds *Members* paid for seats.
+  - *Yield Account* to store yields and Global Rewards.
+  - *Bonus Account* to store bonus.
   - *Withdraw Account* to store the funds to be returned to *Members*.
 
-*Manager*, *User Members* and *DPO Members* can take up to 15, 15 and 30 seats, respectively.
+##### ACTIVE
+When all seats were taken. DPO is then ready to commit to a target.
+A DPO has a *Default Target*. A target can be to (1) buy a TravelCabin or (2) chain to another DPO by taking its seats
+If the *Default Target* is available, the DPO must commit to it.
 
-## Lifecycle and States
-- **CREATED**: The state upon DPO creation. Users can then start referring others to join the DPO.
-- **FILLED**: When all seats were taken. DPO will wait for the action of *Manager* or *Member*. 
-  If the *Default Target* is available, the DPO must commit to it. 
-- **CHAINED**: When the DPO_a takes DPO_b seats, DPO_a is **CHAINED** to DPO_b. 
-  DPO_a is then subjected to ChaACTIVATED from DPO_b that
-  if DPO_b changes to any of the *ChaACTIVATED Applicable* states, DPO_a will also change to the same state.
-- **ACTIVATED**: When the DPO has purchased a GrowthBox and begins receiving rewards. 
-  This state is Chain Effect Applicable.
-- **TERMINATED**: When the DPO has failed to become ACTIVATED or CHAINED before Expiry.
-  This state is Chain Effect Applicable. 
-  Remaining funds in the *Deposit Account* is transferred to the *Withdraw Account*.
+After committing to a target successfully, unused funds will go to the *Withdraw Account*.
+Funds in the *Yield Account*, *Bonus Account* and *Withdraw Account* are allowed be released.
+Funds of the *Withdraw Account* will go to *Members* by seats. 
 
-| ![DPO States](/img/DPO_States.svg) |
-|:--:|
-| DPO States and Transitions |
+##### TERMINATED  
+When the DPO has failed to fill all seats before Expiry. All funds in *Deposit Account* will go to the *Withdraw Account*.
+DPOs directly chaining to this DPO, they can commit to a new target. Manager wont be double slashed.
+No other actions are allowed for a TERMINATED DPO except to withdraw. 
 
-## Incentives
-Anyone can release the remaining tokens in the *Yield Account*, *Bonus Account* and *Withdraw Account*.
-Releasing the *Withdraw Account* is very straightforward that tokens will go to *Members* by seats.
-For the other two accounts, releasing tokens involve incentive mechanism and behave differently. 
+[comment]: <> (| ![DPO States]&#40;/img/DPO_States.svg&#41; |)
 
+[comment]: <> (|:--:|)
+
+[comment]: <> (| DPO States and Transitions |)
+
+## DPO Incentives
 #### Yields
-
+Releasing yields will give Management Fee to the Manager and yields to its Members.
 ##### Determining Management Fee
-A Management Fee is applied to yield release. 
 It is set as (5 + Z) % on DPO creation, where Z is the number of seats taken by the DPO Manager **on creation**.
-For example, if the *Manager* takes 15 seats on creation, the fee is 20%. 
-This design incentivizes managers to have Skin-in-the-game on creation. 
-After the DPO becomes **FILLED**, the *Manager* has a 7-day grace period to
-buy a GrowthBox (becomes **ACTIVATED**) or chain to another DPO (becomes **CHAINED**).
+For example, if Manager takes 10 seats on creation, the fee is 15%. 
+It will stay 15% even if the Manager takes more seats later. 
+This design is known as **Skin-in-the-game**. 
+
+After the DPO becomes **ACTIVE**, the *Manager* has a 7-day grace period to commit to a target. 
 This action is exclusive to the *Manager* in the grace period, after which 
 any *Member* of the DPO can act and slash the management fee by half through the whole DPO lifecycle.
 
 ##### Releasing Yields
-Releasing Yields will clear the *Yield Account* and assign all accumulated yields by following rules:
+Releasing Yields will clear the *Yield Account* and assign to Members by following rules:
 - **Lazy Slashing**: *Manager* will first receive Management Fees.
   Management Fees for this release will be slashed by half if yields in account has accumulated for more than 5 days (grace period), 
 - **Fair Reward**: The rest will go to *Members* by seats.
 
 #### Referral and Bonuses
 Any user can refer any DPO to others.
-DPO determines the referrer by the following rules:
-- Let's say if Alice refers Bob to join a DPO successfully. 
+
+DPO determines the referral structure by the following rules:
+- **Members-get-more**:
+  - Let's say if Alice refers Bob to join a DPO successfully. 
   If Alice is a *Member* of the DPO, then Alice will become Bob's *Internal Referrer*.
   If not, Alice will become Bob's *External Referrer* and 
   Bob will be assigned an *Internal Referrer* according to the Walk-In Rule.
-- IF Charlie joins the DPO without any referrer, he will be assigned an *Internal Referrer* according to the Walk-In Rule.
+  - If Charlie joins the DPO without any referrer, he will be assigned an *Internal Referrer* according to the Walk-In Rule.
 - The Walk-In Rule states that any newly joined member without an *Internal Referrer* 
   will be assigned one selected from the *Member Queue* structured by very simple rules:
   - **Get-in-line**: Any newly joined *User Member* will be placed at the end of the queue. 
@@ -100,11 +100,3 @@ the *Member* will be assigned 200 * 100 / 1000 = 20 (BOLTs).
 ##### Assigning Distributable Bonus
   - if the *Internal Referrer* is the *Manager*, 100 % to the *Manager*
   - if the *Internal Referrer* is a *Member*, 80% to the *Member* and 20% to its *Internal Referrer*
-  
-[comment]: <> (|Referral Type|Description                             |Reward &#40;first/second degree&#41;|)
-
-[comment]: <> (  |-------------|----------------------------------------|-----------------------------|)
-
-[comment]: <> (|Manager      |refereed by the Manager of the same DPO | 100% / 20%                  |)
-
-[comment]: <> (|Member       |referred by a DPO member of the same DPO| 80% / 20%                   |)
