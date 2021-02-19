@@ -34,60 +34,51 @@ DPOs directly chaining to this DPO, can commit to a new target. No other actions
 
 ## DPO Incentives
 #### Yields
-Releasing yields will give Management Fee to the Manager and yields to its Members.
-##### Determining Management Fee
-It is set as (5 + Z) % on DPO creation, where Z is the number of seats bought by the DPO Manager **on creation**.
-For example, if Manager buys 10 seats on creation, the fee is 15%. 
-It will stay 15% even if the Manager buys more seats later. 
-This design is known as **Skin-in-the-game**. 
+Yields are to be released by the **DPO Manager** to its members. A **Management Fee** is charged by the manager for their timely actions.
 
-After the DPO becomes **ACTIVE**, the *Manager* has a 7-day grace period to commit to a target. 
-This action is exclusive to the *Manager* in the grace period, after which 
-any *Member* of the DPO can act and slash the management fee by half through the whole DPO lifecycle.
+##### Management Fee
+**Skin-in-the-game**: The fee is set as (5 + Z) % on DPO creation, where Z is the number of seats taken by the DPO Manager **on creation**. This fee will stay the same if a manger decides to take up additional DPO seats at a later time. The Management Fee will always go to the DPO Manager even on the occasion of slashing.
+
+Once **ACTIVE**, the **Manager** has 7-days to purchase a target. After this period, any **Member** can act on behalf of the DPO and the Management Fee will be permanently slashed by half (to punish the lazy manager).
 
 ##### Releasing Yields
-Releasing Yields will clear the *Yield Account* and assign to Members by following rules:
-- **Lazy Slashing**: *Manager* will first receive Management Fees.
-  Management Fees for this release will be slashed by half if yields in account has accumulated for more than 5 days (grace period), 
-- **Fair Reward**: The rest will go to *Members* by seats.
+Releasing Yeilds will empty the *Yield Acccount* and follows the following rules:
+- **Lazy Slashing**: Management Fee for this release will be slashed by half if the yield account has been accumulating for more than 5 days.
+- **Fair Reward**: Yields after fee are distributed to the Manager and all Members by seats.
 
 #### Referral and Bonuses
-Any user can refer any DPO to others.
+Any user can refer any DPO to others. All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (no referrer or referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Members Queue**.
 
-DPO determines the referral structure by the following rules:
-- **Members-get-more**:
-  - Let's say if Alice refers Bob to join a DPO successfully. 
-  If Alice is a *Member* of the DPO, then Alice will become Bob's *Internal Referrer*.
-  If not, Alice will become Bob's *External Referrer* and 
-  Bob will be assigned an *Internal Referrer* according to the Walk-In Rule.
-  - If Charlie joins the DPO without any referrer, he will be assigned an *Internal Referrer* according to the Walk-In Rule.
-- The Walk-In Rule states that any newly joined member without an *Internal Referrer* 
-  will be assigned one selected from the *Member Queue* structured by very simple rules:
-  - **Get-in-line**: Any newly joined *User Member* will be placed at the end of the queue. 
-  - **First-come-first-serve**: If *Internal Referrer* assignment is needed, the first *Member* of the queue will be selected 
-    and then be placed to the end of the queue (Get-back-in-line :D). 
+The *Members Queue* works as follows:
+- All newly joined *Member* (excluding DPO) will be placed in the *Members Queue*.
+- If the queue was priorly empty, the Manager will be assigned as the new Member's *Internal Referrer*.
+- Otherwise, the first Member in the queue will be assigned as *Internal Referrer* and then removed from the Queue.
 
 ##### Calculating Distributable Bonus
-Bonus will first go to Members by seats. The assigned bonus will turn into Distributable Bonus through two filters 
-- Filter 1: if the *Member* is a *DPO Member*, only its *Manager's* portion is distributable. 
-  The rest will be distributed within that *DPO Member's* DPO.
-- Filter 2: if the *Member* has a *External Referrer*, only 70% is distributable while the other 30% go to the *External Referrer*
+Upon joining a DPO, a member will emit **Referral Points** amounting to:
+- if a user, the Total Value of Seats
+- if a DPO, the Total Value of Seats * (it's Manager's Seats / 100). Remaining will go to it's Members.
 
-Note the Filter 1 is designed to guarantee that
-for each *Member*
+In the case of a Lead DPO (i.e. the DPO Target is a TravelCabin), the Manager's referral points will go
+to the manager. Otherwise, the *Referral Points* are distributed as follows:
+- if the Member has an *External Referrer*, 30% of the Referral Points will go to its External Referrer.
+- the remaining will be distributed by:
+  - if the *Internal Referrer* is the *Manager*, 100 % to the *Manager*
+  - if the *Internal Referrer* is a *Member*, 80% to the *Member* and 20% to its *Internal Referrer*
+
+Bonus will be distributed in proportion to the *Referral Points*.
+
+Under these rules, following will mathematically hold for each Seat:
 ```math
-          assigned bonus / seat value = GrowthBox bonus / GrowthBox price
-          
-     or   assigned bonus = GrowthBox bonus * seat value/ GrowthBox price
+    Value in BOLT for each Referral Point = TravelCabin* Bonus / TravelCabin* Price
+
+    For example if a TravelCabin costs 1000 BOLTs and provides 60 BOLTs Bonus, 
+    the each Referral Point will be worth 60 / 1000 = 0.06 BOLT.
+    If a User Member's total value of seats is 300, it will emit 300 * 0.06 = 18 BOLTs as bonus.
+    
+    *Lead DPO's purchased TravelCabin
 ```
-For example, if a *Member* spent 100 BOLTs to buy 10 seats,
-and the DPO purchased, directly or via DPO chains, a GrowthBox priced 1000 BOLTs with 200 BOLTs as bonus,
-the *Member* will be assigned 200 * 100 / 1000 = 20 (BOLTs).
 
 | ![internal distributable bonus](/img/bonus_pipe.svg) |
 |:--:|
 | Examples of Calculating Distributable Bonus |
-
-##### Assigning Distributable Bonus
-  - if the *Internal Referrer* is the *Manager*, 100 % to the *Manager*
-  - if the *Internal Referrer* is a *Member*, 80% to the *Member* and 20% to its *Internal Referrer*
