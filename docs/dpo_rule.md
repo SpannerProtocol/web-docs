@@ -15,7 +15,7 @@ A DPO has 4 accounts to store project tokens:
   - **Deposit Account** to store the funds Members paid for their seats.
   - **Yield Account** to store yields and Milestone Rewards.
   - **Bonus Account** to store Bonuses.
-  - **Withdraw Account** to store the funds to be returned to both Managers and Members.
+  - **Withdraw Account** to store the funds to be returned to seat buyers.
 
 ##### ACTIVE
 When all seats are bought, a DPO is ready to commit to a target. If the Default Target from CREATE is available to be committed, the DPO must commit to it. Otherwise, it is free to select another target to commit to. The Default Target might not be available because a user or another DPO could have committed to it first.
