@@ -11,6 +11,9 @@
       "bolt": {
         "title": "BOLT Economy"
       },
+      "gt01": {
+        "title": "Overview"
+      },
       "collator": {
         "title": "Collator"
       },
@@ -31,9 +34,6 @@
       },
       "governance": {
         "title": "Protocol Governance"
-      },
-      "gt01": {
-        "title": "Overview"
       },
       "integration_guide": {
         "title": "Integration guide",

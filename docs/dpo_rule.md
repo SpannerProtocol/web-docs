@@ -64,20 +64,20 @@ Value in project's token for each Referral Point = (Package Bonus / Package Pric
 For example if the package purchased by the DPO Chain costs 1000 BOLTs and provides 60 BOLTs Bonus,
 then each Referral Point will be worth 60 / 1000 = 0.06 BOLT. If a User Member's total value of seats is 300, it will emit 300 * 0.06 = 18 BOLTs to its referrers.
 
-### Emit
-The Emit rule enables Referral Points to be settled at each individual DPO, which mathematically guarantees the above property, and it is as such:
+Emit-Catch-Divide mathematically guarantees the above property. 
 
-Upon buying DPO seat(s) with a total value of X, the buyer (the referral) will be given X Referral Points of the DPO and emit respective amounts to referrers according to its role in the DPO:
+##### Emit
+The Emit rule enables Referral Points to be settled at each individual DPO. Upon buying DPO seat(s) with a total value of X, the buyer (the referral) will be given X Referral Points of the DPO and emit respective amounts to referrers according to its role in the DPO:
   - Manager of this DPO -> emit nothing
   - User Member -> emit X
   - DPO Member -> emit X * (it's manager's number of seats / 100)
 
-### Catch
+##### Catch
 The emitted *Referral Points* will then be caught by referrers as follows:
 - if the Member has an *External Referrer*, its External Referrer will catch 30%.
 - the remaining will be caught as follows:
   - if the *Internal Referrer* is the *Manager*, the *Manager* will catch 100%
   - if the *Internal Referrer* is a *Member*, the *Internal Referrer* will catch 80%, and the *Internal Referrer*'s *Internal Referrer* will catch the remaining 20%
 
-### Divide
+##### Divide
 Bonus Rewards received by the DPO will be divided proportionally according to the Referral Points each referrer related to the DPO holds.
