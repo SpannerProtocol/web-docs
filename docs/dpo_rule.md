@@ -5,35 +5,26 @@ title: DPO Rules V1
 
 Before you read on, make sure you have read the [BulletTrain Overview](gt01.md). 
 
-## DPO Basics
-Let's understand DPO through its lifecycle and behaviours
+## DPO Lifecycle and Behaviors
 
 ##### CREATED
-A DPO is created by a *Manager* with a goal and expiry (e.g. crowfund 1000 BOLTs before block #10000).
-It has 100 equal-value seats for *Members* to take.
-A Member can be an *User Member*, or a *DPO Member* if the Member is a DPO.
-Manager earns Management Fee and Members earn yields rewards.
-A Manager, User Member and DPO Member can take up to 15, 15, and 30 seats, respectively.
+A DPO is created by a **Manager** and has a **Target** objective and expiry (e.g. crowfund 1000 BOLTs before block #10000). A target can be to (1) buy an incentive package such as TravelCabin in BulletTrain or (2) chain to another DPO by filling its seats. On creation, the Manager specifies a **Default Target** which helps determine the DPO's fundraising objective. It has 100 equal-value seats for **Members** to fill. A Member can be a **User Member**, or a **DPO Member** (DPO fills seats of another DPO).
+Manager earns Management Fee and both Manager and Members earn yield rewards. A Manager, User Member and DPO Member can take up to 15, 15, and 30 seats, respectively.
 
-A DPO has 4 accounts: 
-  - *Deposit Account* to store the funds *Members* paid for seats.
-  - *Yield Account* to store yields and Global Rewards.
-  - *Bonus Account* to store bonus.
-  - *Withdraw Account* to store the funds to be returned to *Members*.
+A DPO has 4 accounts to store project tokens: 
+  - **Deposit Account** to store the funds Members paid for their seats.
+  - **Yield Account** to store yields and Milestone Rewards.
+  - **Bonus Account** to store Bonuses.
+  - **Withdraw Account** to store the funds to be returned to both Managers and Members.
 
 ##### ACTIVE
-When all seats were taken. DPO is then ready to commit to a target.
-A DPO has a *Default Target*. A target can be to (1) buy a TravelCabin or (2) chain to another DPO by taking its seats
-If the *Default Target* is available, the DPO must commit to it.
+When all seats are filled, a DPO is ready to commit to a target. If the Default Target from CREATE is available to be committed, the DPO must commit to it. Otherwise, it is free to select another target to commit to. The Default Target might not be available because other DPOs could have committed to it first.
 
-After committing to a target successfully, unused funds will go to the *Withdraw Account*.
-Funds in the *Yield Account*, *Bonus Account* and *Withdraw Account* are allowed be released.
-Funds of the *Withdraw Account* will go to *Members* by seats. 
+After committing to a target successfully, unused funds will go to the Withdraw Account. Any Member can release the withdraw amount from that account to the DPO but Managers are encouraged and incentivized to do it. Released amounts are distributed proportionately to Members by their seats. Funds in the Yield Account, Bonus Account and Withdraw Account can be released as soon as amounts are acculumated there.
 
-##### TERMINATED  
-When the DPO has failed to fill all seats before Expiry. All funds in *Deposit Account* will go to the *Withdraw Account*.
-DPOs directly chaining to this DPO, they can commit to a new target. Manager wont be double slashed.
-No other actions are allowed for a TERMINATED DPO except to withdraw. 
+##### FAILED  
+If the DPO has failed to fill all seats before its expiry, all funds in the Deposit Account will go to the Withdraw Account.
+DPOs directly chaining to this DPO, can commit to a new target. No other actions are allowed for a FAILED DPO except to withdraw. 
 
 [comment]: <> (| ![DPO States]&#40;/img/DPO_States.svg&#41; |)
 
