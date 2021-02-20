@@ -53,6 +53,6 @@ Check this introductory [article](https://spannerprotocol.medium.com/introducing
 and [DPO Rules](dpo_rule.md) for more details.
 
 [comment]: <> (<img src="/img/chainfunding.svg" width="900">)
-| ![BulletTrain Overview](/img/sgc-01.svg) |
+| ![BulletTrain Overview](/img/bullettrain.svg) |
 |:--:|
 | An Schematic Overview of BulletTrain. Data shown for illustrations only |

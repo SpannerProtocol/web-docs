@@ -32,11 +32,9 @@ An ACTIVE DPO becomes COMPLETED upon a successful release of funds from the *Wit
 1. The purchased Target is an incentive package, and it has matured. The funds will first be withdrawn from the package to the DPO's *Withdraw Account*. Once the funds are released to its members, the DPO becomes COMPLETED.
 2. The purchased Target is a COMPLETED DPO. The DPO will also become COMPLETED once funds are released to its members.
 
-[comment]: <> (| ![DPO States]&#40;/img/DPO_States.svg&#41; |)
-
-[comment]: <> (|:--:|)
-
-[comment]: <> (| DPO States and Transitions |)
+| ![DPO States](/img/DPO_States.svg) |
+|:--:|
+| DPO States and Transitions |
 
 ## DPO Incentives
 #### Management Fee and Yields
@@ -44,6 +42,7 @@ An ACTIVE DPO becomes COMPLETED upon a successful release of funds from the *Wit
 The Management Fee is applied to each Yield release and is determined by these rules:
  - **Skin In the Game**: The fee is set as (5 + Z)%, where Z is the number of seats bought by the DPO Manager on creation. This fee will stay the same even if a manager decides to buy additional seats at a later time.
  - **Lifetime Sentence**: Once ACTIVE, the Manager has 7-days to purchase a target. After this period, any Member can act on behalf of the DPO and the Management Fee will be permanently slashed in half (to punish the lazy manager).
+Note a DPO Member will act through its Manager.
 
 Releasing Yields empties the *Yield Account* and distributes the yield by these rules:
 - **Lazy Slashing**: Management Fee for this release will be slashed in half if the yield account has been accumulating for more than 5 days.
@@ -54,7 +53,7 @@ Any user can refer any DPO to others.
 
 All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (they have no referrer or was referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Members Queue**.
 
-The *Members Queue* works by **First Come, First Served**:
+The *Members Queue* works by **First Come First Serve**:
 - A newly joined *User Member* (not DPO Member) will be placed in the *Members Queue*.
 - If the queue was priorly empty, the Manager will be assigned as the new Member's *Internal Referrer*.
 - Otherwise, the first Member in the queue will be assigned as *Internal Referrer* and then removed from the Queue.
@@ -67,12 +66,11 @@ Property 1:
 Value in project's token for each Referral Point 
     = (Package Bonus / Package Price) * 
       (DPO's used amount / DPO's total raised amount)
-
-For example if the package purchased by the DPO Chain costs 1000 BOLTs 
-and provides 60 BOLTs Bonus, then each Referral Point will be worth 
-60 / 1000 = 0.06 BOLT. If a User Member's total value of seats is 300, 
-it will emit 300 * 0.06 = 18 BOLTs to its referrers.
 ```
+
+For example, if a DPO raised 2000 BOLTs and purchased a package costing 1000 BOLTs() giving 60 BOLTs Bonus), 
+then each Referral Point of that DPO will be worth (60 / 1000) * (1000 / 2000) = 0.03 BOLT. 
+If a User Member's total value of seats is 300, it will emit 300 * 0.03 = 9 BOLTs to its referrers.
 
 How do we enforce a global property while all DPOs of a DPO Chain are settled locally? This is mathematically guaranteed by Emit-Catch-Divide.
 
