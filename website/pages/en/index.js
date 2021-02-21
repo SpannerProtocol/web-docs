@@ -283,34 +283,6 @@ class Index extends React.Component {
               your Smart Contract and focus on building your DApp.
             </MarkdownBlock>
           </div>
-          <div className="container component-catalogue">
-            <div className="components-grid">
-              <div className="component-wrapper">
-                <div className="blockImage">
-                  <img src={`${baseUrl}img/assets.svg`} />
-                </div>
-                <div className="component-text">Asset</div>
-              </div>
-              <div className="component-wrapper">
-                <div className="blockImage">
-                  <img src={`${baseUrl}img/vault.svg`} />
-                </div>
-                <div className="component-text">Vault</div>
-              </div>
-              <div className="component-wrapper">
-                <div className="blockImage">
-                  <img src={`${baseUrl}img/governance.svg`} />
-                </div>
-                <div className="component-text">Governance</div>
-              </div>
-              <div className="component-wrapper">
-                <div className="blockImage">
-                  <img src={`${baseUrl}img/organization.svg`} />
-                </div>
-                <div className="component-text">Organization</div>
-              </div>
-            </div>
-          </div>
         </div>
       );
     };

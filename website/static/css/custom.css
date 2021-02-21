@@ -51,6 +51,10 @@ h6 {
   transition: background 0.3s, color 0.3s;
 }
 
+.bgBlack {
+  background: #000;
+}
+
 .img {
   vertical-align: 100%;
 }
@@ -148,7 +152,7 @@ h6 {
   padding-right: 1.2rem;
   margin-left: auto;
   margin-right: auto;
-  background: #ff9e04;
+  background: #FFBE2E;
 }
 
 .threeByGridBlock {
@@ -242,8 +246,6 @@ h6 {
 .blockElement {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .blockImage {
@@ -305,6 +307,11 @@ h6 {
 
 #spanner-bullet-train {
   background: #FFBE2E;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #spanner-bullet-train h2 p {
@@ -529,6 +536,12 @@ h6 {
   .timeline-item-content li {
     width: 100%;
   }
+  .blockElement {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -561,7 +574,27 @@ h6 {
 }
 
 @media only screen and (min-width: 1400px) {
+  .mainContainer {
+    flex: 1 1 0%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width: 1500px) {
+  .mainContainer {
+    flex: 1 1 0%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
