@@ -35,6 +35,7 @@ class Footer extends React.Component {
               Spanner Introduction
             </a>
             <a href={this.docUrl("launch_phases.html")}>White Paper</a>
+            <a href={`${this.props.config.baseUrl}#roadmap`}>Roadmap</a>
           </div>
           {/* <div>
             <h5>Community</h5>
@@ -59,6 +60,7 @@ class Footer extends React.Component {
             <h5>More</h5>
             <a href="https://spannerprotocol.medium.com/">Blog</a>
             <a href="https://github.com/SpannerProtocol">GitHub</a>
+            <a href="mailto:spannerprotocol@gmail.com">Contact Us</a>
             {/* <a
               className="github-button"
               href={this.props.config.repoUrl}

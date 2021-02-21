@@ -13,8 +13,6 @@ h2,
 h3,
 h4 {
   color: #000;
-  margin: 0;
-  padding: 0;
 }
 
 h2 {
@@ -24,18 +22,18 @@ h2 {
   margin-bottom: 1rem;
 }
 
-h3 {
-  font-size: 40px;
-  font-weight: 400;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 h4 {
   font-size: 20px;
   font-weight: 600;
   margin-top: 0.7rem;
   margin-bottom: 0.7rem;
+}
+
+h6 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
 }
 
 .button-orange {
@@ -51,6 +49,10 @@ h4 {
   text-decoration: none !important;
   text-transform: uppercase;
   transition: background 0.3s, color 0.3s;
+}
+
+.img {
+  vertical-align: 100%;
 }
 
 .button-orange:hover {
@@ -92,11 +94,16 @@ h4 {
 .projectTitle {
   color: #fff;
 }
+
 .mainContainer {
   flex: 1 1 0%;
   max-width: 100%;
   margin-top: 40px;
   padding: 0;
+}
+
+.splashMainContainer {
+  margin-top: 0;
 }
 
 .components-grid {
@@ -106,9 +113,9 @@ h4 {
 }
 
 .component-wrapper {
-  display: block;
+  display: flex;
+  vertical-align: middle;
   align-items: center;
-  margin: 2rem;
   margin: 2rem;
 }
 
@@ -216,7 +223,6 @@ h4 {
 }
 
 .blockElement {
-  max-width: 340px;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
@@ -226,6 +232,16 @@ h4 {
   width: 55px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.blockLogo {
+  margin-bottom: 0;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  vertical-align: middle;
+  position: relative;
 }
 
 .buttonWrapper .button {
@@ -265,6 +281,15 @@ h4 {
   to {
     background-position: 0 100%;
   }
+}
+
+#spanner-bullet-train {
+  background: #FFBE2E;
+}
+
+#spanner-bullet-train h2 p {
+  color: #fff;
+  text-align: center;
 }
 
 .splash-content {
@@ -508,6 +533,10 @@ h4 {
     max-width: 100%;
     margin-top: 70px;
     padding: 0;
+  }
+
+  .splashMainContainer {
+    margin-top: 0;
   }
 }
 
