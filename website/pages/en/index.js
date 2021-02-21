@@ -16,7 +16,7 @@ const GridBlock = CompLibrary.GridBlock;
 const TimelineItem = ({ data }) => (
   <div className="timeline-item">
     <div className="timeline-item-content">
-      <h3>{data.date}</h3>
+      <h6>{data.date}</h6>
       <ul style={{ margin: "0" }}>
         {data.items.map((item, idx) => (
           <li key={idx}>{item}</li>
@@ -31,6 +31,7 @@ const Timeline = () =>
   timelineData.length > 0 && (
     <div className="container paddingTop paddingBottom">
       <MarkdownBlock className="heading">## Roadmap</MarkdownBlock>
+      <MarkdownBlock className="heading">###### </MarkdownBlock>
       <div className="timeline-container">
         {timelineData.map((data, idx) => (
           <TimelineItem data={data} key={idx} />
@@ -169,10 +170,7 @@ class Index extends React.Component {
     );
 
     const Description = () => (
-      <div
-        className="container container-text"
-        style={{ textAlign: "center" }}
-      >
+      <div className="container paddingTop container-text" style={{ textAlign: "center" }}>
         <MarkdownBlock>## What is Spanner?</MarkdownBlock>
         <MarkdownBlock>###### Blockchain projects on steroids</MarkdownBlock>
         <MarkdownBlock>
@@ -210,7 +208,9 @@ class Index extends React.Component {
         >
           <img src={`${baseUrl}img/trainyard.jpg`} />
           <h2 className="heading">Spanner BulletTrain</h2>
-          <MarkdownBlock>###### A revolutionary viral growth model</MarkdownBlock>
+          <MarkdownBlock>
+            ###### A revolutionary viral growth model
+          </MarkdownBlock>
           <MarkdownBlock>
             Grow the community for your hot crypto project with the first
             Spanner Component. Start a BulletTrain on Spanner Blockchain to
@@ -222,28 +222,30 @@ class Index extends React.Component {
     };
 
     const BulletTrainFeatures = () => (
-      <Block layout="threeColumn">
-        {[
-          {
-            content: `Reward growth based on results.`,
-            image: `${baseUrl}img/coin.svg`,
-            imageAlign: "top",
-            title: "Piece Rate Rewards",
-          },
-          {
-            content: `Communities create networks of communties, each with their own incentives collaborating to grow your project.`,
-            image: `${baseUrl}img/viral-marketing.svg`,
-            imageAlign: "top",
-            title: "Viral Growth",
-          },
-          {
-            content: `Start your BulletTrain instantly, using out-of-box components. No code required.`,
-            image: `${baseUrl}img/press-button.svg`,
-            imageAlign: "top",
-            title: "One-click Deployment",
-          },
-        ]}
-      </Block>
+      <div className="container-features">
+        <Block layout="threeColumn">
+          {[
+            {
+              content: `Reward growth based on results.`,
+              image: `${baseUrl}img/coin.svg`,
+              imageAlign: "top",
+              title: "Piece Rate Rewards",
+            },
+            {
+              content: `Communities create networks of communties, each with their own incentives collaborating to grow your project.`,
+              image: `${baseUrl}img/viral-marketing.svg`,
+              imageAlign: "top",
+              title: "Viral Growth",
+            },
+            {
+              content: `Start your BulletTrain instantly, using out-of-box components. No code required.`,
+              image: `${baseUrl}img/press-button.svg`,
+              imageAlign: "top",
+              title: "One-click Deployment",
+            },
+          ]}
+        </Block>
+      </div>
     );
 
     const LaunchPad = () => {
