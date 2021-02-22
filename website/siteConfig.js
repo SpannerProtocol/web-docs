@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: "Spanner Protocol", // Title for your website.
-  tagline: "The blockchain application layer",
+  tagline: "The blockchain component marketplace for decentralized applications",
   cname: "www.spanner.network",
   url: "https://www.spanner.network/", // Your website URL
   baseUrl: "/", // Base URL for your project */

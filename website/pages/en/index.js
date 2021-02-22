@@ -138,8 +138,7 @@ class HomeSplash extends React.Component {
             style={{ color: "#fff" }}
           />
           <div className="splash-content">
-            Build your projects with secure, economically incentivized and
-            highly customizable components.
+            Build fast, high quality and cost-effective DApps.
           </div>
           <PromoSection>
             <Button href="#what-is-spanner">Learn more</Button>
@@ -170,8 +169,18 @@ class Index extends React.Component {
     );
 
     const Description = () => (
-      <div className="container paddingTop container-text" style={{ textAlign: "center" }}>
+      <div
+        className="container paddingTop container-text"
+        style={{ textAlign: "center" }}
+      >
         <MarkdownBlock>## What is Spanner?</MarkdownBlock>
+        <MarkdownBlock>
+          Spanner components are designed to be highly configurable without
+          coding. For the technically savvy, our components are written with
+          extensibility as a core principle. Our components help new projects
+          develop fast, securely and affordably. Bundle them for your Smart
+          Contract and focus on building your DApp.
+        </MarkdownBlock>
         <MarkdownBlock>###### Blockchain projects on steroids</MarkdownBlock>
         <MarkdownBlock>
           Create an asset, enroll in Spanner DeFi for liquidity and promote them
@@ -194,7 +203,7 @@ class Index extends React.Component {
             incentives.`,
             image: `${baseUrl}img/trainyard.jpg`,
             imageAlign: "left",
-            title: "Spanner BulletTrain",
+            title: "BulletTrain for Community Growth",
           },
         ]}
       </Block>
@@ -207,7 +216,7 @@ class Index extends React.Component {
           style={{ textAlign: "center" }}
         >
           <img src={`${baseUrl}img/trainyard.jpg`} />
-          <h2 className="heading">Spanner BulletTrain</h2>
+          <h2 className="heading">SpaBulletTrain</h2>
           <MarkdownBlock>
             ###### A revolutionary viral growth model
           </MarkdownBlock>
@@ -349,7 +358,7 @@ class Index extends React.Component {
       <div className="container paddingTop paddingBottom ">
         <MarkdownBlock>## Partners</MarkdownBlock>
         <div>
-          <MarkdownBlock>### Parachain Partner Candidates</MarkdownBlock>
+          <MarkdownBlock>### Parachain Candidates</MarkdownBlock>
           <div className="container component-catalogue">
             <div className="components-grid">
               <div className="component-wrapper">
@@ -357,16 +366,7 @@ class Index extends React.Component {
                   <img src={`${baseUrl}img/logo-polkadot-color.svg`} />
                 </div>
               </div>
-              <div className="component-wrapper">
-                <div className="blockLogo">
-                  <img src={`${baseUrl}img/logo-parity-substrate.svg`} />
-                </div>
-              </div>
-              <div className="component-wrapper">
-                <div className="blockLogo">
-                  <img src={`${baseUrl}img/logo-subscan.png`} />
-                </div>
-              </div>
+
               <div className="component-wrapper">
                 <div className="blockLogo">
                   <img src={`${baseUrl}img/logo-acala-network.svg`} />
@@ -397,6 +397,23 @@ class Index extends React.Component {
               <div className="component-wrapper">
                 <div className="blockLogo">
                   <img src={`${baseUrl}img/logo-walletconnect-banner.svg`} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <MarkdownBlock>### Ecosystem</MarkdownBlock>
+          <div className="container component-catalogue">
+            <div className="components-grid">
+              <div className="component-wrapper">
+                <div className="blockLogo">
+                  <img src={`${baseUrl}img/logo-parity-substrate.svg`} />
+                </div>
+              </div>
+              <div className="component-wrapper">
+                <div className="blockLogo">
+                  <img src={`${baseUrl}img/logo-subscan.png`} />
                 </div>
               </div>
             </div>
@@ -442,7 +459,7 @@ class Index extends React.Component {
           <BulletTrainLeft />
           <BulletTrainFeatures />
           <Description />
-          <SpannerComponents />
+          {/* <SpannerComponents /> */}
           {/* <LaunchPad /> */}
           {/* <Features /> */}
           <Timeline />
