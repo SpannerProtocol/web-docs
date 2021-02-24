@@ -8,20 +8,21 @@
     	{
     		"type": "subcategory",
     		"label": "Basics",
-    		"ids": ["architecture","bolt","governance"]
+    		"ids": ["architecture", "bolt", "governance"]
     	},
     	{
     		"type": "subcategory",
     		"label": "DEFI",
-    		"ids": ["dex","yield_farming"]
+    		"ids": ["dex", "yield_farming"]
 		},
 		{
     		"type": "subcategory",
     		"label": "BulletTrain",
-    		"ids": ["gt01", "dpo_rule"]
+    		"ids": ["bullettrain", "dpo_rule"]
     	}
-    ],
-    "Build": ["integration_guide", "tools"],
+		],
+		"Use": ["spanner-web"],
+    "Build": ["build-on-spanner", "integration_guide", "tools"],
     "Maintain": ["network_maintainers", "collator"]
   }
 }

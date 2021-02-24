@@ -152,7 +152,10 @@ class HomeSplash extends React.Component {
 class Index extends React.Component {
   render() {
     const { config: siteConfig, language = "" } = this.props;
-    const { baseUrl } = siteConfig;
+    const { baseUrl, docsUrl } = siteConfig;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    const langPart = `${language ? `${language}/` : ""}`;
+    const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const Block = (props) => (
       <Container
@@ -170,7 +173,7 @@ class Index extends React.Component {
 
     const Description = () => (
       <div
-        className="container paddingTop container-text"
+        className="container paddingTop paddingBottom container-text"
         style={{ textAlign: "center" }}
       >
         <MarkdownBlock>## What is Spanner?</MarkdownBlock>
@@ -178,8 +181,7 @@ class Index extends React.Component {
           Spanner components are designed to be highly configurable without
           coding. For the technically savvy, our components are written with
           extensibility as a core principle. Our components help new projects
-          develop fast, securely and affordably. Bundle them for your Smart
-          Contract and focus on building your DApp.
+          develop fast, securely and affordably.
         </MarkdownBlock>
         <MarkdownBlock>###### Blockchain projects on steroids</MarkdownBlock>
         <MarkdownBlock>
@@ -189,11 +191,10 @@ class Index extends React.Component {
           build Smart Contracts to quickly get your project's application
           up-and-running.
         </MarkdownBlock>
-        <MarkdownBlock></MarkdownBlock>
       </div>
     );
 
-    const BulletTrainLeft = () => (
+    const BulletTrain = () => (
       <Block id="spanner-bullet-train">
         {[
           {
@@ -203,32 +204,11 @@ class Index extends React.Component {
             incentives.`,
             image: `${baseUrl}img/trainyard.jpg`,
             imageAlign: "left",
-            title: "BulletTrain for Community Growth",
+            title: "BulletTrain: Spanner's First Growth Component",
           },
         ]}
       </Block>
     );
-
-    const BulletTrain = () => {
-      return (
-        <div
-          className="container container-text paddingTop"
-          style={{ textAlign: "center" }}
-        >
-          <img src={`${baseUrl}img/trainyard.jpg`} />
-          <h2 className="heading">SpaBulletTrain</h2>
-          <MarkdownBlock>
-            ###### A revolutionary viral growth model
-          </MarkdownBlock>
-          <MarkdownBlock>
-            Grow the community for your hot crypto project with the first
-            Spanner Component. Start a BulletTrain on Spanner Blockchain to
-            empower your community to grow itself through affiliate crowdfunding
-            incentives.
-          </MarkdownBlock>
-        </div>
-      );
-    };
 
     const BulletTrainFeatures = () => (
       <div className="container-features">
@@ -236,19 +216,19 @@ class Index extends React.Component {
           {[
             {
               content: `Reward growth based on results.`,
-              image: `${baseUrl}img/coin.svg`,
+              image: `${baseUrl}img/icon-coin.svg`,
               imageAlign: "top",
               title: "Piece Rate Rewards",
             },
             {
               content: `Communities create networks of communties, each with their own incentives collaborating to grow your project.`,
-              image: `${baseUrl}img/viral-marketing.svg`,
+              image: `${baseUrl}img/icon-viral-marketing.svg`,
               imageAlign: "top",
               title: "Viral Growth",
             },
             {
               content: `Start your BulletTrain instantly, using out-of-box components. No code required.`,
-              image: `${baseUrl}img/press-button.svg`,
+              image: `${baseUrl}img/icon-press-button.svg`,
               imageAlign: "top",
               title: "One-click Deployment",
             },
@@ -273,25 +253,6 @@ class Index extends React.Component {
             an asset, use our DEX for liquidity and Growth Components to start
             promoting their projects.
           </MarkdownBlock>
-        </div>
-      );
-    };
-
-    const SpannerComponents = () => {
-      return (
-        <div>
-          <div className="container container-text paddingTop paddingBottom">
-            <MarkdownBlock>
-              ###### An expanding catalogue of components
-            </MarkdownBlock>
-            <MarkdownBlock>
-              Spanner components are designed to be highly configurable without
-              coding. For the technically savvy, our components are written with
-              extensibility as a core principle. Our components help new
-              projects develop fast, securely and affordably. Bundle them for
-              your Smart Contract and focus on building your DApp.
-            </MarkdownBlock>
-          </div>
         </div>
       );
     };
@@ -351,6 +312,55 @@ class Index extends React.Component {
             </div>
           </div>
         </div>
+      </div>
+    );
+
+    const InterestedInSpanner = () => (
+      <div className="container-reverse paddingTop">
+        <MarkdownBlock>## Learn more about Spanner</MarkdownBlock>
+        <MarkdownBlock>
+          Spanner enables rapid crypto project development. 
+          </MarkdownBlock>
+          <MarkdownBlock>
+          Whether you are a Project Owner, User or just curious, there's plenty of resources for you to learn more about Spanner.
+          </MarkdownBlock>
+      </div>
+    );
+
+    const InterestedInSpannerFeatures = () => (
+      <div className="container-features">
+        <Block layout="threeColumn">
+          {[
+            {
+              content: `Build your project on Spanner. 
+            No code required.
+            <div class="promoRow buttonWrapper">
+            <a class="button-orange" href="${docUrl("build-on-spanner")}">Learn More</a>
+            </div>`,
+              image: `${baseUrl}img/icon-spanner.svg`,
+              imageAlign: "top",
+              title: "### Builders",
+            },
+            {
+              content: `Learn more about Spanner Web.
+            <div class="promoRow buttonWrapper">
+            <a class="button-orange" href="${docUrl("spanner-web")}">Learn More</a>
+            </div>`,
+              image: `${baseUrl}img/icon-user.svg`,
+              imageAlign: "top",
+              title: "### Users",
+            },
+            {
+              content: `Curious about Spanner's Blockchain? Read more about our blockchain parameters.
+            <div class="promoRow buttonWrapper">
+            <a class="button-orange" href="${docUrl("params")}">Learn More</a>
+            </div>`,
+              image: `${baseUrl}img/icon-components.svg`,
+              imageAlign: "top",
+              title: "### Browsers",
+            },
+          ]}
+        </Block>
       </div>
     );
 
@@ -422,6 +432,51 @@ class Index extends React.Component {
       </div>
     );
 
+    const BoltToken = () => (
+      <div
+        className="container paddingTop container-text"
+        style={{ textAlign: "center" }}
+      >
+        <MarkdownBlock>## The BOLT Token</MarkdownBlock>
+        <MarkdownBlock>
+          BOLT is Spanner's native currency. Much like ETH for Ethereum gas
+          fees, it is used for all transactions made on Spanner. Get more
+          information about BOLT Tokenomics, issuance and more.
+        </MarkdownBlock>
+      </div>
+    );
+
+    const BoltTokenFeatures = () => (
+      <div className="container-two-features">
+        <Block layout="twoColumn">
+          {[
+            {
+              content: `Learn more about BOLT tokenomics, issuance and denomination.
+              <div class="promoRow buttonWrapper">
+              <a class="button-orange" href="${docUrl("bolt")}">
+              Learn More
+              </a>
+              </div>`,
+              image: `${baseUrl}img/icon-bolts.svg`,
+              imageAlign: "top",
+              title: "BOLT Info.",
+            },
+            {
+              content: `BOLT will be available on Spanner's BulletTrain campaign. 
+              <div class="promoRow buttonWrapper">
+              <a class="button-orange" href="${docUrl("bullettrain")}">
+              Learn More
+              </a>
+              </div>`,
+              image: `${baseUrl}img/icon-train.svg`,
+              imageAlign: "top",
+              title: "BulletTrain Rules",
+            },
+          ]}
+        </Block>
+      </div>
+    );
+
     const Showcase = () => {
       if ((siteConfig.users || []).length === 0) {
         return null;
@@ -456,9 +511,13 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer splashMainContainer">
-          <BulletTrainLeft />
-          <BulletTrainFeatures />
           <Description />
+          <BulletTrain />
+          <BulletTrainFeatures />
+          <BoltToken />
+          <BoltTokenFeatures />
+          <InterestedInSpanner />
+          <InterestedInSpannerFeatures />
           {/* <SpannerComponents /> */}
           {/* <LaunchPad /> */}
           {/* <Features /> */}

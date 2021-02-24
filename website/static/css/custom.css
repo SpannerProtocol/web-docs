@@ -37,13 +37,13 @@ h6 {
 }
 
 .button-orange {
-  border: 1px solid #ff9e04;
+  border: 1px solid #FFBE2E;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #ff9e04;
+  background: #FFBE2E;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -60,7 +60,7 @@ h6 {
 }
 
 .button-orange:hover {
-  background-color: #d28203;
+  background-color: #ff9e04;
 }
 
 .button-red {
@@ -88,7 +88,7 @@ h6 {
 }
 
 .heading {
-  color: #ff9e04;
+  color: #FFBE2E;
 }
 
 .headerTitleWithLogo {
@@ -155,6 +155,15 @@ h6 {
   background: #FFBE2E;
 }
 
+.container-two-features {
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .threeByGridBlock {
   background: #fff;
   margin: 2vw;
@@ -173,7 +182,7 @@ h6 {
 }
 
 .container h2 {
-  color: #ff9e04;
+  color: #FFBE2E;
 }
 
 .container-reverse h2 {
@@ -198,7 +207,7 @@ h6 {
 }
 
 .community-box h3 {
-  color: #ff9e04;
+  color: #FFBE2E;
 }
 
 .community-text {
@@ -207,13 +216,23 @@ h6 {
   padding-bottom: 1.5rem;
 }
 
-.homeContainer {
+/* .homeContainer {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/night-sky-compressed.jpg");
   background-position: 0px 0px;
   background-repeat: repeat-x;
   background-size: cover;
   animation: animatedBackground 100s linear infinite;
+} */
+
+.homeContainer {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/black-hex-background.jpg");
+  min-height: 360px;
+}
+
+.homeContainer .homeWrapper {
+  padding: 4em 10px;
 }
 
 .container.paddingTop {
@@ -267,7 +286,7 @@ h6 {
 }
 
 .buttonWrapper .button {
-  border: 1px solid #ff9e04;
+  border: 1px solid #FFBE2E;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
@@ -282,13 +301,13 @@ h6 {
 }
 
 .buttonWrapper .button:hover {
-  border: 1px solid #ff9e04;
+  border: 1px solid #FFBE2E;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #ff9e04;
+  background: #FFBE2E;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -332,7 +351,7 @@ h6 {
 }
 
 .timeline-container::after {
-  background: linear-gradient(135deg, #ff9e04 0%, #ad074f 100%);
+  background: linear-gradient(135deg, #FFBE2E 0%, #ad074f 100%);
   content: "";
   position: absolute;
   left: calc(50% - 2px);
@@ -459,7 +478,7 @@ h6 {
     font-size: 30px;
   }
   .timeline-container::after {
-    background: linear-gradient(135deg, #ff9e04 0%, #ad074f 100%);
+    background: linear-gradient(135deg, #FFBE2E 0%, #ad074f 100%);
     content: "";
     position: absolute;
     left: calc(5% - 2px);
@@ -573,19 +592,6 @@ h6 {
   }
 }
 
-@media only screen and (min-width: 1400px) {
-  .mainContainer {
-    flex: 1 1 0%;
-    max-width: 100%;
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-}
-
 @media only screen and (min-width: 1500px) {
   .mainContainer {
     flex: 1 1 0%;
@@ -596,5 +602,10 @@ h6 {
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+  .blockElement {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 1100px;
   }
 }

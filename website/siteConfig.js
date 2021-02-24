@@ -59,8 +59,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: "linear-gradient(90deg, #D28203 0%, #AD074F 100%)",
-    secondaryColor: "linear-gradient(90deg, #D28203 0%, #AD074F 100%)",
+    primaryColor: "linear-gradient(90deg, #FFBE2E 0%, #AD074F 100%)",
+    secondaryColor: "linear-gradient(90deg, #FFBE2E 0%, #AD074F 100%)",
   },
 
   /* Custom fonts for website */
