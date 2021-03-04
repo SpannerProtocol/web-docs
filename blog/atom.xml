@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.spanner.network//blog"/>
     <subtitle>The best place to stay up-to-date with the latest Spanner Protocol news and events.</subtitle>
-    <logo>https://www.spanner.network//img/spanner-logo-white.svg</logo>
+    <logo>https://www.spanner.network//img/logo-spanner-white.svg</logo>
     <rights>Copyright © 2021 SpannerProtocol</rights>
     <entry>
         <title type="html"><![CDATA[New Version 1.0.0]]></title>
