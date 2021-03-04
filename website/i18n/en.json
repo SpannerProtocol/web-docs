@@ -55,6 +55,9 @@
       "spanner-web": {
         "title": "Spanner Web"
       },
+      "supported-wallets": {
+        "title": "Supported Wallets"
+      },
       "tools": {
         "title": "Toolings"
       },

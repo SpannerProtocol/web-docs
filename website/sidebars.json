@@ -21,7 +21,7 @@
     		"ids": ["bullettrain", "dpo_rule"]
     	}
 		],
-		"Use": ["spanner-web"],
+		"Use": ["spanner-web", "supported-wallets"],
     "Build": ["build-on-spanner", "integration_guide", "tools"],
     "Maintain": ["network_maintainers", "collator"]
   }

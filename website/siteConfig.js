@@ -53,14 +53,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: "img/spanner-logo-white.svg",
-  footerIcon: "img/spanner-logo-orange.svg",
-  favicon: "img/spanner-logo-orange.svg",
+  headerIcon: "img/logo-spanner-white.svg",
+  footerIcon: "img/logo-spanner-yellow.svg",
+  favicon: "img/logo-spanner-yellow.svg",
 
   /* Colors for website */
   colors: {
-    primaryColor: "linear-gradient(90deg, #FFBE2E 0%, #AD074F 100%)",
-    secondaryColor: "linear-gradient(90deg, #FFBE2E 0%, #AD074F 100%)",
+    primaryColor: "linear-gradient(90deg, #FFBE2E 0%, #FD1158 100%)",
+    secondaryColor: "linear-gradient(90deg, #FFBE2E 0%, #FD1158 100%)",
   },
 
   /* Custom fonts for website */

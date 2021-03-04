@@ -30,7 +30,7 @@ h4 {
 }
 
 h6 {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem; 
@@ -60,17 +60,18 @@ h6 {
 }
 
 .button-orange:hover {
-  background-color: #ff9e04;
+  background-color: #D28203;
+  border: 1px solid #D28203;
 }
 
 .button-red {
-  border: 1px solid #fd1177;
+  border: 1px solid #FD1158;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #fd1177;
+  background: #FD1158;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -351,7 +352,7 @@ h6 {
 }
 
 .timeline-container::after {
-  background: linear-gradient(135deg, #FFBE2E 0%, #ad074f 100%);
+  background: linear-gradient(135deg, #FFBE2E 0%, #FD1158 100%);
   content: "";
   position: absolute;
   left: calc(50% - 2px);
@@ -442,8 +443,9 @@ h6 {
 }
 
 .timeline-item-content h6 {
-  color: #fd1177;
+  color: #FD1158;
   margin: 0;
+  padding-left: 1rem;
 }
 
 .timeline-item-content a {
@@ -458,7 +460,7 @@ h6 {
 
 .timeline-item-content .circle {
   background-color: #fff;
-  border: 3px solid #e17b77;
+  border: 3px solid #FD1158;
   border-radius: 50%;
   position: absolute;
   top: calc(50% - 10px);
@@ -474,11 +476,12 @@ h6 {
 }
 
 @media screen and (min-width: 360px) and (max-width: 736px) {
-  h6 {
+  .timeline-item-content h6 {
     font-size: 30px;
+    padding-left: 1rem;
   }
   .timeline-container::after {
-    background: linear-gradient(135deg, #FFBE2E 0%, #ad074f 100%);
+    background: linear-gradient(135deg, #FFBE2E 0%, #FD1158 100%);
     content: "";
     position: absolute;
     left: calc(5% - 2px);
@@ -517,7 +520,7 @@ h6 {
   }
   .timeline-item-content .circle {
     background-color: #fff;
-    border: 3px solid #e17b77;
+    border: 3px solid #FD1158;
     border-radius: 50%;
     position: absolute;
     top: calc(50% - 10px);

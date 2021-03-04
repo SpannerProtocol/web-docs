@@ -68,6 +68,7 @@ const timelineData = [
     items: [
       "Spanner MainNet launch",
       "Developer tooling",
+      "Yield Farming",
       "Scaling up Spanner infrastructure ",
       "Spanner BulletTrain Campaign on MainNet",
       "Partnerships and project incubation",
@@ -183,6 +184,7 @@ class Index extends React.Component {
           extensibility as a core principle. Our components help new projects
           develop fast, securely and affordably.
         </MarkdownBlock>
+        <div style={{ marginBottom: "2rem" }} />
         <MarkdownBlock>###### Blockchain projects on steroids</MarkdownBlock>
         <MarkdownBlock>
           Create an asset, enroll in Spanner DeFi for liquidity and promote them
@@ -319,11 +321,12 @@ class Index extends React.Component {
       <div className="container-reverse paddingTop">
         <MarkdownBlock>## Learn more about Spanner</MarkdownBlock>
         <MarkdownBlock>
-          Spanner enables rapid crypto project development. 
-          </MarkdownBlock>
-          <MarkdownBlock>
-          Whether you are a Project Owner, User or just curious, there's plenty of resources for you to learn more about Spanner.
-          </MarkdownBlock>
+          Spanner enables rapid crypto project development.
+        </MarkdownBlock>
+        <MarkdownBlock>
+          Whether you are a Project Owner, User or just curious, there's plenty
+          of resources for you to learn more about Spanner.
+        </MarkdownBlock>
       </div>
     );
 
@@ -335,7 +338,9 @@ class Index extends React.Component {
               content: `Build your project on Spanner. 
             No code required.
             <div class="promoRow buttonWrapper">
-            <a class="button-orange" href="${docUrl("build-on-spanner")}">Learn More</a>
+            <a class="button-orange" href="${docUrl(
+              "build-on-spanner"
+            )}">Learn More</a>
             </div>`,
               image: `${baseUrl}img/icon-spanner.svg`,
               imageAlign: "top",
@@ -344,7 +349,9 @@ class Index extends React.Component {
             {
               content: `Learn more about Spanner Web.
             <div class="promoRow buttonWrapper">
-            <a class="button-orange" href="${docUrl("spanner-web")}">Learn More</a>
+            <a class="button-orange" href="${docUrl(
+              "spanner-web"
+            )}">Learn More</a>
             </div>`,
               image: `${baseUrl}img/icon-user.svg`,
               imageAlign: "top",
