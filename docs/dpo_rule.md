@@ -29,9 +29,12 @@ If seats are sold out before expiry, the DPO becomes ACTIVE and is ready to purc
 ### FAILED  
 If a DPO does not become ACTIVE before expiry, then it has FAILED. All funds in the *Deposit Account* will go to its *Withdraw Account*. No other actions are allowed except for withdrawing from this DPO. If the member is a DPO, the withdrawn amount will go to its deposit account, which can be used to buy another Target.
 
+### RUNNING
+If a DPO has started receiving rewards.
+
 ### COMPLETED
 An ACTIVE DPO becomes COMPLETED upon a successful release of funds from the *Withdraw Account*. This can only occur for two cases:
-1. The purchased Target is an incentive package, and it has matured. The funds will first be withdrawn from the package to the DPO's *Withdraw Account*. Once the funds are released to its members, the DPO becomes COMPLETED.
+1. The purchased Target is an incentive package (e.g. a TravelCabin), and it has matured. The funds will first be withdrawn from the package to the DPO's *Withdraw Account*. Once the funds are released to its members, the DPO becomes COMPLETED.
 2. The purchased Target is DPO, and is COMPLETED. This signals the DPO's funds have been returned to its *Withdraw Account*. The DPO will also become COMPLETED once funds are released to its members.
 
 | ![DPO States](/img/DPO_States.svg) |
@@ -49,7 +52,7 @@ The Management Fee is applied to each Yield release and is determined by these r
 Note: a DPO Member will act through its Manager.
 
 Releasing Yields empties the *Yield Account* and distributes the yield by these rules:
-- **Lazy Slashing**: Management Fee for this release will be slashed in half if the yield account has been accumulating for more than 5 days.
+- **Lazy Slashing**: Management Fee for this release will be slashed in half if (1) the yield account has been accumulating for more than 5 days, and (2) the yield is not released by the manager.
 - **Fair Reward**: Yields after fee are distributed to the Manager and all Members in proportion to seat.
 
 ### Referral and Bonuses

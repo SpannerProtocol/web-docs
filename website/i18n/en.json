@@ -11,10 +11,7 @@
       "bolt": {
         "title": "BOLT Economy"
       },
-      "build-on-spanner": {
-        "title": "Build Projects on Spanner"
-      },
-      "bullettrain": {
+      "gt01": {
         "title": "Overview"
       },
       "collator": {
@@ -51,9 +48,6 @@
       "params": {
         "title": "Spanner Parameters",
         "sidebar_label": "Parameters"
-      },
-      "spanner-web": {
-        "title": "Spanner Web"
       },
       "tools": {
         "title": "Toolings"
