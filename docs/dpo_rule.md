@@ -56,7 +56,7 @@ Releasing Yields empties the *Yield Account* and distributes the yield by these 
 - **Fair Reward**: Yields after fee are distributed to the Manager and all Members in proportion to seat.
 
 ### Referral and Bonuses
-Any user can refer any DPO to others.
+Any user can refer any DPO to others. DPO Referrals are unique for each user per project permanently (i.e. Alice can be a referral to Bob for NCAT but is a referral for Charlie in PLKT).
 <br/><br/>
 All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (they have no referrer or was referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Members Queue**.
 <br/><br/>
