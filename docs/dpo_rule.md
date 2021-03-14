@@ -56,12 +56,12 @@ Releasing Yields empties the *Yield Account* and distributes the yield by these 
 - **Fair Reward**: Yields after fee are distributed to the Manager and all Members in proportion to seat.
 
 ### Referral and Bonuses
-Any user can refer any DPO to others. DPO Referrals are unique for each user per project permanently (i.e. Alice can be a referral to Bob for NCAT but is a referral for Charlie in PLKT).
+Any user can refer any DPO to others. A user can have no referrer or a permanent referrer by token project (e.g. Alice and Bob can be the referrer for Charlie for project BOLT and project NCAT, respectively.
 <br/><br/>
-All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (they have no referrer or was referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Members Queue**.
+All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (they have no referrer or was referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Lucky Queue**.
 <br/><br/>
-The *Members Queue* works by **First Come, First Served**:
-- A newly joined *User Member* (not DPO Member) will be placed in the *Members Queue*.
+The *Lucky Queue* works by **First Come, First Served**:
+- A newly joined *User Member* (not DPO Member) will be placed in the *Lucky Queue*.
 - If the queue was priorly empty, the Manager will be assigned as the new Member's *Internal Referrer*.
 - Otherwise, the first Member in the queue will be assigned as *Internal Referrer* and then removed from the Queue.
 
@@ -84,7 +84,12 @@ If a User Member's total value of seats is 300, it will emit 300 * 0.03 = 9 BOLT
 How do we enforce a global property while all DPOs of a DPO Chain are settled locally? This is mathematically guaranteed by Emit-Catch-Divide.
 
 #### Emit
-The Emit rule enables Referral Points to be settled at each individual DPO. Upon buying DPO seat(s) with a total value of X, the buyer (the referral) will be given X Referral Points of the DPO and emit respective amounts to referrers according to its role in the DPO:
+
+The Emit rule enables Referral Points to be settled at each individual DPO. 
+Upon buying DPO seat(s) with a total value of X, X Referral Points of the DPO will be given to the buyer, 
+except if it is a manager of a non Lead DPO. A Lead DPO is the DPO which buys a TravelCabin instead of seats of another DPO.
+
+The buyer will emit respective amounts to referrers according to its role in the DPO:
 - Manager of this DPO => emit nothing
 - User Member => emit X
 - DPO Member => emit X * (it's manager's number of seats / 100)
