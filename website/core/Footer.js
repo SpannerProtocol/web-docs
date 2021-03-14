@@ -59,6 +59,7 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href="https://spannerprotocol.medium.com/">Blog</a>
+            <a href="https://docs.google.com/presentation/d/1DepGxC1x1IH_8L02r_0Vzg3AFd7fZMKnxJOkIs4IoE8/edit?usp=sharing">Spanner Deck</a>
             <a href="https://github.com/SpannerProtocol">GitHub</a>
             <a href="mailto:spannerprotocol@gmail.com">Contact Us</a>
             {/* <a
