@@ -37,7 +37,7 @@ An ACTIVE DPO becomes COMPLETED upon a successful release of funds from the *Wit
 1. The purchased Target is an incentive package (e.g. a TravelCabin), and it has matured. The funds will first be withdrawn from the package to the DPO's *Withdraw Account*. Once the funds are released to its members, the DPO becomes COMPLETED.
 2. The purchased Target is DPO, and is COMPLETED. This signals the DPO's funds have been returned to its *Withdraw Account*. The DPO will also become COMPLETED once funds are released to its members.
 
-| ![DPO States](/img/DPO_States.svg) |
+| ![DPO States](/img/DPO_States.png) |
 |:--:|
 | DPO States and Transitions |
 
@@ -58,12 +58,17 @@ Releasing Yields empties the *Yield Account* and distributes the yield by these 
 ### Referral and Bonuses
 Any user can refer any DPO to others. A user can have no referrer or a permanent referrer by token project (e.g. Alice and Bob can be the referrer for Charlie for project BOLT and project NCAT, respectively.
 <br/><br/>
-All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (they have no referrer or was referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Lucky Queue**.
+All Members of a DPO must have an **Internal Referrer**. If they were not referred by an existing Member (they have no referrer or was referred by a Non-Member, i.e. **External Referrer**), they will be assigned an Internal Referrer from the **Earlybird Queue**.
 <br/><br/>
-The *Lucky Queue* works by **First Come, First Served**:
-- A newly joined *User Member* (not DPO Member) will be placed in the *Lucky Queue*.
+The *Earlybird Queue* works by **First Come, First Served**:
+- A newly joined *User Member* (not DPO Member) will be placed in the *Earlybird Queue*.
 - If the queue was priorly empty, the Manager will be assigned as the new Member's *Internal Referrer*.
 - Otherwise, the first Member in the queue will be assigned as *Internal Referrer* and then removed from the Queue.
+
+
+| ![referral](/img/referral.png) |
+|:--:|
+| How to form a referral structure |
 
 We devised a **Referral Point** system, named Emit-Catch-Divide to record and reward contributions of all referrers of a DPO (both Internal and External).
 <br/><br/>
@@ -74,6 +79,7 @@ Property 1:
       = (Package Bonus / Package Price) * 
         (DPO's used amount / DPO's total raised amount)
         
+  Also known as Bonus Rate (as shown in the image below)
 ```
 
 For example, if a DPO raised 2000 BOLTs and purchased a package costing 1000 BOLTs() giving 60 BOLTs Bonus), 
@@ -103,3 +109,7 @@ The emitted *Referral Points* will then be caught by referrers as follows:
 
 #### Divide
 Bonus Rewards received by the DPO will be divided proportionally according to the Referral Points each referrer related to the DPO holds.
+
+| ![allocate bonus](/img/bonus.png) |
+|:--:|
+| How to allocate bonus.|

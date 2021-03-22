@@ -37,29 +37,30 @@ class Footer extends React.Component {
             <a href={this.docUrl("launch_phases.html")}>White Paper</a>
             <a href={`${this.props.config.baseUrl}#roadmap`}>Roadmap</a>
           </div>
-          {/* <div>
+          {<div>
             <h5>Community</h5>
-            <a href={`${this.props.config.baseUrl}users`}>User Showcase</a>
-            <a
-              href="https://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Twitter
-            </a>
-          </div> */}
+            {/*<a href={`${this.props.config.baseUrl}users`}>User Showcase</a>*/}
+            {/*<a*/}
+            {/*  href="https://t.me/spannerprotocol"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer noopener"*/}
+            {/*>*/}
+            {/*  Stack Overflow*/}
+            {/*</a>*/}
+            <a href="https://t.me/spannerprotocol">Telegram Chat</a>
+            <a href="https://t.me/spannerprotocol">Telegram Official</a>
+            {/*<a*/}
+            {/*  href="https://twitter.com/"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer noopener"*/}
+            {/*>*/}
+            {/*  Twitter*/}
+            {/*</a>*/}
+          </div>}
           <div>
             <h5>More</h5>
             <a href="https://spannerprotocol.medium.com/">Blog</a>
-            <a href="https://docs.google.com/presentation/d/1DepGxC1x1IH_8L02r_0Vzg3AFd7fZMKnxJOkIs4IoE8/edit?usp=sharing">Spanner Deck</a>
+            <a href="https://docs.google.com/presentation/d/1DepGxC1x1IH_8L02r_0Vzg3AFd7fZMKnxJOkIs4IoE8/edit?usp=sharing">Pitch Deck</a>
             <a href="https://github.com/SpannerProtocol">GitHub</a>
             <a href="mailto:spannerprotocol@gmail.com">Contact Us</a>
             {/* <a

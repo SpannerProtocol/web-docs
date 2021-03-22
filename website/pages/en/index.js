@@ -185,7 +185,7 @@ class Index extends React.Component {
           develop fast, securely and affordably.
         </MarkdownBlock>
         <div style={{ marginBottom: "2rem" }} />
-        <MarkdownBlock>###### Blockchain projects on steroids</MarkdownBlock>
+        {/*<MarkdownBlock>###### Blockchain projects on steroids</MarkdownBlock>*/}
         <MarkdownBlock>
           Create an asset, enroll in Spanner DeFi for liquidity and promote them
           with Growth Components -- all with little-to-no code. Focus on your
@@ -206,7 +206,7 @@ class Index extends React.Component {
             incentives.`,
             image: `${baseUrl}img/trainyard.jpg`,
             imageAlign: "left",
-            title: "BulletTrain: Spanner's First Growth Component",
+            title: "BulletTrain: the First Template for Growth",
           },
         ]}
       </Block>
@@ -220,10 +220,10 @@ class Index extends React.Component {
               content: `Reward growth based on results.`,
               image: `${baseUrl}img/icon-coin.svg`,
               imageAlign: "top",
-              title: "Piece Rate Rewards",
+              title: "Result-based Rewards",
             },
             {
-              content: `Communities create networks of communties, each with their own incentives collaborating to grow your project.`,
+              content: `Communities create networks of communities, each with their own incentives collaborating to grow your project.`,
               image: `${baseUrl}img/icon-viral-marketing.svg`,
               imageAlign: "top",
               title: "Viral Growth",

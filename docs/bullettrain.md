@@ -3,7 +3,7 @@ id: bullettrain
 title: Overview
 ---
 
-**BulletTrain** (a Spanner Growth Component) is an evolutionary viral growth marketing model running on the Spanner Blockchain. 
+**BulletTrain** (a Growth Template) is an evolutionary viral growth marketing model running on the Spanner Blockchain. 
 BulletTrain includes (1) **TravelCabin** for projects to provide as incentive to its community, and
 (2) **DPO** (Decentralized Programmable Organization) - an autonomous organizational structure that enables fair and scalable community collaboration 
 based on *piece-rate* incentives.
@@ -53,6 +53,6 @@ Check this introductory [article](https://spannerprotocol.medium.com/introducing
 and [DPO Rules](dpo_rule.md) for more details.
 
 [comment]: <> (<img src="/img/chainfunding.svg" width="900">)
-| ![BulletTrain Overview](/img/bullettrain.svg) |
+| ![BulletTrain Overview](/img/bullettrainonepage.png) |
 |:--:|
 | An Schematic Overview of BulletTrain. Data shown for illustrations only |

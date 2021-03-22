@@ -39,6 +39,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    {
+      href: "https://docs.google.com/presentation/d/1DepGxC1x1IH_8L02r_0Vzg3AFd7fZMKnxJOkIs4IoE8/edit?usp=sharing",
+      label: "Deck",
+      external: true,
+    },
     { doc: "getting_started", label: "Docs" },
     { page: "help", label: "Support" },
     {
