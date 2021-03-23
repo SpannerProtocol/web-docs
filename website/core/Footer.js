@@ -62,7 +62,7 @@ class Footer extends React.Component {
             <a href="https://spannerprotocol.medium.com/">Blog</a>
             <a href="https://docs.google.com/presentation/d/1DepGxC1x1IH_8L02r_0Vzg3AFd7fZMKnxJOkIs4IoE8/edit?usp=sharing">Pitch Deck</a>
             <a href="https://github.com/SpannerProtocol">GitHub</a>
-            <a href="mailto:spannerprotocol@gmail.com">Contact Us</a>
+            <a href="mailto:ask@spanner.network">Contact Us</a>
             {/* <a
               className="github-button"
               href={this.props.config.repoUrl}

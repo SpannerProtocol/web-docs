@@ -69,6 +69,7 @@
       }
     },
     "links": {
+      "Deck": "Deck",
       "Docs": "Docs",
       "Support": "Support",
       "Blog": "Blog"
