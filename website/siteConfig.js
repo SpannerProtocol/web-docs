@@ -40,7 +40,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {
-      href: "https://docs.google.com/presentation/d/1DepGxC1x1IH_8L02r_0Vzg3AFd7fZMKnxJOkIs4IoE8/edit?usp=sharing",
+      href: "https://docs.google.com/presentation/d/15Ot85q0B55GDRHNiTg7RDm7ZDqwzBogvQoNSD2W29sY/edit?usp=sharing",
       label: "Deck",
       external: true,
     },
