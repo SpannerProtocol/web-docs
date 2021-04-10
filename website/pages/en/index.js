@@ -6,7 +6,7 @@
  */
 
 const React = require("react");
-
+const Bootstrap = require("react-bootstrap");
 const CompLibrary = require("../../core/CompLibrary.js");
 
 const MarkdownBlock = CompLibrary.MarkdownBlock; /* Used to read markdown */
@@ -131,21 +131,27 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
         <div className="inner">
           <ProjectTitle
             tagline={siteConfig.tagline}
             title={siteConfig.title}
             style={{ color: "#fff" }}
           />
-          <div className="splash-content">
-            Empower Decentralized Collaboration.
-            Unlock the limitless potential of community consensus.
-          </div>
-          <PromoSection>
-            <Button href="#what-is-spanner">Learn more</Button>
-          </PromoSection>
         </div>
+        <Bootstrap.Container>
+          <Bootstrap.Row>
+            <Bootstrap.Col xs lg="4">
+            </Bootstrap.Col>
+            <Bootstrap.Col md="auto">
+              <Button href="#what-is-spanner">Learn more</Button>
+            </Bootstrap.Col>
+            <Bootstrap.Col md="auto">
+              <Button href="#what-is-spanner">Explore DPO</Button>
+            </Bootstrap.Col>
+            <Bootstrap.Col xs lg="4">
+            </Bootstrap.Col>
+          </Bootstrap.Row>
+        </Bootstrap.Container>
       </SplashContainer>
     );
   }

@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: "Spanner Protocol", // Title for your website.
-  tagline: "The blockchain component marketplace for decentralized applications",
+  tagline: "The Blockchain for Decentralized Programmable Organizations",
   cname: "www.spanner.network",
   url: "https://www.spanner.network/", // Your website URL
   baseUrl: "/", // Base URL for your project */
@@ -110,6 +110,8 @@ const siteConfig = {
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   // repoUrl: 'https://github.com/facebook/test-site',
+
+  stylesheets: ['https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css'],
 };
 
 module.exports = siteConfig;
