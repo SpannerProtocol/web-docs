@@ -139,7 +139,8 @@ class HomeSplash extends React.Component {
             style={{ color: "#fff" }}
           />
           <div className="splash-content">
-            Build fast, high quality and cost-effective DApps.
+            Empower Decentralized Collaboration.
+            Unlock the limitless potential of community consensus.
           </div>
           <PromoSection>
             <Button href="#what-is-spanner">Learn more</Button>
@@ -157,6 +158,14 @@ class Index extends React.Component {
     const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
     const langPart = `${language ? `${language}/` : ""}`;
     const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
+
+    const Button = (props) => (
+        <div className="pluginWrapper buttonWrapper">
+          <a className="button" href={props.href} target={props.target}>
+            {props.children}
+          </a>
+        </div>
+    );
 
     const Block = (props) => (
       <Container
@@ -200,15 +209,21 @@ class Index extends React.Component {
       <Block id="spanner-bullet-train">
         {[
           {
-            content: `Grow the community for your hot crypto project with the first
-            Spanner Component. Start a BulletTrain on Spanner Blockchain to
-            empower your community to grow itself through affiliate crowdfunding
-            incentives.`,
+            content: `Grow the community for your hot crypto project with BulletTrain. 
+              Start a BulletTrain on Spanner Blockchain to
+              empower your community to grow itself through affiliate crowdfunding
+              incentives. 
+              <div class="promoRow buttonWrapper">
+              <a class="button-white-border" href="https://dapp.spanner.network">
+              Try BulletTrain
+              </a>
+              </div>`,
             image: `${baseUrl}img/trainyard.jpg`,
             imageAlign: "left",
-            title: "BulletTrain: the First Template for Growth",
+            title: "BulletTrain: DPO for Growth in action",
           },
         ]}
+
       </Block>
     );
 

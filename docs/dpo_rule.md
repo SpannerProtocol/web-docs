@@ -1,6 +1,6 @@
 ---
 id: dpo_rule
-title: DPO Rules V1
+title: DPO V1 Rules
 ---
 
 Before you read on, make sure you have read the [BulletTrain Overview](bullettrain.md). 
