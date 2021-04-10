@@ -14,8 +14,8 @@ Spanner Protocol has following three major launch phases:
 
 ## Feature Roadmap
 We will progressively implement following features and more. 
-- Economy of Scale for pricing Spanner components
-- More Growth Components to supoort more project launches.
+- Economy of Scale for DPO usages
+- A broader scope of DPO connectivity to off-chain and cross-chain actions.
 - More features for interoperability with other Parachain and integration. 
 - Parachain infrastructure like Collator. 
 

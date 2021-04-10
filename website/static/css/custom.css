@@ -301,6 +301,21 @@ h6 {
   transition: background 0.8s, color 0.8s;
 }
 
+.button-white-border {
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  background: transparent;
+  line-height: 1.2em;
+  padding: 10px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: background 0.8s, color 0.8s;
+}
+
 .buttonWrapper .button:hover {
   border: 1px solid #FFBE2E;
   border-radius: 3px;
