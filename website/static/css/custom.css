@@ -13,20 +13,11 @@ h2,
 h3,
 h4 {
   color: #000;
-  margin: 0;
-  padding: 0;
 }
 
 h2 {
   font-size: 26px;
   font-weight: 700;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 40px;
-  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -38,14 +29,21 @@ h4 {
   margin-bottom: 0.7rem;
 }
 
+h6 {
+  font-size: 34px;
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+}
+
 .button-orange {
-  border: 1px solid #ff9e04;
+  border: 1px solid #FFBE2E;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #ff9e04;
+  background: #FFBE2E;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -53,18 +51,27 @@ h4 {
   transition: background 0.3s, color 0.3s;
 }
 
+.bgBlack {
+  background: #000;
+}
+
+.img {
+  vertical-align: 100%;
+}
+
 .button-orange:hover {
-  background-color: #d28203;
+  background-color: #D28203;
+  border: 1px solid #D28203;
 }
 
 .button-red {
-  border: 1px solid #fd1177;
+  border: 1px solid #FD1158;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #fd1177;
+  background: #FD1158;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -82,7 +89,7 @@ h4 {
 }
 
 .heading {
-  color: #ff9e04;
+  color: #FFBE2E;
 }
 
 .headerTitleWithLogo {
@@ -92,11 +99,16 @@ h4 {
 .projectTitle {
   color: #fff;
 }
+
 .mainContainer {
   flex: 1 1 0%;
   max-width: 100%;
   margin-top: 40px;
   padding: 0;
+}
+
+.splashMainContainer {
+  margin-top: 0;
 }
 
 .components-grid {
@@ -106,9 +118,9 @@ h4 {
 }
 
 .component-wrapper {
-  display: block;
+  display: flex;
+  vertical-align: middle;
   align-items: center;
-  margin: 2rem;
   margin: 2rem;
 }
 
@@ -141,11 +153,37 @@ h4 {
   padding-right: 1.2rem;
   margin-left: auto;
   margin-right: auto;
-  background: #ff9e04;
+  background: #FFBE2E;
+}
+
+.container-two-features {
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.threeByGridBlock {
+  background: #fff;
+  margin: 2vw;
+  padding: 1rem;
+  max-width: 380px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+
+.container-features {
+  background: #FFBE2E;
+}
+
+.container-features .wrapper {
+  padding: 0;
 }
 
 .container h2 {
-  color: #ff9e04;
+  color: #FFBE2E;
 }
 
 .container-reverse h2 {
@@ -170,7 +208,7 @@ h4 {
 }
 
 .community-box h3 {
-  color: #ff9e04;
+  color: #FFBE2E;
 }
 
 .community-text {
@@ -179,13 +217,23 @@ h4 {
   padding-bottom: 1.5rem;
 }
 
-.homeContainer {
+/* .homeContainer {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/img/night-sky-compressed.jpg");
   background-position: 0px 0px;
   background-repeat: repeat-x;
   background-size: cover;
   animation: animatedBackground 100s linear infinite;
+} */
+
+.homeContainer {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/black-hex-background.jpg");
+  min-height: 360px;
+}
+
+.homeContainer .homeWrapper {
+  padding: 4em 10px;
 }
 
 .container.paddingTop {
@@ -216,20 +264,30 @@ h4 {
 }
 
 .blockElement {
-  max-width: 340px;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .blockImage {
   margin-bottom: 0;
   width: 55px;
+  margin: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
+.blockLogo {
+  margin-bottom: 0;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  vertical-align: middle;
+  position: relative;
+}
+
 .buttonWrapper .button {
-  border: 1px solid #ff9e04;
+  border: 1px solid #FFBE2E;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
@@ -244,13 +302,13 @@ h4 {
 }
 
 .buttonWrapper .button:hover {
-  border: 1px solid #ff9e04;
+  border: 1px solid #FFBE2E;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
-  background: #ff9e04;
+  background: #FFBE2E;
   line-height: 1.2em;
   padding: 10px;
   text-decoration: none !important;
@@ -267,6 +325,20 @@ h4 {
   }
 }
 
+#spanner-bullet-train {
+  background: #FFBE2E;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#spanner-bullet-train h2 p {
+  color: #fff;
+  text-align: center;
+}
+
 .splash-content {
   color: #d3d3d3;
 }
@@ -280,7 +352,7 @@ h4 {
 }
 
 .timeline-container::after {
-  background: linear-gradient(135deg, #ff9e04 0%, #ad074f 100%);
+  background: linear-gradient(135deg, #FFBE2E 0%, #FD1158 100%);
   content: "";
   position: absolute;
   left: calc(50% - 2px);
@@ -370,9 +442,10 @@ h4 {
   max-width: 300px;
 }
 
-.timeline-item-content h3 {
-  color: #fd1177;
+.timeline-item-content h6 {
+  color: #FD1158;
   margin: 0;
+  padding-left: 1rem;
 }
 
 .timeline-item-content a {
@@ -387,7 +460,7 @@ h4 {
 
 .timeline-item-content .circle {
   background-color: #fff;
-  border: 3px solid #e17b77;
+  border: 3px solid #FD1158;
   border-radius: 50%;
   position: absolute;
   top: calc(50% - 10px);
@@ -403,11 +476,12 @@ h4 {
 }
 
 @media screen and (min-width: 360px) and (max-width: 736px) {
-  h3 {
+  .timeline-item-content h6 {
     font-size: 30px;
+    padding-left: 1rem;
   }
   .timeline-container::after {
-    background: linear-gradient(135deg, #ff9e04 0%, #ad074f 100%);
+    background: linear-gradient(135deg, #FFBE2E 0%, #FD1158 100%);
     content: "";
     position: absolute;
     left: calc(5% - 2px);
@@ -446,7 +520,7 @@ h4 {
   }
   .timeline-item-content .circle {
     background-color: #fff;
-    border: 3px solid #e17b77;
+    border: 3px solid #FD1158;
     border-radius: 50%;
     position: absolute;
     top: calc(50% - 10px);
@@ -484,6 +558,12 @@ h4 {
   .timeline-item-content li {
     width: 100%;
   }
+  .blockElement {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -509,10 +589,26 @@ h4 {
     margin-top: 70px;
     padding: 0;
   }
-}
 
-@media only screen and (min-width: 1400px) {
+  .splashMainContainer {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (min-width: 1500px) {
+  .mainContainer {
+    flex: 1 1 0%;
+    max-width: 100%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .blockElement {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 1100px;
+  }
 }

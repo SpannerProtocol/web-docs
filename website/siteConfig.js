@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: "Spanner Protocol", // Title for your website.
-  tagline: "The blockchain business application layer",
+  tagline: "The blockchain component marketplace for decentralized applications",
   cname: "www.spanner.network",
   url: "https://www.spanner.network/", // Your website URL
   baseUrl: "/", // Base URL for your project */
@@ -39,6 +39,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
+    {
+      href: "https://docs.google.com/presentation/d/15Ot85q0B55GDRHNiTg7RDm7ZDqwzBogvQoNSD2W29sY/edit?usp=sharing",
+      label: "Deck",
+      external: true,
+    },
     { doc: "getting_started", label: "Docs" },
     { page: "help", label: "Support" },
     {
@@ -53,14 +58,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: "img/spanner-logo-white.svg",
-  footerIcon: "img/spanner-logo-orange.svg",
-  favicon: "img/spanner-logo-orange.svg",
+  headerIcon: "img/logo-spanner-white.svg",
+  footerIcon: "img/logo-spanner-yellow.svg",
+  favicon: "img/logo-spanner-yellow.svg",
 
   /* Colors for website */
   colors: {
-    primaryColor: "linear-gradient(90deg, #D28203 0%, #AD074F 100%)",
-    secondaryColor: "linear-gradient(90deg, #D28203 0%, #AD074F 100%)",
+    primaryColor: "linear-gradient(90deg, #FFBE2E 0%, #EC3D3D 100%)",
+    secondaryColor: "linear-gradient(90deg, #FFBE2E 0%, #EC3D3D 100%)",
   },
 
   /* Custom fonts for website */

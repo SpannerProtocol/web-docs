@@ -10,8 +10,11 @@ This document will focus on terminology relavant to our products, features and t
 #### Components
 A component is built for a specifc purpose set like vesting payments and securing funds. For example, using a secure fund Vault component in a crowdfunding application can give users assurance of fund safety by preventing crowdfunders from misusing funds beyond the defined scope. They can be bundled together to solve even larger problems. Spanner components are built into the protocol and optimized for scale.
 
-#### Growth Components
-A Growth Component is a specific component that focuses on project growth. The overall design principles for ([Growth Components](https://spannerprotocol.medium.com/growth-template-1-growthbox-and-dpo-518bab21ea4d) ) include:
+#### Templates
+A template is building on multiple components and reusable for projects
+
+#### Growth Templates
+A Growth Template is a specific template that focuses on project growth. The overall design principles for ([Growth Templates](https://spannerprotocol.medium.com/growth-template-1-growthbox-and-dpo-518bab21ea4d) ) include:
 - Simplicity: It is as easy to use as creating a token contract.
 - Provable Solvency: This means the promised token reward set by the project teams are guaranteed to payout as agreed upon. This is guaranteed via Spanner smart contracts.
 - Separation of Concerns: Project teams just need to create simple token reward options. The incentivized promotion of your project (incentive plan), its community and structure are determined by community leaders and professional promoters.

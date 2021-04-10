@@ -35,30 +35,34 @@ class Footer extends React.Component {
               Spanner Introduction
             </a>
             <a href={this.docUrl("launch_phases.html")}>White Paper</a>
+            <a href={`${this.props.config.baseUrl}#roadmap`}>Roadmap</a>
           </div>
-          {/* <div>
+          {<div>
             <h5>Community</h5>
-            <a href={`${this.props.config.baseUrl}users`}>User Showcase</a>
-            <a
-              href="https://stackoverflow.com/questions/tagged/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Stack Overflow
-            </a>
-            <a href="https://discordapp.com/">Project Chat</a>
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Twitter
-            </a>
-          </div> */}
+            {/*<a href={`${this.props.config.baseUrl}users`}>User Showcase</a>*/}
+            {/*<a*/}
+            {/*  href="https://t.me/spannerprotocol"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer noopener"*/}
+            {/*>*/}
+            {/*  Stack Overflow*/}
+            {/*</a>*/}
+            <a href="https://t.me/spannerprotocol">Telegram Chat</a>
+            <a href="https://t.me/spannerprotocol">Telegram Official</a>
+            {/*<a*/}
+            {/*  href="https://twitter.com/"*/}
+            {/*  target="_blank"*/}
+            {/*  rel="noreferrer noopener"*/}
+            {/*>*/}
+            {/*  Twitter*/}
+            {/*</a>*/}
+          </div>}
           <div>
             <h5>More</h5>
             <a href="https://spannerprotocol.medium.com/">Blog</a>
+            <a href="https://docs.google.com/presentation/d/15Ot85q0B55GDRHNiTg7RDm7ZDqwzBogvQoNSD2W29sY/edit?usp=sharing">Pitch Deck</a>
             <a href="https://github.com/SpannerProtocol">GitHub</a>
+            <a href="mailto:ask@spanner.network">Contact Us</a>
             {/* <a
               className="github-button"
               href={this.props.config.repoUrl}

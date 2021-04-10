@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "The blockchain business application layer",
+    "tagline": "The blockchain component marketplace for decentralized applications",
     "docs": {
       "architecture": {
         "title": "Architecture"
@@ -11,7 +11,10 @@
       "bolt": {
         "title": "BOLT Economy"
       },
-      "gt01": {
+      "build-on-spanner": {
+        "title": "Build Projects on Spanner"
+      },
+      "bullettrain": {
         "title": "Overview"
       },
       "collator": {
@@ -49,6 +52,12 @@
         "title": "Spanner Parameters",
         "sidebar_label": "Parameters"
       },
+      "spanner-web": {
+        "title": "Spanner Web"
+      },
+      "supported-wallets": {
+        "title": "Supported Wallets"
+      },
       "tools": {
         "title": "Toolings"
       },
@@ -60,6 +69,7 @@
       }
     },
     "links": {
+      "Deck": "Deck",
       "Docs": "Docs",
       "Support": "Support",
       "Blog": "Blog"
@@ -67,6 +77,7 @@
     "categories": {
       "General": "General",
       "Learn": "Learn",
+      "Use": "Use",
       "Build": "Build",
       "Maintain": "Maintain"
     }
