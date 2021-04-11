@@ -148,10 +148,10 @@ class HomeSplash extends React.Component {
           <Bootstrap.Row>
             <Bootstrap.Col xs lg="4">
             </Bootstrap.Col>
-            <Bootstrap.Col md="auto">
+            <Bootstrap.Col md="2">
               <Bootstrap.Button className="buttonWrapper" variant="warning" href={docUrl('getting_started')}>Learn more</Bootstrap.Button>
             </Bootstrap.Col>
-            <Bootstrap.Col md="auto">
+            <Bootstrap.Col md="2">
               <Button href="#what-is-spanner">Explore DPO</Button>
             </Bootstrap.Col>
             <Bootstrap.Col xs lg="4">
