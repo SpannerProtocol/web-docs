@@ -17,8 +17,9 @@ const TimelineItem = ({ data }) => (
   <div className="timeline-item">
     <div className="timeline-item-content">
       <h6>{data.date}</h6>
+      <b style={{ paddingLeft: "17px" }}>{data.items[0]}</b>
       <ul style={{ margin: "0" }}>
-        {data.items.map((item, idx) => (
+        {data.items.slice(1).map((item, idx) => (
           <li key={idx}>{item}</li>
         ))}
       </ul>
@@ -46,45 +47,50 @@ const Timeline = () =>
 const timelineData = [
   {
     items: [
-      "Spanner core components",
-      "Hammer TestNet development",
-      "BulletTrain beta development (Growth Component #1)",
-      "DeFi Infrastructure",
+      "Hammer Testnet development",
+      "DPO Research an Architecture",
+      "Dex and Bridge development",
+      "BulletTrain Development",
     ],
     date: "2020",
   },
   {
     items: [
-      "DApp official release",
-      "Hammer TestNet official launch",
-      "BulletTrain beta deployed on TestNet",
-      "DeFi on TestNet",
-      "Polkadot Ecosystem Partnerships",
-      "Bridge to Ethereum",
+      "Hammer Testnet Launch",
+      "DPO V1 Development",
+      "Dex and Bridge Launch on Hammer",
+      "Partnership Development",
+      "BulletTrain Released on Hammer"
     ],
     date: "2021 Q1",
   },
   {
     items: [
-      "Spanner MainNet launch",
-      "Developer tooling",
-      "Yield Farming",
-      "Scaling up Spanner infrastructure ",
-      "Spanner BulletTrain Campaign on MainNet",
-      "Partnerships and project incubation",
-      "Rococo Parachain R&D",
+      "Spanner Mainnet launch",
+      "DPO Smart Contract Research",
+      "BulletTrain Launch (for Spanner launching BOLT only)",
+      "Rococo Parachain Research"
     ],
     date: "2021 Q2",
   },
   {
     items: [
       "Parachain Offering",
-      "Polkadot ecosystem partnerships",
-      "Open and Permissionless BulletTrain v2",
-      "Growth Marketplace",
-      "Growth Component #2",
+      "DPO V2 Research",
+      "DPO Off-chain Oracle Research",
+      "BulletTrain open for other Projects",
+      "Growth Marketplace"
     ],
     date: "2021 Q3",
+  },
+  {
+    items: [
+      "Parachain Interoperability",
+      "DPO Full Smart Contract Support",
+      "DPO Off-chain Oracle Support",
+      "More DPO applications"
+    ],
+    date: "2021 Q4",
   },
 ];
 
@@ -217,26 +223,18 @@ class Index extends React.Component {
 
     const ComparisonChart = () => (
         <div className="container-container-features">
-          <Bootstrap.Container className="paddingTop paddingBottom">
-            <Bootstrap.Row>
-              <Bootstrap.Col>
-                <img width="400px" src={`${baseUrl}img/matrix.svg`}/>
-              </Bootstrap.Col>
-              <Bootstrap.Col>
-                <Block>
-                  {[
-                    {
-                      content: `Grow the community for your hot crypto project with BulletTrain.
-                Start a BulletTrain on Spanner Blockchain to
-                empower your community to grow itself through affiliate crowdfunding
-                incentives.`,
-                      title: "DPO vs DAO vs Traditional Organizations",
-                    },
-                  ]}
-                </Block>
-              </Bootstrap.Col>
-            </Bootstrap.Row>
-          </Bootstrap.Container>
+          <Block>
+            {[
+              {
+                content: `Standing on the shoulder of giants. Building from the best of DAO and Traditional Organizations. \n
+<b>Decentralization</b> provides trust and transparency for open participation.\n 
+<b>Rationality</b> provides effectiveness and efficiency for the goals of organizations.`,
+                title: "DPO vs DAO vs Traditional Organizations",
+                image: `${baseUrl}img/matrix.png`,
+                imageAlign: "right",
+              },
+            ]}
+          </Block>
         </div>
     )
 
@@ -244,53 +242,12 @@ class Index extends React.Component {
         <div className="container-features">
           <Bootstrap.Container className="paddingTop paddingBottom">
             <Bootstrap.Row>
-              <Bootstrap.Col lg="3"/>
-              <Bootstrap.Col md="auto">
-                <h1><b>DPO Features</b></h1>
-                <Bootstrap.Table responsive>
-                  <thead>
-                  <tr>
-                    <th> </th>
-                    <th>Traditional Organization</th>
-                    <th>DAO</th>
-                    <th>DPO</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>xxxx</td>
-                    <td>Tight</td>
-                    <td>Loose</td>
-                    <td>Tight and Loose</td>
-                  </tr>
-                  <tr>
-                    <td>Structure</td>
-                    <td>Hierarchical</td>
-                    <td>Flat</td>
-                    <td>sdfsdf</td>
-                  </tr>
-                  <tr>
-                    <td>Transparency</td>
-                    <td>Poor</td>
-                    <td>Good</td>
-                    <td>Good</td>
-                  </tr>
-                  <tr>
-                    <td>Participation</td>
-                    <td>Employee / Partners Only</td>
-                    <td>Open</td>
-                    <td>Open</td>
-                  </tr>
-                  <tr>
-                    <td>Location</td>
-                    <td>Local / Global</td>
-                    <td>Global</td>
-                    <td>Global</td>
-                  </tr>
-                  </tbody>
-                </Bootstrap.Table>
+              <Bootstrap.Col xs="2"/>
+              <Bootstrap.Col md="8">
+                <h1 color="color('black')">DPO Comparison</h1>
+                <img width="650px" src={`${baseUrl}img/comparison.svg`}/>
               </Bootstrap.Col>
-              <Bootstrap.Col lg="3"/>
+              <Bootstrap.Col xs="2"/>
             </Bootstrap.Row>
           </Bootstrap.Container>
         </div>
@@ -692,14 +649,14 @@ class Index extends React.Component {
           {/*<BulletTrainFeatures />*/}
           {/*<BoltToken />*/}
           {/*<BoltTokenFeatures />*/}
-          {/*<InterestedInSpanner />*/}
-          {/*<InterestedInSpannerFeatures />*/}
           {/* <SpannerComponents /> */}
           {/* <LaunchPad /> */}
           {/* <Features /> */}
           <Timeline />
-          <Community />
+          <InterestedInSpanner />
+          <InterestedInSpannerFeatures />
           <Partners />
+          <Community />
         </div>
       </div>
     );
