@@ -236,11 +236,11 @@ h6 {
   padding: 4em 10px;
 }
 
-.container.paddingTop {
+.container .paddingTop {
   padding-top: 3vw;
 }
 
-.container.paddingBottom {
+.container .paddingBottom {
   padding-bottom: 3vw;
 }
 

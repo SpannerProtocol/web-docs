@@ -143,7 +143,7 @@ class HomeSplash extends React.Component {
             <Bootstrap.Col xs lg="4">
             </Bootstrap.Col>
             <Bootstrap.Col md="auto">
-              <Button href="#what-is-spanner">Learn more</Button>
+              <Bootstrap.Button className="buttonWrapper" variant="warning" href={docUrl('getting_started')}>Learn more</Bootstrap.Button>
             </Bootstrap.Col>
             <Bootstrap.Col md="auto">
               <Button href="#what-is-spanner">Explore DPO</Button>
@@ -180,11 +180,146 @@ class Index extends React.Component {
         background={props.background}
       >
         <GridBlock
-          align="center"
+          align={props.align}
           contents={props.children}
           layout={props.layout}
         />
       </Container>
+    );
+
+    const DpoFeatures = () => (
+        <div className="container-features">
+          <Block layout="threeColumn">
+            {[
+              {
+                content: `Start working with any like minded individuals around the world.
+                        Collaborate with transparency and trust. Measure contributions
+                        accurately and reward fairly.`,
+                title: "Decentralized",
+              },
+              {
+                content: `Create an organization on Spanner with <b>On-Chain</b> smart contract
+                    programming, connect your organization to others via <b>Cross-Chain</b> bridging
+                    and <b>Off-Chain</b> oracles.`,
+                align: "left",
+                title: "Programmable",
+              },
+              {
+                content: `Designed for traditional organizations to operate on Blockchain. From a two man
+                    band garage start up, to a multi national corporation with over twenty thousand people.
+                    DPO can grow as your real world operations grow.`,
+                title: "Organization",
+              },
+            ]}
+          </Block>
+        </div>
+    );
+
+    const ComparisonChart = () => (
+        <div className="container-container-features">
+          <Block>
+            {[
+              {
+                content: `Grow the community for your hot crypto project with BulletTrain.
+                Start a BulletTrain on Spanner Blockchain to
+                empower your community to grow itself through affiliate crowdfunding
+                incentives.`,
+                image: `${baseUrl}img/matrix.svg`,
+                imageAlign: "left",
+                title: "DPO vs DAO vs Traditional Organizations",
+              },
+            ]}
+          </Block>
+        </div>
+    )
+
+    const ComparisonTable = () => (
+        <div className="container-features">
+          <Bootstrap.Container className="paddingTop paddingBottom">
+            <Bootstrap.Row>
+              <Bootstrap.Col lg="3"/>
+              <Bootstrap.Col md="auto">
+                <p><b>DPO Features</b></p>
+                <Bootstrap.Table responsive>
+                  <thead>
+                  <tr>
+                    <th> </th>
+                    <th>Traditional Organization</th>
+                    <th>DAO</th>
+                    <th>DPO</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>xxxx</td>
+                    <td>Tight</td>
+                    <td>Loose</td>
+                    <td>Tight and Loose</td>
+                  </tr>
+                  <tr>
+                    <td>Structure</td>
+                    <td>Hierarchical</td>
+                    <td>Flat</td>
+                    <td>sdfsdf</td>
+                  </tr>
+                  <tr>
+                    <td>Transparency</td>
+                    <td>Poor</td>
+                    <td>Good</td>
+                    <td>Good</td>
+                  </tr>
+                  <tr>
+                    <td>Participation</td>
+                    <td>Employee / Partners Only</td>
+                    <td>Open</td>
+                    <td>Open</td>
+                  </tr>
+                  <tr>
+                    <td>Location</td>
+                    <td>Local / Global</td>
+                    <td>Global</td>
+                    <td>Global</td>
+                  </tr>
+                  </tbody>
+                </Bootstrap.Table>
+              </Bootstrap.Col>
+              <Bootstrap.Col lg="3"/>
+            </Bootstrap.Row>
+          </Bootstrap.Container>
+        </div>
+
+    )
+
+    const SpannerBlockchain = () => (
+        <div className="container paddingBottom">
+          <Bootstrap.Row>
+            <Bootstrap.Col className="paddingTop" lg="6">
+              <Block>
+                {[
+                  {
+                    content: `A DPO oriented Blockchain design. Supporting on-chain programmability,
+                    off-chain connectivity and cross-chain interoperability. Vertically optimized 
+                    for efficiency and economies of scale. All powered by token <b>BOLT</b>.`,
+                    title: "Spanner Blockchain",
+                  },
+                ]}
+              </Block>
+              <Bootstrap.Row>
+                <Bootstrap.Col lg="2"></Bootstrap.Col>
+                <Bootstrap.Col>
+                  <Bootstrap.Button variant="warning" href="https://polkadot.js.org/apps/#/explorer">Explore Spanner</Bootstrap.Button>
+                </Bootstrap.Col>
+                <Bootstrap.Col>
+                  <Bootstrap.Button variant="warning" href="https://dapp.spanner.network/#/dex">Swap for BOLT</Bootstrap.Button>
+                </Bootstrap.Col>
+                <Bootstrap.Col lg="2"></Bootstrap.Col>
+              </Bootstrap.Row>
+            </Bootstrap.Col>
+            <Bootstrap.Col className="paddingTop" lg="6">
+              <img className="crop" width="400px" src={`${baseUrl}img/spanner_architecture.png`}/>
+            </Bootstrap.Col>
+          </Bootstrap.Row>
+        </div>
     );
 
     const Description = () => (
@@ -192,7 +327,7 @@ class Index extends React.Component {
         className="container paddingTop paddingBottom container-text"
         style={{ textAlign: "center" }}
       >
-        <MarkdownBlock>## What is Spanner?</MarkdownBlock>
+        <MarkdownBlock>## DPO on Spanner?</MarkdownBlock>
         <MarkdownBlock>
           Spanner components are designed to be highly configurable without
           coding. For the technically savvy, our components are written with
@@ -212,25 +347,27 @@ class Index extends React.Component {
     );
 
     const BulletTrain = () => (
-      <Block id="spanner-bullet-train">
-        {[
-          {
-            content: `Grow the community for your hot crypto project with BulletTrain. 
-              Start a BulletTrain on Spanner Blockchain to
-              empower your community to grow itself through affiliate crowdfunding
-              incentives. 
-              <div class="promoRow buttonWrapper">
-              <a class="button-white-border" href="https://dapp.spanner.network">
-              Try BulletTrain
-              </a>
-              </div>`,
-            image: `${baseUrl}img/trainyard.jpg`,
-            imageAlign: "left",
-            title: "BulletTrain: DPO for Growth in action",
-          },
-        ]}
+      <div className="container-features">
+        <Block id="spanner-bullet-train">
+          {[
+            {
+              content: `Grow the community for your hot crypto project with BulletTrain.
+            Start a BulletTrain on Spanner Blockchain to
+            empower your community to grow itself through affiliate crowdfunding
+            incentives.
+            <div class="promoRow buttonWrapper">
+            <a class="button-white-border" href="https://dapp.spanner.network">
+            Try BulletTrain
+            </a>
+            </div>`,
+              image: `${baseUrl}img/trainyard.jpg`,
+              imageAlign: "left",
+              title: "BulletTrain: DPO for Growth in action",
+            },
+          ]}
 
-      </Block>
+        </Block>
+      </div>
     );
 
     const BulletTrainFeatures = () => (
@@ -284,7 +421,7 @@ class Index extends React.Component {
       <Block layout="threeColumn">
         {[
           {
-            content: `Instantly bootstrap your project with asset and liquidity. 
+            content: `Instantly bootstrap your project with asset and liquidity.
             No code required.
             <div class="promoRow buttonWrapper">
             <a class="button-orange" href="docs/getting_started#why-projects-want-to-launch-on-spanner">Learn More</a></div>`,
@@ -356,7 +493,7 @@ class Index extends React.Component {
         <Block layout="threeColumn">
           {[
             {
-              content: `Build your project on Spanner. 
+              content: `Build your project on Spanner.
             No code required.
             <div class="promoRow buttonWrapper">
             <a class="button-orange" href="${docUrl(
@@ -490,7 +627,7 @@ class Index extends React.Component {
               title: "BOLT Info.",
             },
             {
-              content: `BOLT will be available on Spanner's BulletTrain campaign. 
+              content: `BOLT will be available on Spanner's BulletTrain campaign.
               <div class="promoRow buttonWrapper">
               <a class="button-orange" href="${docUrl("bullettrain")}">
               Learn More
@@ -539,13 +676,17 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer splashMainContainer">
-          <Description />
+          <DpoFeatures/>
+          <ComparisonChart/>
+          <ComparisonTable/>
+          <SpannerBlockchain/>
+          {/*<Description />*/}
           <BulletTrain />
-          <BulletTrainFeatures />
-          <BoltToken />
-          <BoltTokenFeatures />
-          <InterestedInSpanner />
-          <InterestedInSpannerFeatures />
+          {/*<BulletTrainFeatures />*/}
+          {/*<BoltToken />*/}
+          {/*<BoltTokenFeatures />*/}
+          {/*<InterestedInSpanner />*/}
+          {/*<InterestedInSpannerFeatures />*/}
           {/* <SpannerComponents /> */}
           {/* <LaunchPad /> */}
           {/* <Features /> */}
