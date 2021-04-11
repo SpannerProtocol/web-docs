@@ -179,6 +179,7 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}
       >
+        {props.title ? <h1>{props.title}</h1> : ''}
         <GridBlock
           align={props.align}
           contents={props.children}
@@ -189,7 +190,7 @@ class Index extends React.Component {
 
     const DpoFeatures = () => (
         <div className="container-features">
-          <Block layout="threeColumn">
+          <Block layout="threeColumn" title="DPO Features">
             {[
               {
                 content: `Start working with any like minded individuals around the world.
@@ -205,9 +206,8 @@ class Index extends React.Component {
                 title: "Programmable",
               },
               {
-                content: `Designed for traditional organizations to operate on Blockchain. From a two man
-                    band garage start up, to a multi national corporation with over twenty thousand people.
-                    DPO can grow as your real world operations grow.`,
+                content: `Supports collaboration of various size, from a two-man start-up, to a multinational 
+                          corporation. DPO can grow standalone or grow by cross-DPO merging and collaborations.`,
                 title: "Organization",
               },
             ]}
@@ -217,19 +217,26 @@ class Index extends React.Component {
 
     const ComparisonChart = () => (
         <div className="container-container-features">
-          <Block>
-            {[
-              {
-                content: `Grow the community for your hot crypto project with BulletTrain.
+          <Bootstrap.Container className="paddingTop paddingBottom">
+            <Bootstrap.Row>
+              <Bootstrap.Col>
+                <img width="400px" src={`${baseUrl}img/matrix.svg`}/>
+              </Bootstrap.Col>
+              <Bootstrap.Col>
+                <Block>
+                  {[
+                    {
+                      content: `Grow the community for your hot crypto project with BulletTrain.
                 Start a BulletTrain on Spanner Blockchain to
                 empower your community to grow itself through affiliate crowdfunding
                 incentives.`,
-                image: `${baseUrl}img/matrix.svg`,
-                imageAlign: "left",
-                title: "DPO vs DAO vs Traditional Organizations",
-              },
-            ]}
-          </Block>
+                      title: "DPO vs DAO vs Traditional Organizations",
+                    },
+                  ]}
+                </Block>
+              </Bootstrap.Col>
+            </Bootstrap.Row>
+          </Bootstrap.Container>
         </div>
     )
 
@@ -239,7 +246,7 @@ class Index extends React.Component {
             <Bootstrap.Row>
               <Bootstrap.Col lg="3"/>
               <Bootstrap.Col md="auto">
-                <p><b>DPO Features</b></p>
+                <h1><b>DPO Features</b></h1>
                 <Bootstrap.Table responsive>
                   <thead>
                   <tr>
@@ -305,18 +312,18 @@ class Index extends React.Component {
                 ]}
               </Block>
               <Bootstrap.Row>
-                <Bootstrap.Col lg="2"></Bootstrap.Col>
-                <Bootstrap.Col>
+                <Bootstrap.Col xs="2"></Bootstrap.Col>
+                <Bootstrap.Col xs="auto">
                   <Bootstrap.Button variant="warning" href="https://polkadot.js.org/apps/#/explorer">Explore Spanner</Bootstrap.Button>
                 </Bootstrap.Col>
-                <Bootstrap.Col>
+                <Bootstrap.Col xs="auto">
                   <Bootstrap.Button variant="warning" href="https://dapp.spanner.network/#/dex">Swap for BOLT</Bootstrap.Button>
                 </Bootstrap.Col>
-                <Bootstrap.Col lg="2"></Bootstrap.Col>
+                <Bootstrap.Col xs="2"></Bootstrap.Col>
               </Bootstrap.Row>
             </Bootstrap.Col>
             <Bootstrap.Col className="paddingTop" lg="6">
-              <img className="crop" width="400px" src={`${baseUrl}img/spanner_architecture.png`}/>
+              <img width="400px" src={`${baseUrl}img/spanner_architecture.png`}/>
             </Bootstrap.Col>
           </Bootstrap.Row>
         </div>
@@ -356,9 +363,9 @@ class Index extends React.Component {
             empower your community to grow itself through affiliate crowdfunding
             incentives.
             <div class="promoRow buttonWrapper">
-            <a class="button-white-border" href="https://dapp.spanner.network">
-            Try BulletTrain
-            </a>
+              <a class="button-white-border" href="https://dapp.spanner.network">
+              Try BulletTrain
+              </a>
             </div>`,
               image: `${baseUrl}img/trainyard.jpg`,
               imageAlign: "left",

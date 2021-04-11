@@ -227,8 +227,7 @@ h6 {
 } */
 
 .homeContainer {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/img/black-hex-background.jpg");
+  background: url("/img/black-hex-background.jpg");
   min-height: 360px;
 }
 
