@@ -185,7 +185,7 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}
       >
-        {props.title ? <h1>{props.title}</h1> : ''}
+        {props.title ? <Bootstrap.Container><h1>{props.title}</h1></Bootstrap.Container> : ''}
         <GridBlock
           align={props.align}
           contents={props.children}
@@ -454,7 +454,7 @@ class Index extends React.Component {
 
     const InterestedInSpannerFeatures = () => (
       <div className="container-features">
-        <Block layout="threeColumn">
+        <Block layout="threeColumn" align="center">
           {[
             {
               content: `Build your project on Spanner.
