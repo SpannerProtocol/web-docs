@@ -257,7 +257,7 @@ class Index extends React.Component {
     const SpannerBlockchain = () => (
         <div className="container paddingBottom">
           <Bootstrap.Row>
-            <Bootstrap.Col className="paddingTop" lg="6">
+            <Bootstrap.Col className="paddingTop" lg="7">
               <Block>
                 {[
                   {
@@ -269,17 +269,17 @@ class Index extends React.Component {
                 ]}
               </Block>
               <Bootstrap.Row>
-                <Bootstrap.Col xs="2"></Bootstrap.Col>
-                <Bootstrap.Col xs="auto">
+                <Bootstrap.Col lg="1" xs="2"> </Bootstrap.Col>
+                <Bootstrap.Col xs="4">
                   <Bootstrap.Button variant="warning" href="https://polkadot.js.org/apps/#/explorer">Explore Spanner</Bootstrap.Button>
                 </Bootstrap.Col>
-                <Bootstrap.Col xs="auto">
+                <Bootstrap.Col xs="4">
                   <Bootstrap.Button variant="warning" href="https://dapp.spanner.network/#/dex">Swap for BOLT</Bootstrap.Button>
                 </Bootstrap.Col>
-                <Bootstrap.Col xs="2"></Bootstrap.Col>
+                <Bootstrap.Col lg="3" xs="2"> </Bootstrap.Col>
               </Bootstrap.Row>
             </Bootstrap.Col>
-            <Bootstrap.Col className="paddingTop" lg="6">
+            <Bootstrap.Col className="paddingTop" lg="5">
               <img width="400px" src={`${baseUrl}img/spanner_architecture.png`}/>
             </Bootstrap.Col>
           </Bootstrap.Row>
