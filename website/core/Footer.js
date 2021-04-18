@@ -39,16 +39,10 @@ class Footer extends React.Component {
           </div>
           {<div>
             <h5>Community</h5>
-            {/*<a href={`${this.props.config.baseUrl}users`}>User Showcase</a>*/}
-            {/*<a*/}
-            {/*  href="https://t.me/spannerprotocol"*/}
-            {/*  target="_blank"*/}
-            {/*  rel="noreferrer noopener"*/}
-            {/*>*/}
-            {/*  Stack Overflow*/}
-            {/*</a>*/}
-            <a href="https://t.me/spannerprotocol">Telegram Chat</a>
-            <a href="https://t.me/spannerprotocol">Telegram Official</a>
+            {/* <a href={`${this.props.config.baseUrl}users`}>User Showcase</a> */}
+
+            <a href="https://t.me/spannerprotocol" target="_blank">Telegram Official Chat</a>
+            <a href="https://t.me/spannerupdates" target="_blank">Telegram Announcements</a>
             {/*<a*/}
             {/*  href="https://twitter.com/"*/}
             {/*  target="_blank"*/}

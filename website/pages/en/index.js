@@ -60,7 +60,7 @@ const timelineData = [
       "DPO V1 Development",
       "Dex and Bridge Launch on Hammer",
       "Partnership Development",
-      "BulletTrain Released on Hammer"
+      "BulletTrain Released on Hammer",
     ],
     date: "2021 Q1",
   },
@@ -69,7 +69,7 @@ const timelineData = [
       "Spanner Mainnet launch",
       "DPO Smart Contract Research",
       "BulletTrain Launch (for Spanner launching BOLT only)",
-      "Rococo Parachain Research"
+      "Rococo Parachain Research",
     ],
     date: "2021 Q2",
   },
@@ -79,7 +79,7 @@ const timelineData = [
       "DPO V2 Research",
       "DPO Off-chain Oracle Research",
       "BulletTrain open for other Projects",
-      "Growth Marketplace"
+      "Growth Marketplace",
     ],
     date: "2021 Q3",
   },
@@ -88,7 +88,7 @@ const timelineData = [
       "Parachain Interoperability",
       "DPO Full Smart Contract Support",
       "DPO Off-chain Oracle Support",
-      "More DPO applications"
+      "More DPO applications",
     ],
     date: "2021 Q4",
   },
@@ -135,6 +135,14 @@ class HomeSplash extends React.Component {
       </div>
     );
 
+    const ButtonYellow = (props) => (
+      <div className="pluginWrapper buttonWrapper">
+        <a className="button-orange" href={props.href} target={props.target}>
+          {props.children}
+        </a>
+      </div>
+    );
+
     return (
       <SplashContainer>
         <div className="inner">
@@ -146,16 +154,16 @@ class HomeSplash extends React.Component {
         </div>
         <Bootstrap.Container>
           <Bootstrap.Row>
-            <Bootstrap.Col xs lg="4">
-            </Bootstrap.Col>
+            <Bootstrap.Col xs lg="4"></Bootstrap.Col>
             <Bootstrap.Col md="2">
-              <Bootstrap.Button className="buttonWrapper" variant="warning" href={docUrl('getting_started')}>Learn more</Bootstrap.Button>
+              <ButtonYellow variant="warning" href={docUrl("getting_started")}>
+                Learn more
+              </ButtonYellow>
             </Bootstrap.Col>
             <Bootstrap.Col md="2">
               <Button href="#what-is-spanner">Explore DPO</Button>
             </Bootstrap.Col>
-            <Bootstrap.Col xs lg="4">
-            </Bootstrap.Col>
+            <Bootstrap.Col xs lg="4"></Bootstrap.Col>
           </Bootstrap.Row>
         </Bootstrap.Container>
       </SplashContainer>
@@ -172,11 +180,19 @@ class Index extends React.Component {
     const docUrl = (doc) => `${baseUrl}${docsPart}${langPart}${doc}`;
 
     const Button = (props) => (
-        <div className="pluginWrapper buttonWrapper">
-          <a className="button" href={props.href} target={props.target}>
-            {props.children}
-          </a>
-        </div>
+      <div className="pluginWrapper buttonWrapper">
+        <a className="button" href={props.href} target={props.target}>
+          {props.children}
+        </a>
+      </div>
+    );
+
+    const ButtonYellow = (props) => (
+      <div className="pluginWrapper buttonWrapper">
+        <a className="button-orange" href={props.href} target={props.target}>
+          {props.children}
+        </a>
+      </div>
     );
 
     const Block = (props) => (
@@ -185,7 +201,13 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}
       >
-        {props.title ? <Bootstrap.Container><h1>{props.title}</h1></Bootstrap.Container> : ''}
+        {props.title ? (
+          <Bootstrap.Container>
+            <h1>{props.title}</h1>
+          </Bootstrap.Container>
+        ) : (
+          ""
+        )}
         <GridBlock
           align={props.align}
           contents={props.children}
@@ -195,95 +217,128 @@ class Index extends React.Component {
     );
 
     const DpoFeatures = () => (
-        <div className="container-features">
-          <Block layout="threeColumn" title="DPO Features">
-            {[
-              {
-                content: `Start working with any like minded individuals around the world.
-                        Collaborate with transparency and trust. Measure contributions
-                        accurately and reward fairly.`,
-                title: "Decentralized",
-              },
-              {
-                content: `Create an organization on Spanner with <b>On-Chain</b> smart contract
-                    programming, connect your organization to others via <b>Cross-Chain</b> bridging
-                    and <b>Off-Chain</b> oracles.`,
-                align: "left",
-                title: "Programmable",
-              },
-              {
-                content: `Supports collaboration of various size, from a two-man start-up, to a multinational 
-                          corporation. DPO can grow standalone or grow by cross-DPO merging and collaborations.`,
-                title: "Organization",
-              },
-            ]}
-          </Block>
+      <div className="container-reverse paddingTop paddingBottom">
+        <MarkdownBlock>## Introducing the DPO</MarkdownBlock>
+        <div style={{ maxWidth: "768px", margin: 'auto' }}>
+          <MarkdownBlock>
+            The Decentralized Programmable Organization (DPO) is a technology to
+            enable borderless collaboration on Blockchain. It can be programmed
+            with any structure and all interactions are transparent and
+            verifiable.
+          </MarkdownBlock>
         </div>
+        <div className="container-flexbox">
+          <div className="container-features">
+            <h3>Decentralized</h3>
+            <div className="container-features-text">
+              <b>Completely Borderless</b>. Work with anyone around the world.
+              Collaborate with transparency and trust. Measure contributions
+              accurately and distribute rewards fairly.
+            </div>
+          </div>
+          <div className="container-features">
+            <h3>Programmable</h3>
+            <div className="container-features-text">
+              <b>Do anything, with anyone at anyscale</b>. Program any
+              blockchain activity, membership structures and composition to
+              other DPOs.
+            </div>
+          </div>
+          <div className="container-features">
+            <h3>Organization</h3>
+            <div className="container-features-text">
+              <b>Behave like a real organization.</b> DPO supports collaboration
+              of any size, from two person start-ups, to multinational
+              corporations. DPOs can work independently or collaborate with
+              other DPOs via DPO Composition.
+            </div>
+          </div>
+        </div>
+      </div>
     );
 
     const ComparisonChart = () => (
-        <div className="container-container-features">
-          <Block>
-            {[
-              {
-                content: `Standing on the shoulder of giants. Building from the best of DAO and Traditional Organizations. \n
-<b>Decentralization</b> provides trust and transparency for open participation.\n 
-<b>Rationality</b> provides effectiveness and efficiency for the goals of organizations.`,
-                title: "DPO vs DAO vs Traditional Organizations",
-                image: `${baseUrl}img/matrix.png`,
-                imageAlign: "right",
-              },
-            ]}
-          </Block>
-        </div>
-    )
+      <div className="container">
+        <Block>
+          {[
+            {
+              content: `Building on the best of DAOs (Decentralized Autonomous Organizations) and Traditional Organizations. <br/><br/>
+                <b>Decentralization</b> provides trust and transparency for open participation. <br/><br/>
+                <b>Operational Focus</b> provides effectiveness and efficiency for the goals of organizations.
+                `,
+              title: "DPOs vs DAOs vs Traditional Organizations",
+              image: `${baseUrl}img/dpo-matrix.png`,
+              imageAlign: "right",
+            },
+          ]}
+        </Block>
+      </div>
+    );
 
     const ComparisonTable = () => (
-        <div className="container-features">
-          <Bootstrap.Container className="paddingTop paddingBottom">
-            <Bootstrap.Row>
-              <Bootstrap.Col xs="2"/>
-              <Bootstrap.Col md="8">
-                <h1 color="color('black')">DPO Comparison</h1>
-                <img width="650px" src={`${baseUrl}img/comparison.svg`}/>
-              </Bootstrap.Col>
-              <Bootstrap.Col xs="2"/>
-            </Bootstrap.Row>
-          </Bootstrap.Container>
-        </div>
-
-    )
+      <div className="container-reverse">
+        <Bootstrap.Container className="paddingTop paddingBottom">
+          <Bootstrap.Row>
+            <Bootstrap.Col xs="2" />
+            <Bootstrap.Col md="8">
+              <h2 className="heading-white">DPO Comparison</h2>
+              <img width="650px" src={`${baseUrl}img/dpo-comparison.svg`} />
+            </Bootstrap.Col>
+            <Bootstrap.Col xs="2" />
+          </Bootstrap.Row>
+        </Bootstrap.Container>
+      </div>
+    );
 
     const SpannerBlockchain = () => (
-        <div className="container paddingBottom">
-          <Bootstrap.Row>
-            <Bootstrap.Col className="paddingTop" lg="7">
-              <Block>
-                {[
-                  {
-                    content: `A DPO oriented Blockchain design. Supporting on-chain programmability,
-                    off-chain connectivity and cross-chain interoperability. Vertically optimized 
-                    for efficiency and economies of scale. All powered by token <b>BOLT</b>.`,
-                    title: "Spanner Blockchain",
-                  },
-                ]}
-              </Block>
-              <Bootstrap.Row>
-                <Bootstrap.Col lg="1" xs="2"> </Bootstrap.Col>
-                <Bootstrap.Col xs="4">
-                  <Bootstrap.Button variant="warning" href="https://polkadot.js.org/apps/#/explorer">Explore Spanner</Bootstrap.Button>
-                </Bootstrap.Col>
-                <Bootstrap.Col xs="4">
-                  <Bootstrap.Button variant="warning" href="https://dapp.spanner.network/#/dex">Swap for BOLT</Bootstrap.Button>
-                </Bootstrap.Col>
-                <Bootstrap.Col lg="3" xs="2"> </Bootstrap.Col>
-              </Bootstrap.Row>
-            </Bootstrap.Col>
-            <Bootstrap.Col className="paddingTop" lg="5">
-              <img width="400px" src={`${baseUrl}img/spanner_architecture.png`}/>
-            </Bootstrap.Col>
-          </Bootstrap.Row>
-        </div>
+      <div className="container paddingBottom">
+        <Bootstrap.Row>
+          <Bootstrap.Col className="paddingTop" lg="7">
+            <Block>
+              {[
+                {
+                  content: `Full-stack optimization for Economies of Scale and technical Comparative Advantage. <br/><br/>
+                    <b>DPO Technology Focus</b> <br/><br/>
+                    <b>On-chain</b> - Core DPO feature development <br/>
+                    <b>Off-chain</b> - Oracle Integrations for real-world data <br/>
+                    <b>Cross-chain</b> - Integrations to target third-party blockchain assets. <br/><br/>
+                    All powered by token <b>BOLT</b>.`,
+                  title: "Spanner Blockchain",
+                },
+              ]}
+            </Block>
+            <Bootstrap.Row>
+              <Bootstrap.Col lg="1" xs="2">
+                {" "}
+              </Bootstrap.Col>
+              <Bootstrap.Col xs="4">
+                <ButtonYellow
+                  className="buttonWrapper"
+                  variant="warning"
+                  href="https://polkadot.js.org/apps/#/explorer"
+                >
+                  Explore Spanner
+                </ButtonYellow>
+              </Bootstrap.Col>
+              <Bootstrap.Col xs="4">
+                <ButtonYellow
+                  className="buttonWrapper"
+                  variant="warning"
+                  href="https://dapp.spanner.network/#/dex"
+                >
+                  Swap for BOLT
+                </ButtonYellow>
+              </Bootstrap.Col>
+              <Bootstrap.Col lg="3" xs="2">
+                {" "}
+              </Bootstrap.Col>
+            </Bootstrap.Row>
+          </Bootstrap.Col>
+          <Bootstrap.Col className="paddingTop" lg="5">
+            <img width="400px" src={`${baseUrl}img/spanner_architecture.png`} />
+          </Bootstrap.Col>
+        </Bootstrap.Row>
+      </div>
     );
 
     const Description = () => (
@@ -311,7 +366,7 @@ class Index extends React.Component {
     );
 
     const BulletTrain = () => (
-      <div className="container-features">
+      <div className="container-reverse">
         <Block id="spanner-bullet-train">
           {[
             {
@@ -319,8 +374,8 @@ class Index extends React.Component {
             Start a BulletTrain on Spanner Blockchain to
             empower your community to grow itself through affiliate crowdfunding
             incentives.
-            <div class="promoRow buttonWrapper">
-              <a class="button-white-border" href="https://dapp.spanner.network">
+            <div class="promoRow buttonWrapper centered">
+              <a class="button-white" href="https://dapp.spanner.network">
               Try BulletTrain
               </a>
             </div>`,
@@ -329,7 +384,6 @@ class Index extends React.Component {
               title: "BulletTrain: DPO for Growth in action",
             },
           ]}
-
         </Block>
       </div>
     );
@@ -414,25 +468,58 @@ class Index extends React.Component {
     );
 
     const Community = () => (
-      <div className="container-reverse paddingTop paddingBottom ">
+      <div className="container-reverse paddingTop paddingBottom">
         <MarkdownBlock>## Join our Community</MarkdownBlock>
-        <div className="container-community">
-          <div className="community-box">
-            <h3>Governance</h3>
-            <div className="community-text">
-              Discuss and vote on protocol topics openly and transparently
+        <div className="container-flexbox">
+          <div className="container-features">
+            <h3>HODLers</h3>
+            <div className="container-features-text">
+              Discuss about Spanner and support us in our social channels.
+            </div>
+            <div
+              className="promoRow buttonWrapper"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <a href="https://t.me/spannerprotocol" target="_blank">
+                <img
+                  src={`${baseUrl}img/icon-telegram.png`}
+                  style={{ width: "32px" }}
+                />
+              </a>
             </div>
           </div>
-          <div className="community-box">
-            <h3>Partners</h3>
-            <div className="community-text">
+          <div className="container-features">
+            <h3>Ecosystem Partners</h3>
+            <div className="container-features-text">
               Collaborate with our team to integrate Spanner with your project
             </div>
+            <div
+              className="promoRow buttonWrapper"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <a
+                className="button-orange"
+                href="mailto:ask@spanner.network?subject=Ecosystem Partner Inquiry"
+              >
+                Find out more
+              </a>
+            </div>
           </div>
-          <div className="community-box">
-            <h3>Explorers</h3>
-            <div className="community-text">
-              Help promote new projects on Spanner and get rewarded
+          <div className="container-features">
+            <h3>Ambassadors</h3>
+            <div className="container-features-text">
+              Join our Ambassador Program and help grow our community!
+            </div>
+            <div
+              className="promoRow buttonWrapper"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <a
+                className="button-orange"
+                href="mailto:ask@spanner.network?subject=Ambassador Inquiry"
+              >
+                Become an Ambassador
+              </a>
             </div>
           </div>
         </div>
@@ -442,54 +529,71 @@ class Index extends React.Component {
     const InterestedInSpanner = () => (
       <div className="container-reverse paddingTop">
         <MarkdownBlock>## Learn more about Spanner</MarkdownBlock>
-        <MarkdownBlock>
-          Spanner enables rapid crypto project development.
-        </MarkdownBlock>
-        <MarkdownBlock>
-          Whether you are a Project Owner, User or just curious, there's plenty
-          of resources for you to learn more about Spanner.
-        </MarkdownBlock>
-      </div>
-    );
+        <div style={{ maxWidth: "768px", margin: 'auto' }}>
+          <MarkdownBlock>
+            Whether you are a Project Owner, User or just curious, there's
+            plenty of resources for you to learn more about Spanner.
+          </MarkdownBlock>
+        </div>
+        <div className="container-flexbox">
+          <div className="container-features-centered">
+            <div style={{ marginTop: "1rem" }}>
+              <img
+                src={`${baseUrl}img/icon-spanner.svg`}
+                style={{ width: "55px" }}
+              />
+            </div>
 
-    const InterestedInSpannerFeatures = () => (
-      <div className="container-features">
-        <Block layout="threeColumn" align="center">
-          {[
-            {
-              content: `Build your project on Spanner.
-            No code required.
-            <div class="promoRow buttonWrapper">
-            <a class="button-orange" href="${docUrl(
-              "build-on-spanner"
-            )}">Learn More</a>
-            </div>`,
-              image: `${baseUrl}img/icon-spanner.svg`,
-              imageAlign: "top",
-              title: "### Builders",
-            },
-            {
-              content: `Learn more about Spanner Web.
-            <div class="promoRow buttonWrapper">
-            <a class="button-orange" href="${docUrl(
-              "spanner-web"
-            )}">Learn More</a>
-            </div>`,
-              image: `${baseUrl}img/icon-user.svg`,
-              imageAlign: "top",
-              title: "### Users",
-            },
-            {
-              content: `Curious about Spanner's Blockchain? Read more about our blockchain parameters.
-            <div class="promoRow buttonWrapper">
-            <a class="button-orange" href="${docUrl("params")}">Learn More</a>
-            </div>`,
-              image: `${baseUrl}img/icon-components.svg`,
-              imageAlign: "top",
-              title: "### Browsers",
-            },
-          ]}
-        </Block>
+            <h3>Builders</h3>
+            <div className="container-features-text-centered">
+              Build your project on Spanner. No code required.
+              <div className="promoRow buttonWrapper">
+                <a
+                  className="button-orange"
+                  href={`${docUrl("build-on-spanner")}`}
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="container-features-centered">
+            <div style={{ marginTop: "1rem" }}>
+              <img
+                src={`${baseUrl}img/icon-user.svg`}
+                style={{ width: "55px" }}
+              />
+            </div>
+
+            <h3>Users</h3>
+            <div className="container-features-text-centered">
+              Check out our decentralized application, Spanner Dapp. 
+              <div className="promoRow buttonWrapper">
+                <a className="button-orange" href={`${docUrl("spanner-web")}`}>
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="container-features-centered">
+            <div style={{ marginTop: "1rem" }}>
+              <img
+                src={`${baseUrl}img/icon-components.svg`}
+                style={{ width: "55px" }}
+              />
+            </div>
+            <h3>Blockchain Enthusiasts</h3>
+            <div className="container-features-text-centered">
+              Curious about Spanner's Blockchain? Read more about our blockchain
+              parameters.
+              <div className="promoRow buttonWrapper">
+                <a className="button-orange" href={`${docUrl("params")}`}>
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
 
@@ -628,7 +732,7 @@ class Index extends React.Component {
           <p>This project is used by all these people</p>
           <div className="logos">{showcase}</div>
           <div className="more-users">
-            <a className="button" href={pageUrl("users.html")}>
+            <a className="button-orange" href={pageUrl("users.html")}>
               More {siteConfig.title} Users
             </a>
           </div>
@@ -640,10 +744,10 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer splashMainContainer">
-          <DpoFeatures/>
-          <ComparisonChart/>
-          <ComparisonTable/>
-          <SpannerBlockchain/>
+          <DpoFeatures />
+          <ComparisonChart />
+          <ComparisonTable />
+          <SpannerBlockchain />
           {/*<Description />*/}
           <BulletTrain />
           {/*<BulletTrainFeatures />*/}
@@ -654,7 +758,6 @@ class Index extends React.Component {
           {/* <Features /> */}
           <Timeline />
           <InterestedInSpanner />
-          <InterestedInSpannerFeatures />
           <Partners />
           <Community />
         </div>

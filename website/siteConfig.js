@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: "Spanner Protocol", // Title for your website.
-  tagline: "The Blockchain for Decentralized Programmable Organizations",
+  tagline: "The Blockchain for Borderless Collaboration",
   cname: "www.spanner.network",
   url: "https://www.spanner.network/", // Your website URL
   baseUrl: "/", // Base URL for your project */
@@ -59,8 +59,8 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: "img/logo-spanner-white.svg",
-  footerIcon: "img/logo-spanner-yellow.svg",
-  favicon: "img/logo-spanner-yellow.svg",
+  footerIcon: "img/logo-spanner-gradient.svg",
+  favicon: "img/logo-spanner-gradient.svg",
 
   /* Colors for website */
   colors: {
@@ -109,7 +109,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  // repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/facebook/test-site',
 
   stylesheets: ['https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css'],
 };
