@@ -45,7 +45,7 @@ const siteConfig = {
       external: true,
     },
     { doc: "getting_started", label: "Docs" },
-    { page: "help", label: "Support" },
+    { page: "guides", label: "Guides" },
     {
       href: "https://spannerprotocol.medium.com",
       label: "Blog",

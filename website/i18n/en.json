@@ -71,7 +71,7 @@
     "links": {
       "Deck": "Deck",
       "Docs": "Docs",
-      "Support": "Support",
+      "Guides": "Guides",
       "Blog": "Blog"
     },
     "categories": {
@@ -83,6 +83,11 @@
     }
   },
   "pages-strings": {
+    "Guides|no description given": "Guides",
+    "Guides are created by both the Spanner team and community. If you would like to contribute to our guide compilation, please contact us at|no description given": "Guides are created by both the Spanner team and community. If you would like to contribute to our guide compilation, please contact us at",
+    "Dapp Guides|no description given": "Dapp Guides",
+    "General Guides|no description given": "General Guides",
+    "Spanner 101 - Community guide (ZH)|no description given": "Spanner 101 - Community guide (ZH)",
     "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)|no description given": "Learn more using the [documentation on this site.](/test-site/docs/en/doc1.html)",
     "Browse Docs|no description given": "Browse Docs",
     "Ask questions about the documentation and project|no description given": "Ask questions about the documentation and project",
